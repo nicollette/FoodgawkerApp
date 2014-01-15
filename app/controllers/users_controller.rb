@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :only => :show
+  
   def new
     render :new
   end
@@ -6,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save!
+      login!
       # this will go to recipes#index
       redirect_to user_url(@user)
     else
@@ -15,5 +18,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user = User.find(params[:id])
+    render :show
   end
 end
