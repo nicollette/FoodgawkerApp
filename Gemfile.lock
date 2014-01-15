@@ -29,6 +29,11 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
+    backbone-on-rails (1.1.0.0)
+      eco
+      ejs
+      jquery-rails
+      rails (>= 3.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     coffee-rails (3.2.2)
@@ -38,10 +43,19 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
     i18n (0.6.9)
+    jbuilder (2.0.2)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -98,15 +112,20 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.5.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  backbone-on-rails
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
+  ejs
+  jbuilder
   jquery-rails
   pg
   rails (= 3.2.15)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  underscore-rails

@@ -26,8 +26,10 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
+gem 'jbuilder'
+gem 'underscore-rails'
+gem 'backbone-on-rails'
+gem 'ejs'
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :username, :email, :uniqueness => :true
   before_validation :generate_session_token
 
+  has_many :recipes
+  
   def self.find_by_credentials(params)
     user = User.find_by_username(params[:username])
     return nil unless user
