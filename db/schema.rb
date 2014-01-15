@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115173204) do
+ActiveRecord::Schema.define(:version => 20140115200718) do
+
+  create_table "recipes", :force => true do |t|
+    t.string   "title",              :null => false
+    t.string   "blog_url",           :null => false
+    t.text     "description"
+    t.integer  "total_time"
+    t.integer  "user_id",            :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "recipes", ["title"], :name => "index_recipes_on_title"
+  add_index "recipes", ["user_id"], :name => "index_recipes_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",        :null => false

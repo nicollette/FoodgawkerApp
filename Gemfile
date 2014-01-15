@@ -30,6 +30,9 @@ gem 'jbuilder'
 gem 'underscore-rails'
 gem 'backbone-on-rails'
 gem 'ejs'
+
+gem 'paperclip'
+gem 'aws-sdk'
 # Use unicorn as the app server
 # gem 'unicorn'
 
