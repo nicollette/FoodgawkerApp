@@ -36,7 +36,6 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var attrs = $(event.target.form).serializeJSON();
-
     var success = function() {
       Backbone.history.navigate("", { trigger: true })
     };

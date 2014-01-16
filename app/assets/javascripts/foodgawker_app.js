@@ -5,6 +5,8 @@ window.FoodgawkerApp = {
   Routers: {},
   Data: {},
   initialize: function() {
+    FoodgawkerApp.Data.categories =      
+      JSON.parse($("#bootstrapped-categories").html());
     FoodgawkerApp.Data.recipes = new FoodgawkerApp.Collections.Recipes();
     FoodgawkerApp.Data.recipes.fetch({
       success: function () {
