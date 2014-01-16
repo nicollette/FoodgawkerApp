@@ -33,6 +33,11 @@ gem 'ejs'
 
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'aws-s3'
+
+gem 'figaro'
+# gem 'jquery-fileupload-rails', '0.3.0'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

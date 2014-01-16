@@ -1,7 +1,8 @@
 <h1>All Recipes</h1>
 <ul>
   <% recipes.each(function(recipe) { %>
-    <li><%= recipe.get("title") %></li>
+    <li><%= recipe.get("title") %>
+    <img src="<%= recipe.get('photo_url')%>"></li>
   <% }) %>
   
 </ul>
