@@ -11,8 +11,22 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   index: function () {
-    var view = new FoodgawkerApp.Views.RecipesIndex({ collection: this.recipes })
-    this._swapView(view);
+    // is it bad to fetch again?
+    // var router = this;
+    // FoodgawkerApp.Data.recipes.fetch({ 
+    //   success: function () {
+    //     var view = new FoodgawkerApp.Views.RecipesIndex({ 
+    //       collection: FoodgawkerApp.Data.recipes 
+    //     });
+    //     router._swapView(view);        
+    //   }
+    // })
+    
+    var view = new FoodgawkerApp.Views.RecipesIndex({ 
+      collection: this.recipes 
+    });
+    this._swapView(view);        
+  
   },
   
   new: function () {

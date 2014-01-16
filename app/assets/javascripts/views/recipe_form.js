@@ -42,7 +42,6 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
     };
     
     this.model.set(attrs);
-    debugger;
     
     if(this.model.isNew()){
       this.collection.create(this.model, {
