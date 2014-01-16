@@ -5,12 +5,8 @@ class Recipe < ActiveRecord::Base
     
   belongs_to :user
   
-  # has_attached_file 
-  #   :photo, 
-  #   :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-  #   :url => "/system/:attachment/:id/:style/:filename",
-  #   :styles => {
+  # has_attached_file :photo, :styles => {
   #     medium: '336x280>',
   #     large: '672X560>'
-  #   }
+  # }
 end

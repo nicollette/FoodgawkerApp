@@ -3,7 +3,7 @@ FoodgawkerApp::Application.routes.draw do
   resource :session, :only => [:new, :create, :destroy]
   
   namespace :api do
-    resources :recipes, :only => [:index], 
+    resources :recipes, :only => [:index, :create], 
                         :defaults => {:format => "json"}
   end
   

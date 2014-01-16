@@ -1,7 +1,8 @@
 FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   routes: {
     "": "index",
-    "recipes": "index"
+    "recipes": "index",
+    "recipes/new": "new"
   },
   
   initialize: function (options) {
@@ -12,6 +13,15 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   index: function () {
     var view = new FoodgawkerApp.Views.RecipesIndex({ collection: this.recipes })
     this._swapView(view);
+  },
+  
+  new: function () {
+    var newRecipe = new FoodgawkerApp.Models.Recipe();
+    var view = new FoodgawkerApp.Views.RecipeForm({ 
+      collection: this.recipes, 
+      model: newRecipe 
+    });
+    this._swapView(view);  
   },
   
   _swapView: function (view) {
