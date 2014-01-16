@@ -14,11 +14,11 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
   
   submit: function (event) {
     event.preventDefault();
-    var attrs = this.$el.serializeJSON();
+    var attrs = $(event.target.form).serializeJSON();
     var success = function() {
       Backbone.history.navigate("", { trigger: true })
     };
-
+    
     this.model.set(attrs);
     
     if(this.model.isNew()){

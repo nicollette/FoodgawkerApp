@@ -5,7 +5,6 @@ window.FoodgawkerApp = {
   Routers: {},
   Data: {},
   initialize: function() {
-    alert('Hello from Backbone!');
     FoodgawkerApp.Data.recipes = new FoodgawkerApp.Collections.Recipes();
     FoodgawkerApp.Data.recipes.fetch({
       success: function () {

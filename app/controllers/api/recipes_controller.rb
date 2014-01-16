@@ -8,11 +8,11 @@ class Api::RecipesController < ApplicationController
     params[:recipe][:user_id] = current_user.id
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
-      render :create
+      render :show
     else
       # return @recipe in json with errors?
       flash.now[:errors] = @recipe.errors.full_messages
-      
+      render :show
     end
   end
 end

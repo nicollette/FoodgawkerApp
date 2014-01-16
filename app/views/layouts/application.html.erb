@@ -10,6 +10,10 @@
   <% flash[:errors] && flash[:errors].each do |error| %>
     <p><%= error %> </p>
   <% end %>
+  
+  <% if logged_in? %>
+    <p>Welcome <%= current_user.username %></p>
+  <% end %>
 <%= yield %>
 
 </body>
