@@ -5,6 +5,5 @@ FoodgawkerApp.Models.Recipe = Backbone.Model.extend({
     delete attributes["recipe_categories"]
     
     return attributes;
-    
   }
 })

@@ -1,0 +1,13 @@
+<%= recipe.get("title") %>
+
+<img src="<%= recipe.get('photo_url')%>">
+
+<p>Description: <%= recipe.get("description") %></p>
+<p>Total Time: <%= recipe.get("total_time") %></p>
+<p>User Id: <%= recipe.get("user_id") %></p>
+
+<ul>
+<% recipe.get("categories").forEach(function(category) { %>
+  <li><% category.name %></li>
+<% }) %>
+</ul>

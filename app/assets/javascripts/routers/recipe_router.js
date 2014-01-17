@@ -2,7 +2,8 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   routes: {
     "": "index",
     "recipes": "index",
-    "recipes/new": "new"
+    "recipes/new": "new",
+    "recipes/:id": "detail"
   },
   
   initialize: function (options) {
@@ -26,6 +27,15 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       model: newRecipe 
     });
     this._swapView(view);  
+  },
+  
+  detail: function (id) {
+    var recipe = FoodgawkerApp.Data.recipes.get(id);
+    debugger;
+    var view = new FoodgawkerApp.Views.RecipeDetail({
+      model: recipe
+    });
+    this._swapView(view);
   },
   
   _swapView: function (view) {
