@@ -16,22 +16,13 @@ class Recipe < ActiveRecord::Base
   }
   
   def self.search_results(keywords, categories)
-    categories = [2, 3]
-    keywords = ["chocolate", "cookie"]    
-  # Recipe.filter_by_keywords(keywords).joins(Recipe.filter_by_categories(categories))
-    
-  end
-  
-  def self.filter_by_categories(categories)
-    categories = [2, 3]
-    join_statement = categories.map do |category|
-      "SELECT
-          recipe_categories.recipe_id
-        FROM
-          recipe_categories
-        WHERE
-          recipe_categories.category_id = ?"
-    end.join("\nINTERSECT\n")
+    parsed_keywords = keywords.map do |keyword|
+      "%#{keyword}%"
+    end
+        
+    cat_sql = self.generate_category_sql(categories)
+    key_sql = self.generate_keyword_sql(parsed_keywords)
+    join_statement = cat_sql.push(key_sql).join("\nINTERSECT\n")
     
     query = <<-SQL
       SELECT
@@ -43,21 +34,73 @@ class Recipe < ActiveRecord::Base
       ON
         recipes.id = rc.recipe_id
     SQL
-    sql_params = [query].concat(categories)
-    
-    results = Recipe.find_by_sql(sql_params)   
+
+    sql_params = [query].concat(categories).concat(parsed_keywords)
+    results = Recipe.find_by_sql(sql_params)
   end
   
-  def self.filter_by_keywords(keywords)
-    keywords = ["chocolate", "cookie"]
+  def self.generate_category_sql(categories)
+    join_statement = categories.map do |category|
+      "SELECT
+          recipe_categories.recipe_id
+        FROM
+          recipe_categories
+        WHERE
+          recipe_categories.category_id = ?"
+    end
+  end
+  
+  def self.generate_keyword_sql(keywords)
     where_clause = keywords.map do |keyword|
       "title like ?"
     end.join(" AND ")
-    
-    parsed_keywords = keywords.map do |keyword|
-      "%#{keyword}%"
-    end
-    
-    results = Recipe.where(where_clause, *parsed_keywords)
+
+    join_statement = 
+     "SELECT 
+        recipes.id 
+      FROM 
+        recipes
+      WHERE 
+        #{where_clause}"
   end
+  
+
+ #  def self.filter_by_categories(categories)
+ #    categories = [2, 3]
+ #    join_statement = categories.map do |category|
+ #      "SELECT
+ #          recipe_categories.recipe_id
+ #        FROM
+ #          recipe_categories
+ #        WHERE
+ #          recipe_categories.category_id = ?"
+ #    end.join("\nINTERSECT\n")
+ #    
+ #    query = <<-SQL
+ #      SELECT
+ #        recipes.*
+ #      FROM 
+ #        recipes
+ #      JOIN
+ #        (#{join_statement}) AS rc
+ #      ON
+ #        recipes.id = rc.recipe_id
+ #    SQL
+ #    sql_params = [query].concat(categories)
+ #    
+ #    sql_results = Recipe.find_by_sql(sql_params)   
+ #  end
+ #  
+ #  def self.filter_by_keywords(keywords)
+ #    keywords = ["cookie", "banana"]
+ #    where_clause = keywords.map do |keyword|
+ #      "title like ?"
+ #    end.join(" AND ")
+ #    
+ #    parsed_keywords = keywords.map do |keyword|
+ #      "%#{keyword}%"
+ #    end
+ #    
+ #    results = Recipe.where(where_clause, *parsed_keywords)
+ #  end
 end

@@ -27,8 +27,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
       success: function () {
         alert("faved!")
         recipe.set("favorites", fav)
-      }
-      
+      }      
     }); 
   },
   

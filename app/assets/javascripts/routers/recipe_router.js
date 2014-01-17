@@ -51,9 +51,9 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   _swapView: function (view) {
     if(this.current_view && this.current_view.removeAll) { 
-      this.current_view.removeAll()
+      this.current_view.removeAll();
     } else {
-      this.current_view && this.current_view.remove()
+      this.current_view && this.current_view.remove();
     }
     
     this.current_view = view
