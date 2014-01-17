@@ -31,7 +31,6 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   detail: function (id) {
     var recipe = FoodgawkerApp.Data.recipes.get(id);
-    debugger;
     var view = new FoodgawkerApp.Views.RecipeDetail({
       model: recipe
     });

@@ -3,4 +3,5 @@ json.array! @recipes do |recipe|
   json.username(recipe.user.username)
   json.photo_url(recipe.photo.url(:large))
   json.categories(recipe.categories, :id, :name)
+  json.favorites(recipe.favorites, :id, :recipe_id, :user_id)
 end
