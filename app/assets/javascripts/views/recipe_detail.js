@@ -2,7 +2,8 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   template: JST["recipes/show"],
   
   events: {
-    "click button#favorite": "favorite"
+    "click button#favorite": "favorite",
+    "click button#unfavorite": "unfavorite"
   },
   
   initialize: function () {
@@ -28,7 +29,19 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
         recipe.set("favorites", fav)
       }
       
-    });
+    }); 
+  },
+  
+  unfavorite: function () {
+    event.preventDefault();
     
+    var recipe = this.model;
+    var fav = this.model.get("favorites");
+    fav.destroy({
+      success: function () {
+        alert("unfaved")
+        recipe.set("favorites", [])
+      }
+    });
   }
 })
