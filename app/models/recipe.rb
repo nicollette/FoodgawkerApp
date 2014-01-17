@@ -15,6 +15,12 @@ class Recipe < ActiveRecord::Base
       large: '672X560>'
   }
   
+  def self.search_results(keywords, categories)
+    categories = [2, 3]
+    keywords = ["chocolate", "cookie"]    
+  # Recipe.filter_by_keywords(keywords).joins(Recipe.filter_by_categories(categories))
+    
+  end
   
   def self.filter_by_categories(categories)
     categories = [2, 3]
@@ -42,7 +48,7 @@ class Recipe < ActiveRecord::Base
     results = Recipe.find_by_sql(sql_params)   
   end
   
-  def self.filter_by_keyword(keywords)
+  def self.filter_by_keywords(keywords)
     keywords = ["chocolate", "cookie"]
     where_clause = keywords.map do |keyword|
       "title like ?"

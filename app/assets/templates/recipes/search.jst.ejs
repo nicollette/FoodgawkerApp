@@ -1,0 +1,17 @@
+<form id="search-form">
+  
+  <label for="keyword">Search By Keyword</label>
+  <input type="text" name="keywords" id="keyword">
+  
+  <label>Filter by Category</label>
+
+  <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
+    <input type="checkbox" 
+           id="<%= category.name %>" 
+           name="recipe_categories[<%= category.id %>][category_id]"
+           value="<%= category.id %>">
+    <label for="<%= category.name %>"><%= category.name %></label>
+  <% })%>
+
+  <button id="search-button">Search</button>  
+</form>
