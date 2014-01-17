@@ -4,7 +4,8 @@
 
 <p>Description: <%= recipe.get("description") %></p>
 <p>Total Time: <%= recipe.get("total_time") %></p>
-<p>User Id: <%= recipe.get("user_id") %></p>
+<p>Blog link: <%= recipe.get("blog_url")%></p>
+<p>Added by: <%= recipe.get("username") %></p>
 
 <ul>
 <% recipe.get("categories").forEach(function(category) { %>
