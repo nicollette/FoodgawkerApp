@@ -1,0 +1,12 @@
+<div data-recipe-id="<%= recipe.id %>">
+  <p><%= recipe.get("title") %></p>
+  <img src="<%= recipe.get('photo_url')%>">
+  <p><%= recipe.get("description")%></p>
+  
+  <% if (recipe.get("favorites").length < 1 ) { %>
+    <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
+  <% } else { %>
+    <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
+  <% } %>
+  
+</div>
