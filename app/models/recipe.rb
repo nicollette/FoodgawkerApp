@@ -43,6 +43,15 @@ class Recipe < ActiveRecord::Base
   end
   
   def self.filter_by_keyword(keywords)
+    keywords = ["chocolate", "cookie"]
+    where_clause = keywords.map do |keyword|
+      "title like ?"
+    end.join(" AND ")
     
+    parsed_keywords = keywords.map do |keyword|
+      "%#{keyword}%"
+    end
+    
+    results = Recipe.where(where_clause, *parsed_keywords)
   end
 end
