@@ -23,12 +23,10 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
     return this;
   },
   
-  remove: function () {
-    if(this.childViews.length > 0) {
-      this.childViews.forEach(function(childView) {
-        childView.remove();
-      })
-    }
+  removeAll: function () {
+    this.childViews.forEach(function(childView) {
+      childView.remove();
+    })
     this.remove();
   }
 })

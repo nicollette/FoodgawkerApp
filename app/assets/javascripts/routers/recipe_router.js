@@ -16,7 +16,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       collection: this.recipes 
     });
     
-    this._swapView(view);        
+    this._swapView(view);      
   
   },
   
@@ -39,7 +39,12 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   _swapView: function (view) {
     // will need to change remove to remove nested views
-    this.current_view && this.current_view.remove()
+    if(this.current_view && this.current_view.removeAll) { 
+      this.current_view.removeAll()
+    } else {
+      this.current_view && this.current_view.remove()
+    }
+    
     this.current_view = view
     this.$rootEl.html(view.render().$el);
   }

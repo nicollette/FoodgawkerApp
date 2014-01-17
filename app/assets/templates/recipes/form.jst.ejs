@@ -14,14 +14,17 @@
 
   <input type="file" id="photo" name="photo">
   
+  <label for="ingredients">Ingredients</label>
+  <input type="text" name="ingredients" id="ingredients">
+  
   <label>Categories</label>
   
   <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
-    <label for="<%= category.name %>"><%= category.name %></label>
     <input type="checkbox" 
            id="<%= category.name %>" 
            name="recipe_categories[<%= category.id %>][category_id]"
            value="<%= category.id %>">
+    <label for="<%= category.name %>"><%= category.name %></label>
   <% })%>
   
   <button type="submit" id="recipe-form-button">Add Recipe</button>  
