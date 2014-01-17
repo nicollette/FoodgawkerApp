@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   before_validation :generate_session_token
 
   has_many :recipes
+  has_many :favorites
+  has_many :favorite_recipes, :through => :favorites, :source => :recipe
   
   def self.find_by_credentials(params)
     user = User.find_by_username(params[:username])

@@ -6,7 +6,8 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :recipe_categories, :inverse_of => :recipe, :dependent => :destroy
   has_many :categories, :through => :recipe_categories, :source => :category
-  
+  has_many :favorites
+
   accepts_nested_attributes_for :recipe_categories, :reject_if => :all_blank
   has_attached_file :photo, :styles => {
       medium: '336x280>',
