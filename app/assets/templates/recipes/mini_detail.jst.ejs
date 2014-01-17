@@ -3,7 +3,7 @@
   <img src="<%= recipe.get('photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
-  <% if (recipe.get("favorites") && recipe.get("favorites").length < 1 ) { %>
+  <% if (!recipe.get("favorites") || recipe.get("favorites").length < 1 ) { %>
     <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
   <% } else { %>
     <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 

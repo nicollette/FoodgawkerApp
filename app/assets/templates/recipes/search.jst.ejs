@@ -8,7 +8,7 @@
   <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
     <input type="checkbox" 
            id="<%= category.name %>" 
-           name="recipe_categories[<%= category.id %>][category_id]"
+           name="category_ids[]"
            value="<%= category.id %>">
     <label for="<%= category.name %>"><%= category.name %></label>
   <% })%>

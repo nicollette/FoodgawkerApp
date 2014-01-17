@@ -23,12 +23,12 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
     
     var recipe_id = $(event.target).attr("data-recipe-id");
     var fav = new FoodgawkerApp.Models.Favorite();
+    
     fav.save( { recipe_id: recipe_id },{
       success: function () {
         alert("faved!")
         recipe.set("favorites", fav)
-      }
-      
+      }      
     }); 
   },
   

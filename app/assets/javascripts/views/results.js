@@ -1,22 +1,20 @@
-FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
-  template: JST["recipes/index"],
+FoodgawkerApp.Views.Results = Backbone.View.extend({
+  template: JST["recipes/results"],
   
   childViews: [],
   
-  initialize: function () {
-    this.listenTo(this.collection, "all", this.render)
-  },
-  
   render: function () {
-    var indexView = this;
+    var resultsView = this;
     var content = this.template({ recipes: this.collection });
+    
     this.$el.html(content);
     this.collection.each(function (recipe) {
       var miniDetailView = new FoodgawkerApp.Views.MiniRecipeDetail({ 
         model: recipe 
       });
-      indexView.childViews.push(miniDetailView);
-      indexView.$el.append(miniDetailView.render().$el);
+      
+      resultsView.childViews.push(miniDetailView);
+      resultsView.$el.append(miniDetailView.render().$el);
     })
     
     return this;
