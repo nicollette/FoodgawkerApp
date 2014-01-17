@@ -1,4 +1,4 @@
-class Api::FavoritesController < ApplicationController
+class Api::FavoriteController < ApplicationController
   def create
     params[:favorite][:user_id] = current_user.id
     @favorite = Favorite.create(params[:favorite])
@@ -8,6 +8,6 @@ class Api::FavoritesController < ApplicationController
   def destroy
     favorite = Favorite.find(params[:id]);
     favorite.destroy
-    render :json => :status => 200
+    render :json => { :status => :ok }
   end
 end

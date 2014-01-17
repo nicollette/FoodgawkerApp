@@ -5,7 +5,7 @@ FoodgawkerApp::Application.routes.draw do
   namespace :api do
     resources :recipes, :only => [:index, :create], 
                         :defaults => {:format => "json"}
-    resources :favorites, :only => [:create, :destroy],
+    resources :favorite, :only => [:create, :destroy],
                            :defaults => {:format => "json"}
   end
   

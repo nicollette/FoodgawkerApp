@@ -37,6 +37,7 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
     
     var recipe = this.model;
     var fav = this.model.get("favorites");
+
     fav.destroy({
       success: function () {
         alert("unfaved")
