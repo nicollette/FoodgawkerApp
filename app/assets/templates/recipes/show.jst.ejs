@@ -6,6 +6,7 @@
 <p>Total Time: <%= recipe.get("total_time") %></p>
 <p>Blog link: <%= recipe.get("blog_url")%></p>
 <p>Added by: <%= recipe.get("username") %></p>
+<button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
 
 <ul>
 <% recipe.get("categories").forEach(function(category) { %>
