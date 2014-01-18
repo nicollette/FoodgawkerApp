@@ -16,14 +16,20 @@ class Recipe < ActiveRecord::Base
   }
   
   def self.search_results(keywords, categories)
-    parsed_keywords = keywords.map do |keyword|
-      "%#{keyword}%"
+    categories ||= []
+    parsed_keywords = []
+    join_statement = ""
+    cat_sql = categories.nil? ? [] : self.generate_category_sql(categories)
+  
+    if keywords.rstrip.empty? 
+      key_sql = ""
+      join_statement = cat_sql.join("\nINTERSECT\n")
+    else
+      parsed_keywords = keywords.split.map { |keyword| "%#{keyword}%" }
+      key_sql = self.generate_keyword_sql(parsed_keywords)
+      join_statement = cat_sql.push(key_sql).join("\nINTERSECT\n")
     end
         
-    cat_sql = self.generate_category_sql(categories)
-    key_sql = self.generate_keyword_sql(parsed_keywords)
-    join_statement = cat_sql.push(key_sql).join("\nINTERSECT\n")
-    
     query = <<-SQL
       SELECT
         recipes.*
@@ -57,7 +63,7 @@ class Recipe < ActiveRecord::Base
 
     join_statement = 
      "SELECT 
-        recipes.id 
+        recipes.id AS recipe_id
       FROM 
         recipes
       WHERE 
