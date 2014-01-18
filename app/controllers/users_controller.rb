@@ -9,8 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save!
       login!
-      # this will go to recipes#index
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

@@ -4,7 +4,8 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     "recipes": "index",
     "recipes/new": "new",
     "recipes/:id": "detail",
-    "search": "search"
+    "search": "search",
+    "favorites": "favorites"
   },
   
   initialize: function (options) {
@@ -24,7 +25,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   new: function () {
     var newRecipe = new FoodgawkerApp.Models.Recipe();
     var view = new FoodgawkerApp.Views.RecipeForm({ 
-      collection: this.recipes, 
+      collection: this.recipes,
       model: newRecipe 
     });
     this._swapView(view);  
@@ -36,6 +37,14 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       model: recipe
     });
     this._swapView(view);
+  },
+  
+  favorites: function () {
+    // create a favoriteRecipes Collection? (model: recipe)
+    // does this need a custom controller to fetch the fav recipes for the current user?
+    // this controller needs a before filter to authenticate user, or is this done in Backbone?
+      // if done on the Backbone side, how do i redirect a backbone view to a Rails template?
+  // create a fav's router with current users' favorites?  
   },
   
   search: function () {
