@@ -1,23 +1,16 @@
-<ul>
-  <li><a href="">All Recipes</a></li>
-  <li><a href="#users/new">Sign Up</a></li>
-  <li><a href="#session/new">Sign In</a></li>
-  <li><a href="#search">Search</a></li>
-  <li><a href="#recipes/new">Submit Recipe</a></li>
-  <li><a href="#favorites">Favorite Recipes</a></li>
-  <%= button_to("Sign Out", session_url, :method => "delete") if logged_in?%>
-</ul>
-
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="navbar-header">
-    <button class="btn navbar-toggle" data-toggle="collapse" data-target="#my-nav">!</button>
+    <button class="btn navbar-toggle" data-toggle="collapse" data-target="#app-nav">!</button>
     <a href="/" class="navbar-brand">Our Site</a>
   </div>
-  <div id="my-nav" class="collapse navbar-collapse">
+  <div id="app-nav" class="collapse navbar-collapse">
   <ul class="nav navbar-nav">
-    <li><a href="#">Nav link 1</a>
-    <li><a href="#">Nav link 2</a>
-    <li><a href="#">Nav link 3</a>
+    <li><a href="">All Recipes</a></li>
+    <li><a href="#users/new">Sign Up</a></li>
+    <li><a href="#session/new">Sign In</a></li>
+    <li><a href="#search">Search</a></li>
+    <li><a href="#recipes/new">Submit Recipe</a></li>
+    <li><a href="#favorites">Favorite Recipes</a></li>
   </ul>
   </div>
 </nav>
