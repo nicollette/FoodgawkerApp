@@ -24,7 +24,6 @@ FoodgawkerApp.Views.Search = Backbone.View.extend({
   
   search: function (event) {
     event.preventDefault();
-    
     var queryString = $(event.target.form).serialize();
     var searchResults = new FoodgawkerApp.Collections.Recipes();
     var searchView = this;

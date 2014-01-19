@@ -18,13 +18,13 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   },
   
   favorite: function (event) {
+    // if no user is logged in then display sign in page when fav button is clicked
     event.preventDefault();
     var recipe = this.model;
     
     var recipe_id = $(event.target).attr("data-recipe-id");
     
     var fav = new FoodgawkerApp.Models.Favorite();
-    
     fav.save( { recipe_id: recipe_id },{
       success: function () {
         alert("faved!")
