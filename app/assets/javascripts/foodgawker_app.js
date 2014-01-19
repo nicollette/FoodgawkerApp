@@ -8,9 +8,12 @@ window.FoodgawkerApp = {
     FoodgawkerApp.Data.categories =      
       JSON.parse($("#bootstrapped-categories").html());
 
-    FoodgawkerApp.Data.currentUserId = 
-      JSON.parse($("#bootstrapped-current-user-id").html().trim());
-
+    var currUser = JSON.parse($("#bootstrapped-current-user").html().trim());
+    if(typeof currUser === "object") {
+      FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User(currUser)
+      FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ id: 1 });
+    }
+    
     var navView = new FoodgawkerApp.Views.NavBar();
     $("#nav-section").html(navView.render().$el);
     

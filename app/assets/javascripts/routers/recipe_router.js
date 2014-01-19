@@ -31,9 +31,9 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     if(this._isSignedIn()) {
       Backbone.history.navigate("", { trigger: true })
     } else {
-        var newUser = new FoodgawkerApp.Models.Session();
+        var newSession = new FoodgawkerApp.Models.Session();
         var view = new FoodgawkerApp.Views.SignIn({
-          model: newUser
+          model: newSession
         });
       
         this._swapView(view);
@@ -41,6 +41,9 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   index: function () {
+    var navView = new FoodgawkerApp.Views.NavBar();
+    $("#nav-section").html(navView.render().$el);
+    
     var view = new FoodgawkerApp.Views.RecipesIndex({ 
       collection: this.recipes 
     });
@@ -50,12 +53,17 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   new: function () {
-    var newRecipe = new FoodgawkerApp.Models.Recipe();
-    var view = new FoodgawkerApp.Views.RecipeForm({ 
-      collection: this.recipes,
-      model: newRecipe 
-    });
-    this._swapView(view);  
+    if(this._isSignedIn()) {
+      var newRecipe = new FoodgawkerApp.Models.Recipe();
+      var view = new FoodgawkerApp.Views.RecipeForm({ 
+        collection: this.recipes,
+        model: newRecipe 
+      });
+      this._swapView(view);  
+    }
+    else {
+      Backbone.history.navigate("session/new", { trigger: true })
+    }
   },
   
   detail: function (id) {
@@ -85,7 +93,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   _isSignedIn: function () {
-    return (FoodgawkerApp.Data.currentUserId > 0);
+    return (FoodgawkerApp.Data.currentUser !== undefined);
   },
   
   _swapView: function (view) {

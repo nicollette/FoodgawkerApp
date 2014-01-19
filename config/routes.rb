@@ -1,8 +1,8 @@
 FoodgawkerApp::Application.routes.draw do
   root :to => "static_page#index"
 
-  resources :users, :only => [:create, :new]
-  resource :session, :only => [:new, :create, :destroy]
+  resources :users, :only => [:create, :new], :defaults => {:format => "json"}
+  resource :session, :only => [:new, :create, :destroy], :defaults => {:format => "json"}
   
   namespace :api do
     resources :search, :only => [:index],

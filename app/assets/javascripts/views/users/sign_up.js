@@ -21,7 +21,11 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
     
     this.model.save({}, {
       success: function () {
-        FoodgawkerApp.Data.currentUserId = user.id
+        FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ 
+          id: 1 
+        });
+        FoodgawkerApp.Data.currentUser = 
+          new FoodgawkerApp.Models.User(response.attributes)
         Backbone.history.navigate("", { trigger: true })
       }
     });

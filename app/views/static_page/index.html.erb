@@ -2,13 +2,12 @@
   <%= Category.all.to_json.html_safe %>
 </script>
 
-<script id="bootstrapped-current-user-id">
-  <%= logged_in? ? current_user.id : 0 %>
+<script id="bootstrapped-current-user">
+  <%= logged_in? ? current_user.to_json.html_safe : "undefined".to_json.html_safe %>
 </script>
 
 <div id="nav-section">
 </div>
 
 <div id="content">
-  
 </div>

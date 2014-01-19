@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
   
   def destroy
     logout!
-    redirect_to root_url
+    render :json => { :status => :ok }
   end
 end
