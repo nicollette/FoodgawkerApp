@@ -1,6 +1,7 @@
 FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   routes: {
     "": "index",
+    "users/new": "signUp",
     "recipes": "index",
     "recipes/new": "new",
     "recipes/:id": "detail",
@@ -11,6 +12,19 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.recipes = options.recipes;
     this.$rootEl = options.$rootEl
+  },
+  
+  signUp: function () {
+    if(FoodgawkerApp.Data.currentUser.length > 0) {
+      Backbone.history.navigate("", { trigger: true })
+    } else {
+      var newUser = new FoodgawkerApp.Models.User();
+      var view = new FoodgawkerApp.Views.SignUp({
+        model: newUser
+      });
+      
+      this._swapView(view);
+    }
   },
   
   index: function () {
