@@ -2,7 +2,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   template: JST["recipes/mini_detail"],
   
   initialize: function () {
-    this.listenTo(this.model, "all", this.render)
+    this.listenTo(this.model, "all", this.render);
+    this.listenTo(this.model.get("favorites"), "all", this.render);
   },
   
   events: {
@@ -21,12 +22,14 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var recipe = this.model;
     
     var recipe_id = $(event.target).attr("data-recipe-id");
+    
     var fav = new FoodgawkerApp.Models.Favorite();
     
     fav.save( { recipe_id: recipe_id },{
       success: function () {
         alert("faved!")
-        recipe.set("favorites", fav)
+        // recipe.set("favorites", fav)
+        recipe.get("favorites").add(fav)
       }      
     }); 
   },
@@ -35,12 +38,15 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     event.preventDefault();
     
     var recipe = this.model;
-    var fav = this.model.get("favorites");
+    var fav = this.model.get("favorites").findWhere({ 
+      user_id: FoodgawkerApp.Data.currentUser.id
+    });
 
     fav.destroy({
       success: function () {
         alert("unfaved")
-        recipe.set("favorites", [])
+        // recipe.set("favorites", [])
+        recipe.get("favorites").remove(fav)
       }
     });
   }

@@ -3,10 +3,11 @@
   <img src="<%= recipe.get('photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
-  <% if (!recipe.get("favorites") || recipe.get("favorites").length < 1 ) { %>
-    <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
+  <% var favorites = recipe.get("favorites") %>
+  <% var currUser = FoodgawkerApp.Data.currentUser %>
+  <% if(currUser && favorites && favorites.findWhere({ user_id: currUser.id })) { %>
+     <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
   <% } else { %>
-    <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
+    <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
   <% } %>
-  
 </div>

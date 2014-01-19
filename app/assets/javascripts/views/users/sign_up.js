@@ -20,7 +20,7 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
     this.model.set(attrs);
     
     this.model.save({}, {
-      success: function () {
+      success: function (response) {
         FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ 
           id: 1 
         });

@@ -96,6 +96,10 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     return (FoodgawkerApp.Data.currentUser !== undefined);
   },
   
+  _clearAlerts: function () {
+    $("#alerts-section").empty();
+  },
+  
   _swapView: function (view) {
     if(this.current_view && this.current_view.removeAll) { 
       this.current_view.removeAll();

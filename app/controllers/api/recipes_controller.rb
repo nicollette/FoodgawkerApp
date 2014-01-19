@@ -6,7 +6,6 @@ class Api::RecipesController < ApplicationController
   
   def create
     params[:recipe][:user_id] = current_user.id
-    p "PARAMS #{params[:recipe]}"
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
       render :show

@@ -7,9 +7,14 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save!
       login!
-      render :json => @user
+      render :show
     else
       flash.now[:errors] = @user.errors.full_messages
     end
+  end
+  
+  def show
+    @user = User.find(params[:id])
+    render :show
   end
 end

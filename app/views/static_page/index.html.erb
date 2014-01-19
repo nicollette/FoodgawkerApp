@@ -2,10 +2,22 @@
   <%= Category.all.to_json.html_safe %>
 </script>
 
-<script id="bootstrapped-current-user">
-  <%= logged_in? ? current_user.to_json.html_safe : "undefined".to_json.html_safe %>
-</script>
+<% if logged_in? %>
+  <script id="bootstrapped-current-user">
+    <%= current_user.to_json.html_safe %>
+  </script>
+  
+<% else %>
+  <script id="bootstrapped-current-user">
+    <%= "undefined".to_json.html_safe %>
+  </script>
+<% end %>
 
+<% if logged_in? %>
+<script id="bootstrapped-curr-user-fav-recipes">
+  <%= current_user.favorite_recipes.to_json.html_safe %>
+</script>
+<% end %>
 <div id="nav-section">
 </div>
 
