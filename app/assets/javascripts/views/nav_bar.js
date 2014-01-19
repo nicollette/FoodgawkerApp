@@ -21,6 +21,7 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
         FoodgawkerApp.Data.currentUser = undefined;
         FoodgawkerApp.Data.session = undefined;
         var navView = new FoodgawkerApp.Views.NavBar();
+        // if i click sign out btn on root page, the router index method isn't run and the nav bar isn't updated
         Backbone.history.navigate("", { trigger: true });
         
         $("#nav-section").html(navView.render().$el);
