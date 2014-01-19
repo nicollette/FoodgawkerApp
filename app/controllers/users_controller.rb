@@ -1,6 +1,4 @@
-class UsersController < ApplicationController
-  before_filter :authenticate, :only => :show
-  
+class UsersController < ApplicationController  
   def new
     render :new
   end
@@ -14,10 +12,5 @@ class UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
-  end
-  
-  def show
-    @user = User.find(params[:id])
-    render :show
   end
 end

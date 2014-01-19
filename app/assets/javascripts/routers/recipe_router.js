@@ -40,11 +40,16 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   favorites: function () {
-    // create a favoriteRecipes Collection? (model: recipe)
-    // does this need a custom controller to fetch the fav recipes for the current user?
-    // this controller needs a before filter to authenticate user, or is this done in Backbone?
-      // if done on the Backbone side, how do i redirect a backbone view to a Rails template?
-  // create a fav's router with current users' favorites?  
+    var router = this;
+    var favRecipes = new FoodgawkerApp.Collections.FavoriteRecipes();
+    favRecipes.fetch({
+      success: function () {
+        var view = new FoodgawkerApp.Views.FavoriteRecipesView({ 
+          collection: favRecipes 
+        });
+        router._swapView(view)
+      }
+    });
   },
   
   search: function () {
