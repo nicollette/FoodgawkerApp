@@ -8,8 +8,8 @@ window.FoodgawkerApp = {
     FoodgawkerApp.Data.categories =      
       JSON.parse($("#bootstrapped-categories").html());
 
-    FoodgawkerApp.Data.currentUser = 
-      JSON.parse($("#bootstrapped-current-user").html().trim());
+    FoodgawkerApp.Data.currentUserId = 
+      JSON.parse($("#bootstrapped-current-user-id").html().trim());
 
     FoodgawkerApp.Data.recipes = new FoodgawkerApp.Collections.Recipes();
     FoodgawkerApp.Data.recipes.fetch({

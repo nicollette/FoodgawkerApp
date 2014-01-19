@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user])
     if @user
       login!
-      redirect_to root_url
+      render :json => @user
     else
       flash.now[:errors] = ["invalid credentials"]
       render :new

@@ -2,6 +2,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   routes: {
     "": "index",
     "users/new": "signUp",
+    "session/new": "signIn",
     "recipes": "index",
     "recipes/new": "new",
     "recipes/:id": "detail",
@@ -15,16 +16,28 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   signUp: function () {
-    if(FoodgawkerApp.Data.currentUser.length > 0) {
+    if(this._isSignedIn()) {
+      Backbone.history.navigate("", { trigger: true })
+    } else {      
+        var newUser = new FoodgawkerApp.Models.User();
+        var view = new FoodgawkerApp.Views.SignUp({
+          model: newUser
+        });
+        this._swapView(view);
+    }
+  },
+  
+  signIn: function () {
+    if(this._isSignedIn()) {
       Backbone.history.navigate("", { trigger: true })
     } else {
-      var newUser = new FoodgawkerApp.Models.User();
-      var view = new FoodgawkerApp.Views.SignUp({
-        model: newUser
-      });
+        var newUser = new FoodgawkerApp.Models.Session();
+        var view = new FoodgawkerApp.Views.SignIn({
+          model: newUser
+        });
       
-      this._swapView(view);
-    }
+        this._swapView(view);
+    }    
   },
   
   index: function () {
@@ -69,6 +82,10 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   search: function () {
     var view = new FoodgawkerApp.Views.Search();
     this._swapView(view);
+  },
+  
+  _isSignedIn: function () {
+    return (FoodgawkerApp.Data.currentUserId > 0);
   },
   
   _swapView: function (view) {

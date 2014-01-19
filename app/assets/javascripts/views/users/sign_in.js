@@ -1,8 +1,8 @@
-FoodgawkerApp.Views.SignUp = Backbone.View.extend({
-  template: JST["users/new"],
+FoodgawkerApp.Views.SignIn = Backbone.View.extend({
+  template: JST["session/new"],
   
   events: {
-    "click button": "signUp"
+    "click button": "signIn"
   },
   
   render: function () {
@@ -12,16 +12,16 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
     return this;
   },
   
-  signUp: function (event) {
+  signIn: function (event) {
     event.preventDefault();
     
-    var user = this.model
+    var session = this.model
     var attrs = $(event.target.form).serializeJSON();    
     this.model.set(attrs);
     
     this.model.save({}, {
-      success: function () {
-        FoodgawkerApp.Data.currentUserId = user.id
+      success: function (response) {
+        FoodgawkerApp.Data.currentUserId = response.id
         Backbone.history.navigate("", { trigger: true })
       }
     });
