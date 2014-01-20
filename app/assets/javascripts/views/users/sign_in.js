@@ -2,7 +2,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   template: JST["session/new"],
   
   events: {
-    "click button": "signIn"
+    "click button#sign-in-button": "signIn"
   },
   
   render: function () {
@@ -15,22 +15,20 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   
   signIn: function (event) {
     event.preventDefault();
-    
     var session = this.model
-    var attrs = $(event.target.form).serializeJSON();    
+    var attrs = $("#sign-in-form").serializeJSON();
     this.model.set(attrs);
-    
+
     this.model.save({}, {
       success: function (response) {
-        $('#signInModal').modal('toggle')
         FoodgawkerApp.Data.session = session;
-        delete response.attributes["user"]
-        FoodgawkerApp.Data.currentUser.set(response.attributes)
-
-        // console.log("after setting curr user")
-          // doesn't re-render index page when used as modal in minidetailView
-        Backbone.history.navigate("", { trigger: true })
+        delete response.attributes["user"];
         
+        // Allowing bootstrap modal to hide before rerendering
+        setTimeout(function () {
+          FoodgawkerApp.Data.currentUser.set(response.attributes)          
+        }, 1000);
+
       }
     });
     

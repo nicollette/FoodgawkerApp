@@ -1,9 +1,28 @@
-<form id="sign-in-form">
-  <label for="username">Username</label>
-  <input type="text" name="user[username]" id="username">
-  <br>
-  <label for="password">Password</label>
-  <input type="password" name="user[password]" id="password">
-  <br>
-  <button type="submit" id="sign-in-button">Sign In</button>
-</form>
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        
+        <form id="sign-in-form">
+          <label for="username">Username</label>
+          <input type="text" name="user[username]" id="username">
+          <br>
+          <label for="password">Password</label>
+          <input type="password" name="user[password]" id="password">
+          <br>
+          
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="sign-in-button" class="btn btn-default" data-dismiss="modal">Sign In</button>
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
