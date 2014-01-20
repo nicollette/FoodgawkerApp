@@ -26,7 +26,6 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({
           id: 1
         });
-        debugger;
         FoodgawkerApp.Data.currentUser = 
           new FoodgawkerApp.Models.User(response.attributes)
           // doesn't re-render index page when used as modal in minidetailView
