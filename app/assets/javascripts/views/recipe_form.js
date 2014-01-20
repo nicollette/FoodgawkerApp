@@ -41,6 +41,7 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
     };
     
     this.model.set(attrs);
+    this.model.set("favorites", new FoodgawkerApp.Collections.Favorites())
     
     if(this.model.isNew()){
       this.collection.create(this.model, {
