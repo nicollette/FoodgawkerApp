@@ -13,11 +13,6 @@ window.FoodgawkerApp = {
     if(typeof currUser === "object") {
       FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User(currUser);
       FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ id: 1 });
-
-      // var favRecipes = new FoodgawkerApp.Collections.Recipes(
-      //   JSON.parse($("#bootstrapped-curr-user-fav-recipes").html().trim());
-      // );
-      // FoodgawkerApp.Data.currentUser.set("favorite_recipes", favRecipes);
       
       var alertView = new FoodgawkerApp.Views.Alerts({ 
         message: "Welcome " + FoodgawkerApp.Data.currentUser.get("username"),

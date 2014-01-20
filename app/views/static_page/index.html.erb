@@ -13,11 +13,7 @@
   </script>
 <% end %>
 
-<% if logged_in? %>
-<script id="bootstrapped-curr-user-fav-recipes">
-  <%= current_user.favorite_recipes.to_json.html_safe %>
-</script>
-<% end %>
+
 <div id="nav-section">
 </div>
 
@@ -25,4 +21,5 @@
 </div>
 
 <div id="content">
+  
 </div>

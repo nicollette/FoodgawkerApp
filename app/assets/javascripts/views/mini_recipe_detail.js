@@ -6,6 +6,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     this.listenTo(this.model.get("favorites"), "all", this.render);
   },
   
+  childViews: [],
+  
   events: {
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite"
@@ -14,11 +16,25 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   render: function () {
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
+    
+    if(!FoodgawkerApp.Data.currentUser) {
+      this.addSignInModal();
+    }
+    
     return this;
   },
   
+  addSignInModal: function () {
+    var newSession = new FoodgawkerApp.Models.Session();
+    var view = new FoodgawkerApp.Views.SignIn({
+      model: newSession
+    });
+    this.childViews.push(view);
+    this.$(".modal-body").html(view.render().$el);
+  },
+  
   favorite: function (event) {
-    // if no user is logged in then display sign in page when fav button is clicked
+    // if no user is logged in then display sign in page as modal when fav button is clicked
     event.preventDefault();
     var recipe = this.model;
     
@@ -28,7 +44,6 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     fav.save( { recipe_id: recipe_id },{
       success: function () {
         alert("faved!")
-        // recipe.set("favorites", fav)
         recipe.get("favorites").add(fav)
       }      
     }); 
@@ -45,9 +60,15 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     fav.destroy({
       success: function () {
         alert("unfaved")
-        // recipe.set("favorites", [])
         recipe.get("favorites").remove(fav)
       }
     });
+  },
+  
+  removeAll: function () {
+    this.childViews.forEach(function(childView) {
+      childView.remove();
+    })
+    this.remove();
   }
 })
