@@ -26,5 +26,11 @@ FoodgawkerApp.Collections.Recipes = Backbone.Collection.extend({
     });
     
     return recipes;
+  },
+  
+  parse: function (response) {
+    this.page_number = parseInt(response.page_number);
+    this.total_pages = parseInt(response.total_pages);
+    return response.models;
   }
 })

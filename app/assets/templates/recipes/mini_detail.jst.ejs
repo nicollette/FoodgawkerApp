@@ -1,5 +1,5 @@
 <div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
-  <center><h3><%= recipe.get("title") %></h3></center>
+  <center><h4><%= recipe.get("title").toUpperCase() %></h4></center>
   <img class="img-circle small" src="<%= recipe.get('photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
@@ -7,7 +7,7 @@
   <% var currUser = FoodgawkerApp.Data.currentUser %>
   
   
-  <% if(currUser) { %>
+  <% if(currUser.id) { %>
     <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
        <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
     <% } else { %>

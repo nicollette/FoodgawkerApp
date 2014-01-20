@@ -17,7 +17,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
     
-    if(!FoodgawkerApp.Data.currentUser) {
+    if(!FoodgawkerApp.Data.currentUser.id) {
       this.addSignInModal();
     }
     

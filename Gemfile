@@ -36,6 +36,10 @@ gem 'aws-sdk'
 gem 'aws-s3'
 
 gem 'figaro'
+
+gem 'friendly_id'
+
+gem 'kaminari'
 # gem 'jquery-fileupload-rails', '0.3.0'
 
 # Use unicorn as the app server

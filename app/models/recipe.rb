@@ -25,7 +25,7 @@ class Recipe < ActiveRecord::Base
       key_sql = ""
       join_statement = cat_sql.join("\nINTERSECT\n")
     else
-      parsed_keywords = keywords.split.map { |keyword| "%#{keyword}%" }
+      parsed_keywords = keywords.split.map { |keyword| "%#{keyword.downcase}%" }
       key_sql = self.generate_keyword_sql(parsed_keywords)
       join_statement = cat_sql.push(key_sql).join("\nINTERSECT\n")
     end

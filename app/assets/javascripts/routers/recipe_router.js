@@ -93,7 +93,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   _isSignedIn: function () {
-    return (FoodgawkerApp.Data.currentUser !== undefined);
+    return (FoodgawkerApp.Data.currentUser.id);
   },
   
   _clearAlerts: function () {
