@@ -22,14 +22,15 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
     
     this.model.save({}, {
       success: function (response) {
-        FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({
-          id: 1
-        });
-        FoodgawkerApp.Data.currentUser.set(response.attributes)
+        $('#signInModal').modal('toggle')
+        FoodgawkerApp.Data.session = session;
+        delete response.attributes["user"]
+        // FoodgawkerApp.Data.currentUser.set(response.attributes)
+        FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User();
+
         // console.log("after setting curr user")
           // doesn't re-render index page when used as modal in minidetailView
         Backbone.history.navigate("", { trigger: true })
-        $('#signInModal').modal('hide')
         
       }
     });
