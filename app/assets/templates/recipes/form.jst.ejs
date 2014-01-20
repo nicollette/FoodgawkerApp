@@ -33,15 +33,20 @@
     </div>
   </div>
   
-  <label>Categories</label>
   
-  <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
-    <input type="checkbox" 
-           id="<%= category.name %>" 
-           name="recipe_categories[<%= category.id %>][category_id]"
-           value="<%= category.id %>">
-    <label for="<%= category.name %>"><%= category.name %></label>
-  <% })%>
+  <label class="col-sm-2 control-label">Categories</label>
+  <div class="form-group col-sm-offset-2 col-sm-10">
+    <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
+    <div class="checkbox">
+        <label>
+          <input type="checkbox" 
+                 id="<%= category.name %>" 
+                 name="recipe_categories[<%= category.id %>][category_id]"
+                 value="<%= category.id %>"><%= category.name %>
+        </label>
+    </div>
+    <% })%>
+  </div>
   
 
   <div class="form-group">
