@@ -78,13 +78,23 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     var router = this;
     var favRecipes = new FoodgawkerApp.Collections.FavoriteRecipes();
     favRecipes.fetch({
+      data: { page: 1 },
       success: function () {
         var view = new FoodgawkerApp.Views.FavoriteRecipesView({ 
           collection: favRecipes 
         });
         router._swapView(view)
       }
-    });
+    })
+      
+      
+      // success: function () {
+//         var view = new FoodgawkerApp.Views.FavoriteRecipesView({ 
+//           collection: favRecipes 
+//         });
+//         router._swapView(view)
+//       }
+//     });
   },
   
   search: function () {
