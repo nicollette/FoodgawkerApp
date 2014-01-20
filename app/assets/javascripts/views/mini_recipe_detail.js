@@ -8,7 +8,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
 
   events: {
     "click button#favorite": "favorite",
-    "click button#unfavorite": "unfavorite"
+    "click button#unfavorite": "unfavorite",
+    "click img": "toggleModal"
   },
   
   render: function () {
@@ -16,6 +17,12 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     this.$el.html(content);
     
     return this;
+  },
+  
+  toggleModal: function (event) {
+    console.log("clicked img!")
+    var recipeId = $(event.target).attr("data-recipe-id")
+    $("#recipeModal" + recipeId).modal("toggle");
   },
   
   favorite: function (event) {
