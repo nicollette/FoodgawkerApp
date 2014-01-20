@@ -86,15 +86,6 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
         router._swapView(view)
       }
     })
-      
-      
-      // success: function () {
-//         var view = new FoodgawkerApp.Views.FavoriteRecipesView({ 
-//           collection: favRecipes 
-//         });
-//         router._swapView(view)
-//       }
-//     });
   },
   
   search: function () {

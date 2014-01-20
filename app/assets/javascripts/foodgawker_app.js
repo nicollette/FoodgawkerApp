@@ -35,6 +35,10 @@ window.FoodgawkerApp = {
         Backbone.history.start();
       }
     })
+  },
+  
+  flash: function (message, classType) {
+    
   }
 };
 
