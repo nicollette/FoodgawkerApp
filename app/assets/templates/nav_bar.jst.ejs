@@ -11,7 +11,8 @@
       <li><a href="#favorites">Favorite Recipes</a></li>
       <% if(FoodgawkerApp.Data.currentUser.id === undefined) { %>
         <li><a href="#users/new">Sign Up</a></li>
-        <li><a href="#session/new">Sign In</a></li>
+        <!-- <li><a href="#session/new">Sign In</a></li> -->
+        <li><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">Sign In</button><li>
         <!-- <li><button type="submit" class="btn btn-primary btn-sm" id="sign-in-btn" data-toggle="modal" data-target="#signInModal">Sign In</button></li> -->
       <% } else { %>
         <li><button type="submit" class="nav-bar-btn" id="sign-out-btn">Sign Out</button></li>
