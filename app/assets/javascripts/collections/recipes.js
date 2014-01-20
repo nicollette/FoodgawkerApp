@@ -10,7 +10,6 @@ FoodgawkerApp.Collections.Recipes = Backbone.Collection.extend({
       url: '/api/search',
       data: querystring,
       success: function (response) {
-        debugger;
         recipeResults.reset(recipeResults.parseResults(response))
         callback(recipeResults);
       }

@@ -1,19 +1,31 @@
-<form id="search-form">
-  
-  <label for="keyword">Search By Keyword</label>
-  <input type="text" name="keywords" id="keyword">
-  
-  <label>Filter by Category</label>
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="keyword" class="col-sm-2 control-label">Search By Keyword</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" name="keywords" id="keyword">
+        </div>
+  </div>
 
-  <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
-    <input type="checkbox" 
-           id="<%= category.name %>" 
-           name="category_ids[]"
-           value="<%= category.id %>">
-    <label for="<%= category.name %>"><%= category.name %></label>
-  <% })%>
 
-  <button id="search-button">Search</button>  
+  <label class="col-sm-2 control-label">Categories</label>
+  <div class="form-group col-sm-offset-2 col-sm-10">
+    <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
+    <div class="checkbox">
+        <label>
+          <input type="checkbox" 
+                 id="<%= category.name %>" 
+                 name="category_ids[]"
+                 value="<%= category.id %>"><%= category.name %>
+        </label>
+    </div>
+    <% })%>
+</div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="search-button" class="btn btn-default">Search</button> 
+    </div>
+  </div>
 </form>
 
 <div id="results">

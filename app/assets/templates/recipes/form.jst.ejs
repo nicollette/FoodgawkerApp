@@ -1,21 +1,37 @@
-<form id="recipe-form" enctype="multipart/form-data">
-  <label for="title">Title</label>
-  <input type="text" name="title" id="title">
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" name="title" id="title">
+        </div>
+  </div>
   
-  <label for="blog_url">Blog Url</label>
-  <input type="text" name="blog_url" id="blog_url">
+  <div class="form-group">
+    <label for="blog_url" class="col-sm-2 control-label">Blog Url</label>         <div class="col-sm-10">
+          <input class="form-control" type="text" name="blog_url" id="blog_url">
+        </div>
+  </div>  
   
-  <label for="description">Description</label>
-  <input type="text" name="description" id="description">
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" name="description" id="description">
+        </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="total_time" class="col-sm-2 control-label">Total Time</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="number" name="total_time" id="total_time">
+        </div>
+  </div>
 
-  <!-- need to change this input type   -->
-  <label for="total_time">Total Time</label>
-  <input type="number" name="total_time" id="total_time">
-
-  <input type="file" id="photo" name="photo">
-  
-  <label for="ingredients">Ingredients</label>
-  <input type="text" name="ingredients" id="ingredients">
+  <div class="form-group">
+    <label for="photo" class="col-sm-2 control-label">Photo</label>
+    <div class="col-sm-10">
+      <input type="file" id="photo">
+    </div>
+  </div>
   
   <label>Categories</label>
   
@@ -27,5 +43,10 @@
     <label for="<%= category.name %>"><%= category.name %></label>
   <% })%>
   
-  <button type="submit" id="recipe-form-button">Add Recipe</button>  
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="recipe-form-button" class="btn btn-default">Add Recipe</button> 
+    </div>
+  </div>
 </form>
