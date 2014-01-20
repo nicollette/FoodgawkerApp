@@ -11,7 +11,7 @@ class Recipe < ActiveRecord::Base
 
   accepts_nested_attributes_for :recipe_categories, :reject_if => :all_blank
   has_attached_file :photo, :styles => {
-      medium: '336x280>',
+      medium: '275x275#',
       large: '672X560>'
   }
   

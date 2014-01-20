@@ -15,7 +15,8 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   
   signIn: function (event) {
     event.preventDefault();
-    $('#myModal').modal('hide')
+    $('#signInModal').modal('hide')
+    
     var session = this.model
     var attrs = $(event.target.form).serializeJSON();    
     this.model.set(attrs);

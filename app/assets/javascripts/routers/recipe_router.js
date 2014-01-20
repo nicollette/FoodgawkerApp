@@ -45,7 +45,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     $("#nav-section").html(navView.render().$el);
     
     var view = new FoodgawkerApp.Views.RecipesIndex({ 
-      collection: this.recipes 
+      collection: FoodgawkerApp.Data.recipes 
     });
     
     this._swapView(view);      
@@ -56,7 +56,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     if(this._isSignedIn()) {
       var newRecipe = new FoodgawkerApp.Models.Recipe();
       var view = new FoodgawkerApp.Views.RecipeForm({ 
-        collection: this.recipes,
+        collection: FoodgawkerApp.Data.recipes,
         model: newRecipe 
       });
       this._swapView(view);  

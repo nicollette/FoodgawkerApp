@@ -34,7 +34,6 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   },
   
   favorite: function (event) {
-    // if no user is logged in then display sign in page as modal when fav button is clicked
     event.preventDefault();
     var recipe = this.model;
     

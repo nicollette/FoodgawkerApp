@@ -29,7 +29,7 @@ window.FoodgawkerApp = {
       success: function () {
         new FoodgawkerApp.Routers.RecipeRouter({ 
           recipes: FoodgawkerApp.Data.recipes,
-          $rootEl: $("#content")
+          $rootEl: $(".container")
         });
         Backbone.history.start();
       }
