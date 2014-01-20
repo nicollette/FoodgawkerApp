@@ -5,9 +5,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     this.listenTo(this.model, "all", this.render);
     this.listenTo(this.model.get("favorites"), "all", this.render);
   },
-  
-  childViews: [],
-  
+
   events: {
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite"
@@ -49,12 +47,5 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
         recipe.get("favorites").remove(fav)
       }
     });
-  },
-  
-  removeAll: function () {
-    this.childViews.forEach(function(childView) {
-      childView.remove();
-    })
-    this.remove();
   }
 })

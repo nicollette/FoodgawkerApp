@@ -6,7 +6,6 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   },
   
   render: function () {
-    // display as modal
     var content = this.template();
     this.$el.html(content);
     
