@@ -1,6 +1,6 @@
 <div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
   <center><h3><%= recipe.get("title") %></h3></center>
-  <img class="small" src="<%= recipe.get('photo_url')%>">
+  <img class="img-circle small" src="<%= recipe.get('photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
   <% var favorites = recipe.get("favorites") %>
