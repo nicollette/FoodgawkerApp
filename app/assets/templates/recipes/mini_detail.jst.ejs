@@ -1,6 +1,6 @@
 <div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
   <center><h4><%= recipe.get("title").toUpperCase() %></h4></center>
-  <img data-recipe-id="<%= recipe.id %>" class="img-circle small" src="<%= recipe.get('photo_url')%>">
+  <img data-recipe-id="<%= recipe.id %>" class="img-circle small" src="<%= recipe.get('med_photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
   <% var favorites = recipe.get("favorites") %>
@@ -27,26 +27,22 @@
       </div>
       <div class="modal-body">
         
-        <img class="img-circle small" src="<%= recipe.get('photo_url')%>">
+        <img class="large" src="<%= recipe.get('large_photo_url')%>">
         <p><%= recipe.get("description")%></p>
-  
-        <% var favorites = recipe.get("favorites") %>
-        <% var currUser = FoodgawkerApp.Data.currentUser %>
-  
-  
-        <% if(currUser.id) { %>
-          <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
-             <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
-          <% } else { %>
-            <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
-          <% } %>
-        <% } else { %>
-          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">Favorite</button> 
-        <% }%>
-
-        
+   
       </div>
       <div class="modal-footer">
+        <% var favorites = recipe.get("favorites") %>
+        <% var currUser = FoodgawkerApp.Data.currentUser %>
+        <% if(currUser.id) { %>
+          <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
+             <button type="button" id="unfavorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal">Unfavorite</button> 
+          <% } else { %>
+            <button type="button" id="favorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal">Favorite</button>
+          <% } %>
+        <% } else { %>
+          <button class="btn btn-primary btn-sm" data-dismiss="modal">Favorite</button> 
+        <% }%>
         <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>

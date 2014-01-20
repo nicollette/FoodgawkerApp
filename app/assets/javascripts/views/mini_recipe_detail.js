@@ -35,7 +35,9 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     fav.save( { recipe_id: recipe_id },{
       success: function () {
         alert("faved!")
-        recipe.get("favorites").add(fav)
+        setTimeout(function () {
+          recipe.get("favorites").add(fav)     
+        }, 1000);
       }      
     }); 
   },
@@ -48,11 +50,14 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
       user_id: FoodgawkerApp.Data.currentUser.id
     });
 
-    fav.destroy({
-      success: function () {
-        alert("unfaved")
-        recipe.get("favorites").remove(fav)
-      }
-    });
+    setTimeout(function () {
+      fav.destroy({
+        success: function () {
+          // alert("unfaved");
+          recipe.get("favorites").remove(fav)
+        }
+      });
+    }, 1000);
+
   }
 })

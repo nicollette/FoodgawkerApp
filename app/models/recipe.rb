@@ -12,7 +12,7 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :recipe_categories, :reject_if => :all_blank
   has_attached_file :photo, :styles => {
       medium: '275x275#',
-      large: '672X560>'
+      large: '475X475#'
   }
   
   def self.search_results(keywords, categories)
