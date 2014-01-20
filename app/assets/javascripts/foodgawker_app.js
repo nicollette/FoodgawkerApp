@@ -14,7 +14,11 @@ window.FoodgawkerApp = {
     if(typeof currUser === "object") {
       FoodgawkerApp.Data.currentUser.set(currUser);
       FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ id: 1 });
-
+      
+      this.flash(
+        ["Welcome " + FoodgawkerApp.Data.currentUser.get("username")], 
+        "success"
+      )
 //NEED TO FIX ALERTS      
       // var alertView = new FoodgawkerApp.Views.Alerts({ 
       //   message: "Welcome " + FoodgawkerApp.Data.currentUser.get("username"),
@@ -37,8 +41,21 @@ window.FoodgawkerApp = {
     })
   },
   
-  flash: function (message, classType) {
+  flash: function (messages, type) {
+    this.emptyFlash();
+    var alertClasses = "alert alert-" + type;
     
+    messages.forEach(function (message) {
+      var $newAlert = $("<div>").addClass(alertClasses);
+      $newAlert.text(message);
+      
+      $("#alerts-section").append($newAlert)
+    })
+    $("#alerts-section").fadeOut(5500, this.emptyFlash.bind(this));
+  },
+  
+  emptyFlash: function () {
+    $("#alerts-section").empty();
   }
 };
 
