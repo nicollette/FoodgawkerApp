@@ -44,7 +44,7 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
       model: newSession
     });
     this.childViews.push(view);
-    this.$(".modal-body").html(view.render().$el);
+    this.$("#modal-section").html(view.render().$el);
   },
   
   appendRow: function (id) {

@@ -17,20 +17,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
     
-    if(!FoodgawkerApp.Data.currentUser.id) {
-      this.addSignInModal();
-    }
-    
     return this;
-  },
-  
-  addSignInModal: function () {
-    var newSession = new FoodgawkerApp.Models.Session();
-    var view = new FoodgawkerApp.Views.SignIn({
-      model: newSession
-    });
-    this.childViews.push(view);
-    this.$(".modal-body").html(view.render().$el);
   },
   
   favorite: function (event) {

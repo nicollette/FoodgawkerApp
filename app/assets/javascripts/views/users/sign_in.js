@@ -25,8 +25,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         $('#signInModal').modal('toggle')
         FoodgawkerApp.Data.session = session;
         delete response.attributes["user"]
-        // FoodgawkerApp.Data.currentUser.set(response.attributes)
-        FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User();
+        FoodgawkerApp.Data.currentUser.set(response.attributes)
 
         // console.log("after setting curr user")
           // doesn't re-render index page when used as modal in minidetailView
