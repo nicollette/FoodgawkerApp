@@ -13,6 +13,9 @@
  */
  @import "bootstrap";
  
+ a {
+   cursor: pointer;
+ }
  form#search-form {
    display: none;
  }

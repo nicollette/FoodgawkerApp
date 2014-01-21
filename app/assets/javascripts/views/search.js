@@ -15,7 +15,12 @@ FoodgawkerApp.Views.Search = Backbone.View.extend({
   },
   
   renderResults: function (results) {
-    var resultsView = new FoodgawkerApp.Views.Results({ collection: results });
+    debugger;
+    if(results.length === 0){
+      
+    } else {
+     var resultsView = new FoodgawkerApp.Views.Results({ collection: results }); 
+    } 
     // this.$("#results").html(resultsView.render().$el)
     $(".container").html(resultsView.render().$el)
     
