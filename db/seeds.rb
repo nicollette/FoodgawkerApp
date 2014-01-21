@@ -116,7 +116,7 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r17.id, category_id: c12.id)
   RecipeCategory.create(recipe_id: r17.id, category_id: c19.id)
   
-  r18 = Recipe.create(title: "raw thai noodle salad", blog_url: "http://www.floridacoastalcooking.com/2013/12/raw-thai-noodle-salad.html", description: "Raw Thai Noodle Salad ~ Easy, Gluten Free and Vegan", ingredients: "kelp noodles, broccoli, green onion, red cabbage, carrots, seasame seeds, cilantro, nut butter, ume plum vinegar, agave, chili sauce", total_time: 15, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r18.jpg'))
+  r18 = Recipe.create(title: "raw thai noodle salad", blog_url: "http://www.floridacoastalcooking.com/2013/12/raw-thai-noodle-salad.html", description: "Raw Thai Noodle Salad ~ Easy, Gluten Free and Vegan", ingredients: "kelp noodles, broccoli, green onion, red cabbage, carrots, seasame seeds, cilantro, nut butter, ume plum vinegar, agave, chili sauce", total_time: 15, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r18.jpeg'))
   RecipeCategory.create(recipe_id: r18.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r18.id, category_id: c8.id)
   RecipeCategory.create(recipe_id: r18.id, category_id: c10.id)
@@ -124,13 +124,13 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r18.id, category_id: c15.id)
   
   
-  r19 = Recipe.create(title: "vegan cheesy baked pesto mac", blog_url: "http://boldvegan.com/cheesy-baked-pesto-mac-with-walnut-parm-gluten-free-soy-free/", description: "Vegan Cheesy Baked Pesto Mac with Walnut Parmesan (Gluten Free and Soy Free).", ingredients: "potato, carrot, onion, water, walnuts, nutritional yeast, basil, garlic, olive oil, turmeric powder, sea salt, pepper, quinoa pasta, walnuts", total_time: 50, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r19.jpg'))
+  r19 = Recipe.create(title: "vegan cheesy baked pesto mac", blog_url: "http://boldvegan.com/cheesy-baked-pesto-mac-with-walnut-parm-gluten-free-soy-free/", description: "Vegan Cheesy Baked Pesto Mac with Walnut Parmesan (Gluten Free and Soy Free).", ingredients: "potato, carrot, onion, water, walnuts, nutritional yeast, basil, garlic, olive oil, turmeric powder, sea salt, pepper, quinoa pasta, walnuts", total_time: 50, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r19.jpeg'))
   RecipeCategory.create(recipe_id: r19.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r19.id, category_id: c8.id)
   RecipeCategory.create(recipe_id: r19.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r19.id, category_id: c12.id)
   
-  r20 = Recipe.create(title: "spicy miso udon noodle soup", blog_url: "http://blog.seasonwithspice.com/2013/10/miso-udon-noodle-soup-recipe.html", description: "Miso Udon Noodle Soup with Spicy Korean Chili Dressing", ingredients: "udon noodles, water, shiitake mushrooms, silken tofu, miso paste, spinach, nori, scallions", total_time: 20, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r20.jpg'))
+  r20 = Recipe.create(title: "spicy miso udon noodle soup", blog_url: "http://blog.seasonwithspice.com/2013/10/miso-udon-noodle-soup-recipe.html", description: "Miso Udon Noodle Soup with Spicy Korean Chili Dressing", ingredients: "udon noodles, water, shiitake mushrooms, silken tofu, miso paste, spinach, nori, scallions", total_time: 20, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r20.jpeg'))
   RecipeCategory.create(recipe_id: r20.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r20.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r20.id, category_id: c12.id)
@@ -193,7 +193,7 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r29.id, category_id: c15.id)
   RecipeCategory.create(recipe_id: r29.id, category_id: c16.id)
   
-  r30 = Recipe.create(title: "autumn kale salad", blog_url: "http://blog.vegancuts.com/recipes/autumn-kale-salad-recipe/", description: "A sweet, Autumn Kale Salad with roasted sweet potatoes, and a citrus vinaigrette.", ingredients: "sweet potatoes, orange juice, olive oil, agave nectar, apple cider vinegar, dijon mustard, ginger, cinnamon, kale, cranberries", total_time: 35, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r30.jpg'))
+  r30 = Recipe.create(title: "autumn kale salad", blog_url: "http://blog.vegancuts.com/recipes/autumn-kale-salad-recipe/", description: "A sweet, Autumn Kale Salad with roasted sweet potatoes, and a citrus vinaigrette.", ingredients: "sweet potatoes, orange juice, olive oil, agave nectar, apple cider vinegar, dijon mustard, ginger, cinnamon, kale, cranberries", total_time: 35, user_id: 2, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r30.jpeg'))
   RecipeCategory.create(recipe_id: r30.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r30.id, category_id: c7.id)
   RecipeCategory.create(recipe_id: r30.id, category_id: c8.id)
