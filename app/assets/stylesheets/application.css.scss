@@ -13,6 +13,10 @@
  */
  @import "bootstrap";
  
+ .modal-content {
+   background-color: #d0f9ec;
+ }
+ 
  body {
    padding-top: 70px;
  }
@@ -40,7 +44,8 @@
  }
  
  .nav-bar-btn {
-   margin-top: 8px
+   margin-top: 8px;
+   margin-right: 15px;
  }
  
  .nav, .navbar {
@@ -63,4 +68,8 @@
    color: #333 !important;
    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.33);
    -webkit-font-smoothing: antialiased;
+ }
+ 
+ .btn-primary:hover {
+   background-color: #ec4848;
  }
