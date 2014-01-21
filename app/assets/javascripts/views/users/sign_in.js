@@ -22,6 +22,10 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
       success: function (response) {
         FoodgawkerApp.Data.session = session;
         delete response.attributes["user"];
+        FoodgawkerApp.flash(
+          ["Welcome " + response.attributes["username"] + "!"], 
+          "success"
+        )
         
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
