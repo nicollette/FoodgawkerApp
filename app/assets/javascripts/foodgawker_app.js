@@ -60,10 +60,15 @@ window.FoodgawkerApp = {
   },
   
   addSignInModal: function () {
-    var newSession = new FoodgawkerApp.Models.Session();
+    // var newSession = new FoodgawkerApp.Models.Session();
+    // var view = new FoodgawkerApp.Views.SignIn({
+    //   model: newSession
+    // });
+   FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session();
     var view = new FoodgawkerApp.Views.SignIn({
-      model: newSession
+      model: FoodgawkerApp.Data.session
     });
+
     $("#modal-sign-in-section").html(view.render().$el);
   },
   

@@ -3,6 +3,11 @@ FoodgawkerApp.Views.Results = Backbone.View.extend({
   
   childViews: [],
   
+  initialize: function () {
+    this.listenTo(this.collection, "add remove reset change", this.render);
+    this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
+  },
+  
   render: function () {
     var resultsView = this;
     var content = this.template({ recipes: this.collection });

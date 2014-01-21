@@ -9,7 +9,6 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
-    
   },
   
   showSearchForm: function (event) {

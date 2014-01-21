@@ -14,6 +14,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   
   signIn: function (event) {
     event.preventDefault();
+    this.model = new FoodgawkerApp.Models.Session();
     var session = this.model
     var attrs = $("#sign-in-form").serializeJSON();
     this.model.set(attrs);

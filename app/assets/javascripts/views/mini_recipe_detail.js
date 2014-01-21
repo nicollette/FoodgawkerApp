@@ -43,7 +43,6 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var fav = new FoodgawkerApp.Models.Favorite();
     fav.save( { recipe_id: recipe_id },{
       success: function () {
-        alert("faved!")
         setTimeout(function () {
           recipe.get("favorites").add(fav)     
         }, 1000);
@@ -62,7 +61,6 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     setTimeout(function () {
       fav.destroy({
         success: function () {
-          // alert("unfaved");
           recipe.get("favorites").remove(fav)
         }
       });
