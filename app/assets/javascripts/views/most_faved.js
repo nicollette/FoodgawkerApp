@@ -1,5 +1,5 @@
 FoodgawkerApp.Views.MostFaved = Backbone.View.extend({
-  template: JST["recipes/index"],
+  template: JST["recipes/most_faved"],
   
   childViews: [],
   

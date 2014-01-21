@@ -14,6 +14,7 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
   
   showSearchForm: function (event) {
     $("#search-form").slideDown('500').css('display', 'block');
+    
     $("#search-view").mouseleave(function () {
       $("#search-form").slideUp('500');
     })
