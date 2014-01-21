@@ -15,17 +15,16 @@ FoodgawkerApp.Views.Search = Backbone.View.extend({
   },
   
   renderResults: function (results) {
-    debugger;
     if(results.length === 0){
-      
+      var content = JST["recipes/no_results"];
+      $(".container").html(content);
     } else {
-     var resultsView = new FoodgawkerApp.Views.Results({ collection: results }); 
+     var resultsView = 
+       new FoodgawkerApp.Views.Results({ collection: results }); 
+     $(".container").html(resultsView.render().$el);
+     this.childViews.push(resultsView);
+     this.childViews.concat(resultsView.childViews);
     } 
-    // this.$("#results").html(resultsView.render().$el)
-    $(".container").html(resultsView.render().$el)
-    
-    this.childViews.push(resultsView)
-    this.childViews.concat(resultsView.childViews);
   },
   
   search: function (event) {
