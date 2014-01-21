@@ -9,20 +9,16 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
-    // this.searchHover();  
+    
   },
   
   showSearchForm: function (event) {
-    $("#search-form").slideToggle('500').css('display', 'block');
+    console.log("showing")
+    $("#search-form").slideDown('500').css('display', 'block');
+    $("#search-view").mouseleave(function () {
+      $("#search-form").slideUp('500');
+    })
   },
-  
-  // searchHover: function () {
-  //   $("#search-nav").hover(function() {
-  //     $("#search-form").slideToggle('500').css('display', 'block');
-  //   }, function () {
-  //     $("#search-form").slideToggle('500');
-  //   });
-  // },
   
   render: function () {
     var content = this.template();
