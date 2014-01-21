@@ -6,6 +6,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
     "recipes": "index",
     "recipes/new": "new",
     "recipes/:id": "detail",
+    "top": "mostFaved",
     "search": "search",
     "favorites": "favorites"
   },
@@ -13,6 +14,14 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.recipes = options.recipes;
     this.$rootEl = options.$rootEl
+  },
+  
+  mostFaved: function () {
+    var view = new FoodgawkerApp.Views.MostFaved({
+      collection: FoodgawkerApp.Data.recipes
+    });
+    
+    this._swapView(view);
   },
   
   signUp: function () {
@@ -41,9 +50,6 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   index: function () {
-    var navView = new FoodgawkerApp.Views.NavBar();
-    $("#nav-section").html(navView.render().$el);
-    
     var view = new FoodgawkerApp.Views.RecipesIndex({ 
       collection: FoodgawkerApp.Data.recipes 
     });

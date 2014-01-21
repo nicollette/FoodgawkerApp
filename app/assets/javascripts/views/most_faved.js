@@ -1,4 +1,4 @@
-FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
+FoodgawkerApp.Views.MostFaved = Backbone.View.extend({
   template: JST["recipes/index"],
   
   childViews: [],
@@ -10,11 +10,12 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
   
   render: function () {
     this.collection.comparator = function (recipe) {
-      return -recipe.id;
+      return -recipe.get("favorites").length;
     };
+    
     this.collection.sort();
-        
-    var indexView = this;
+    
+    var mostFavedView = this;
     var content = this.template({ recipes: this.collection });
     this.$el.html(content);
     
@@ -29,10 +30,10 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
         if(recipeCounter > rowId) {
           rowId += 3;
         }
-        indexView.appendRow(rowId)        
+        mostFavedView.appendRow(rowId)        
       }
-      indexView.childViews.push(miniDetailView);
-      indexView.$("#" + rowId).append(miniDetailView.render().$el);
+      mostFavedView.childViews.push(miniDetailView);
+      mostFavedView.$("#" + rowId).append(miniDetailView.render().$el);
       recipeCounter++;
     })
     this.listenForScroll();

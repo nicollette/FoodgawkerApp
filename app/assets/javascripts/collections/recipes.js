@@ -3,6 +3,10 @@ FoodgawkerApp.Collections.Recipes = Backbone.Collection.extend({
   
   model: FoodgawkerApp.Models.Recipe,
   
+  comparator: function (recipe) {
+    return -recipe.id
+  },
+  
   fetchByQuery: function (querystring, callback) {
     var recipeResults = this;
     $.ajax({

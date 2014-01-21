@@ -21,7 +21,6 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   },
   
   showTitle: function (event) {
-    // debugger;
     var recipeId = $(event.target).attr("data-recipe-id");
     $("#header" + recipeId).slideDown('500').css('display', 'block');
     $("#img" + recipeId).mouseleave(function () {
