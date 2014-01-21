@@ -13,6 +13,10 @@
  */
  @import "bootstrap";
  
+ .hover header {
+   diplay: none
+ }
+ 
  .modal-content {
    background-color: #d0f9ec;
  }

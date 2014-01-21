@@ -30,7 +30,7 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
       indexView.$("#" + rowId).append(miniDetailView.render().$el);
       recipeCounter++;
     })
-    
+    this.listenForScroll();
     return this;
   },
   
