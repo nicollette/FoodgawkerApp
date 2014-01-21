@@ -16,7 +16,8 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
     event.preventDefault();
     
     var user = this.model
-    var attrs = $(event.target.form).serializeJSON();    
+    var attrs = $("#sign-up-form").serializeJSON();
+    
     this.model.set(attrs);
     
     this.model.save({}, {
@@ -24,9 +25,10 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
         FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ 
           id: 1 
         });
-        FoodgawkerApp.Data.currentUser = 
-          new FoodgawkerApp.Models.User(response.attributes)
-        Backbone.history.navigate("", { trigger: true })
+        
+        setTimeout(function () {
+          FoodgawkerApp.Data.currentUser.set(response.attributes)          
+        }, 1000);
       }
     });
   }
