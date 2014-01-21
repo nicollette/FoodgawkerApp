@@ -14,19 +14,9 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
     var content = this.template();
     this.$el.html(content);
     
-    // var signInView = new FoodgawkerApp.Views.SignIn();
-    // $("#container").append(signInView.render().$el);
-    // debugger;
-    
-    
     return this;
   },
-  
-  signIn: function (event) {
-    event.preventDefault();
     
-  },
-  
   signOut: function (event) {
     event.preventDefault();
     

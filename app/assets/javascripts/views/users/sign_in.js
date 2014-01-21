@@ -23,7 +23,6 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         FoodgawkerApp.Data.session = session;
         delete response.attributes["user"];
         
-        // Allowing bootstrap modal to hide before rerendering
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);

@@ -24,6 +24,8 @@ window.FoodgawkerApp = {
     var navView = new FoodgawkerApp.Views.NavBar();
     $("#nav-section").html(navView.render().$el);
     
+    this.addSignInModal();
+    
     FoodgawkerApp.Data.recipes = new FoodgawkerApp.Collections.Recipes();
     FoodgawkerApp.Data.recipes.fetch({
       data: { page: 1 },
@@ -52,6 +54,14 @@ window.FoodgawkerApp = {
   
   emptyFlash: function () {
     $("#alerts-section").empty();
+  },
+  
+  addSignInModal: function () {
+    var newSession = new FoodgawkerApp.Models.Session();
+    var view = new FoodgawkerApp.Views.SignIn({
+      model: newSession
+    });
+    $("#modal-sign-in-section").html(view.render().$el);
   }
 };
 
