@@ -15,6 +15,15 @@ class Recipe < ActiveRecord::Base
       large: '475X475#'
   }
   
+   
+  def self.time_ordered
+    order('id DESC')
+  end
+  
+  def self.fav_ordered
+    # order('favorites ')
+  end
+  
   def self.search_results(keywords, categories)
     categories ||= []
     parsed_keywords = []

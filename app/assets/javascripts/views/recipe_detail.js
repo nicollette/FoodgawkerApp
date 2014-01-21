@@ -11,12 +11,20 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   },
   
   render: function () {
-    var content = this.template({ recipe: this.model });
+    var relatedRecipes = this.selectRelatedRecipes();
+    var content = this.template({ 
+      recipe: this.model,
+      relatedRecipes: relatedRecipes 
+    });
+    
     this.$el.html(content);
     
-    var relatedRecipes = this.selectRelatedRecipes();
     debugger;
     return this;
+  },
+  
+  renderSideBar: function () {
+    
   },
   
   getCategories: function (recipe) {
