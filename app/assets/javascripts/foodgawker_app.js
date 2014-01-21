@@ -50,13 +50,13 @@ window.FoodgawkerApp = {
       
       $("#alerts-section").append($newAlert)
     })
-    $("#alerts-section").attr("style", "display: inline");
     
     $("#alerts-section").fadeOut(5500, this.emptyFlash.bind(this));
   },
   
   emptyFlash: function () {
     $("#alerts-section").empty();
+    $("#alerts-section").removeAttr("style")
   },
   
   addSignInModal: function () {
