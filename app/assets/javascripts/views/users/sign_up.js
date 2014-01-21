@@ -25,7 +25,10 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
         FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ 
           id: 1 
         });
-        
+        FoodgawkerApp.flash(
+          ["Welcome " + response.attributes["username"] + "!"], 
+          "success"
+        );
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);

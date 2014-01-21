@@ -22,7 +22,6 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
     
     FoodgawkerApp.Data.session.destroy({
       success: function (resp) {
-        // alert("signed out!")
         FoodgawkerApp.Data.currentUser.set("id", undefined);
         FoodgawkerApp.Data.session = undefined;
         FoodgawkerApp.flash(
