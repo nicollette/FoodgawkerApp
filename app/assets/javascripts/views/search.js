@@ -16,7 +16,8 @@ FoodgawkerApp.Views.Search = Backbone.View.extend({
   
   renderResults: function (results) {
     var resultsView = new FoodgawkerApp.Views.Results({ collection: results });
-    this.$("#results").html(resultsView.render().$el)
+    // this.$("#results").html(resultsView.render().$el)
+    $(".container").html(resultsView.render().$el)
     
     this.childViews.push(resultsView)
     this.childViews.concat(resultsView.childViews);
