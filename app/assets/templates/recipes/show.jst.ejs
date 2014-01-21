@@ -1,6 +1,6 @@
-<%= recipe.get("title") %>
-
-<img src="<%= recipe.get('photo_url')%>">
+<h1><%= recipe.get("title") %></h1>
+<br>
+<img class="large" src="<%= recipe.get('large_photo_url')%>">
 
 <p>Description: <%= recipe.get("description") %></p>
 <p>Total Time: <%= recipe.get("total_time") %></p>
@@ -18,3 +18,7 @@
   <li><%= category.name %></li>
 <% }) %>
 </ul>
+
+<div id="side-bar">
+  
+</div>

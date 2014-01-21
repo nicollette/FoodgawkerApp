@@ -1,6 +1,6 @@
 class Api::RecipesController < ApplicationController
   def index
-    @recipes = Recipe.page(params[:page]).per(30)
+    @recipes = Recipe.page(params[:page]).per(15)
     @page_num = params[:page]
     render :index
   end

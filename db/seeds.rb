@@ -38,7 +38,7 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r3.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r3.id, category_id: c14.id)
   
-  r4 = Recipe.create(title: "spicy butternut squash with quinoa", blog_url: "http://thehonoursystem.com/2014/01/20/spicy-roasted-butternut-squash-with-quinoa-dried-cranberries/", description: "Spicy Roasted Butternut Squash with Quinoa & Dried Cranberries. Gluten Free! Tastes even better for lunch the next day!", ingredients: "butternut squash, shallots, garlic cloves, olive oil, chili flakes, sea salt, pepper, dried cranberries", total_time: 45, user_id: 1, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/m_a_risotto.jpg'))
+  r4 = Recipe.create(title: "spicy butternut squash with quinoa", blog_url: "http://thehonoursystem.com/2014/01/20/spicy-roasted-butternut-squash-with-quinoa-dried-cranberries/", description: "Spicy Roasted Butternut Squash with Quinoa & Dried Cranberries. Gluten Free! Tastes even better for lunch the next day!", ingredients: "butternut squash, shallots, garlic cloves, olive oil, chili flakes, sea salt, pepper, dried cranberries", total_time: 45, user_id: 1, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r4.jpg'))
   RecipeCategory.create(recipe_id: r4.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r4.id, category_id: c8.id)
   RecipeCategory.create(recipe_id: r4.id, category_id: c10.id)
@@ -69,7 +69,7 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r9.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r9.id, category_id: c19.id)
 
-  r10 = Recipe.create(title: "easy lemon herb spaghetti", blog_url: "http://www.sugardishme.com/2014/01/17/easy-lemon-herb-spaghetti/", description: "Dinner on the table in 20 minutes or less with this simple pasta dish that's loaded with flavor.", ingredients: "whole wheat spaghetti, olive oil, garlic, lemon, panko bread crumbs, basil, oregano, salt, black pepper, red pepper flakes", total_time: 20, user_id: 1, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/mq_soup.jpg'))
+  r10 = Recipe.create(title: "easy lemon herb spaghetti", blog_url: "http://www.sugardishme.com/2014/01/17/easy-lemon-herb-spaghetti/", description: "Dinner on the table in 20 minutes or less with this simple pasta dish that's loaded with flavor.", ingredients: "whole wheat spaghetti, olive oil, garlic, lemon, panko bread crumbs, basil, oregano, salt, black pepper, red pepper flakes", total_time: 20, user_id: 1, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r10.jpg'))
   RecipeCategory.create(recipe_id: r10.id, category_id: c6.id)
   RecipeCategory.create(recipe_id: r10.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r10.id, category_id: c12.id)

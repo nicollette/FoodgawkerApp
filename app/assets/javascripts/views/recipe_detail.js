@@ -13,7 +13,50 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   render: function () {
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
+    
+    var relatedRecipes = this.selectRelatedRecipes();
+    debugger;
     return this;
+  },
+  
+  getCategories: function (recipe) {
+    var categoryIds = [];
+    recipe.get("categories").forEach(function (category) {
+      categoryIds.push(category.id)
+    });
+    
+    return categoryIds;
+  },
+  
+  selectRelatedRecipes: function () {
+    var detailView = this;
+    var relatedRecipes = [];
+    var relatedRecipeIds = [];
+    var categoryIds = this.getCategories(this.model);
+    
+    categoryIds.forEach(function (catId) {
+      FoodgawkerApp.Data.recipes.each(function (recipe) {
+        var recipeCatIds = detailView.getCategories(recipe);
+        if(_.contains(recipeCatIds, catId)) {
+          relatedRecipes.push(recipe)
+        };
+      })
+    })
+
+    var selected = this.chooseRandom(relatedRecipes);
+    return selected;
+  },
+  
+  chooseRandom: function (recipes) {
+    var selected = new FoodgawkerApp.Collections.Recipes();
+    var maxIdx = recipes.length - 1
+    while(selected.length < 6) {
+      var randRecipe = recipes[Math.floor(Math.random() * maxIdx)]
+      if(!_.contains(selected.pluck("id"), randRecipe.id)) {
+        selected.push(randRecipe)
+      }
+    }
+    return selected;
   },
   
   favorite: function (event) {
