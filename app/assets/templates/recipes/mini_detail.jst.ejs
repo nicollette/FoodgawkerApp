@@ -1,6 +1,6 @@
 <div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
-  <center><h4 class="hover header"><%= recipe.get("title").toUpperCase() %></h4></center>
-  <img data-recipe-id="<%= recipe.id %>" class="img-circle small" src="<%= recipe.get('med_photo_url')%>">
+  <center><h4 class="hover-header" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><%= recipe.get("title").toUpperCase() %></h4></center>
+  <img id="img<%= recipe.id %>" data-recipe-id="<%= recipe.id %>" class="img-circle small" src="<%= recipe.get('med_photo_url')%>">
   <p><%= recipe.get("description")%></p>
   
   <% var favorites = recipe.get("favorites") %>
