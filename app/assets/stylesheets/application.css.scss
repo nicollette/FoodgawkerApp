@@ -13,9 +13,10 @@
  */
  @import "bootstrap";
  
- .hover header {
-   diplay: none
+ form#search-form {
+   display: none;
  }
+ 
  
  .modal-content {
    background-color: #d0f9ec;
