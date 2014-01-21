@@ -24,7 +24,7 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
         console.log(e.target.result);
         that.model.set({ photo: e.target.result });
     };
-    
+     
     reader.onerror = function(stuff) {
         console.log("error", stuff)
         console.log (stuff.getMessage())
@@ -38,6 +38,7 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
     var attrs = $(event.target.form).serializeJSON();
     var success = function() {
       Backbone.history.navigate("", { trigger: true })
+      FoodgawkerApp.flash(["Recipe added!"], "success")
     };
     
     this.model.set(attrs);

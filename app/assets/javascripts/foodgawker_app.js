@@ -50,6 +50,8 @@ window.FoodgawkerApp = {
       
       $("#alerts-section").append($newAlert)
     })
+    $("#alerts-section").attr("style", "display: inline");
+    
     $("#alerts-section").fadeOut(5500, this.emptyFlash.bind(this));
   },
   

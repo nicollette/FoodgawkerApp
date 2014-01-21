@@ -31,21 +31,8 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
       recipeCounter++;
     })
     
-    // if(!FoodgawkerApp.Data.currentUser.id) {
-    //   this.addSignInModal();
-    // }
-    
     return this;
   },
-  
-  // addSignInModal: function () {
-  //   var newSession = new FoodgawkerApp.Models.Session();
-  //   var view = new FoodgawkerApp.Views.SignIn({
-  //     model: newSession
-  //   });
-  //   this.childViews.push(view);
-  //   this.$("#modal-sign-in-section").html(view.render().$el);
-  // },
   
   appendRow: function (id) {
     var newRow = $("<div class='row' id='" + id + "'>")
