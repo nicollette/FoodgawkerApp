@@ -22,10 +22,10 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
     
     FoodgawkerApp.Data.session.destroy({
       success: function (resp) {
-        FoodgawkerApp.Data.currentUser.set("id", undefined);
         FoodgawkerApp.Data.session = undefined;
+        FoodgawkerApp.Data.currentUser.set("id", undefined);
         FoodgawkerApp.flash(
-          ["Goodbye " + resp.attributes["username"] + "!"], 
+          ["Goodbye " + FoodgawkerApp.Data.currentUser.get("username") + "!"], 
           "info"
         )
       }
