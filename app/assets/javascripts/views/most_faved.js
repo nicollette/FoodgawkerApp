@@ -8,13 +8,7 @@ FoodgawkerApp.Views.MostFaved = Backbone.View.extend({
     this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
   },
   
-  render: function () {
-    this.collection.comparator = function (recipe) {
-      return -recipe.get("favorites").length;
-    };
-    
-    this.collection.sort();
-    
+  render: function () {    
     var mostFavedView = this;
     var content = this.template({ recipes: this.collection });
     this.$el.html(content);

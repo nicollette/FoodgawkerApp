@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117173657) do
+ActiveRecord::Schema.define(:version => 20140121233321) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -59,18 +59,19 @@ ActiveRecord::Schema.define(:version => 20140117173657) do
   add_index "recipe_ingredients", ["recipe_id"], :name => "index_recipe_ingredients_on_recipe_id"
 
   create_table "recipes", :force => true do |t|
-    t.string   "title",              :null => false
-    t.string   "blog_url",           :null => false
+    t.string   "title",                             :null => false
+    t.string   "blog_url",                          :null => false
     t.text     "description"
     t.integer  "total_time"
-    t.integer  "user_id",            :null => false
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "user_id",                           :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "ingredients"
+    t.integer  "favorites_count",    :default => 0
   end
 
   add_index "recipes", ["title"], :name => "index_recipes_on_title"

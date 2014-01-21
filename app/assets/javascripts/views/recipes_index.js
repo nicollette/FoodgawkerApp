@@ -9,11 +9,6 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
   },
   
   render: function () {
-    this.collection.comparator = function (recipe) {
-      return -recipe.id;
-    };
-    this.collection.sort();
-        
     var indexView = this;
     var content = this.template({ recipes: this.collection });
     this.$el.html(content);

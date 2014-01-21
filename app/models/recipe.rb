@@ -19,9 +19,9 @@ class Recipe < ActiveRecord::Base
   def self.time_ordered
     order('id DESC')
   end
-  
+
   def self.fav_ordered
-    # order('favorites ')
+    order("favorites_count DESC")
   end
   
   def self.search_results(keywords, categories)

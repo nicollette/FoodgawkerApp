@@ -3,6 +3,6 @@ class Favorite < ActiveRecord::Base
   validates :recipe_id, :user_id, :presence => true
   validates_uniqueness_of :recipe_id, :scope => :user_id
   
-  belongs_to :recipe
+  belongs_to :recipe, :counter_cache => true
   belongs_to :user
 end

@@ -17,11 +17,18 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   mostFaved: function () {
-    var view = new FoodgawkerApp.Views.MostFaved({
-      collection: FoodgawkerApp.Data.recipes
-    });
+    var router = this;
+    var topRecipes = new FoodgawkerApp.Collections.MostFaved();
+    topRecipes.fetch({
+      data: { page: 1 },
+      success: function () {
+        var view = new FoodgawkerApp.Views.MostFaved({
+          collection: topRecipes
+        });
     
-    this._swapView(view);
+        router._swapView(view);
+      }
+    })
   },
   
   signUp: function () {
