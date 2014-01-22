@@ -35,7 +35,7 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
   },
   
   appendRow: function (id) {
-    var newRow = $("<div class='row' id='" + id + "'>")
+    var newRow = $("<div class='row index' id='" + id + "'>")
     this.$el.append(newRow)
   },
   
