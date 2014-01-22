@@ -10,7 +10,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite",
     "click img": "toggleModal", 
-    "mouseover img": "showTitle"
+    "mouseover img": "showTitle", 
+    "click button#share": "emailRecipe"
   },
   
   render: function () {
@@ -18,6 +19,21 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     this.$el.html(content);
     
     return this;
+  },
+  
+  emailRecipe: function (event) {
+    var recipeId = $(event.target).attr("data-recipe-id");
+    
+    $.ajax({
+      type: 'GET',
+      url: '/api/share',
+      data: {
+        url: this.model.get("blog_url")
+      },
+      success: function (response) {
+        alert("emailed")
+      }
+    })
   },
   
   showTitle: function (event) {

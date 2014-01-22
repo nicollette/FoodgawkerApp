@@ -16,6 +16,7 @@
   <% } else { %>
     <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">Favorite</button> 
   <% }%>
+  <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share">+</button> 
 </div>
 
 <div class="modal fade" id="recipeModal<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

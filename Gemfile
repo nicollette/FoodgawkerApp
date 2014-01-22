@@ -40,6 +40,7 @@ gem 'figaro'
 gem 'friendly_id'
 
 gem 'kaminari'
+gem "letter_opener", :group => :development
 # gem 'jquery-fileupload-rails', '0.3.0'
 
 # Use unicorn as the app server

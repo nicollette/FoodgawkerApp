@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.15)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    addressable (2.3.5)
     arel (3.0.3)
     aws-s3 (0.6.3)
       builder
@@ -81,6 +82,10 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -159,6 +164,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
+  letter_opener
   paperclip
   pg
   rails (= 3.2.15)

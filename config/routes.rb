@@ -7,6 +7,7 @@ FoodgawkerApp::Application.routes.draw do
   namespace :api do
     resources :search, :only => [:index],
                       :defaults => {:format => "json"}
+    resources :share, :only => [:index]
     resources :top_recipes, :only => [:index]
     resources :recipes, :only => [:index, :create, :show], 
                         :defaults => {:format => "json"}
@@ -17,3 +18,6 @@ FoodgawkerApp::Application.routes.draw do
   end
   
 end
+
+
+## GENERATE CONTROLLER TO SEND THE EMAIL

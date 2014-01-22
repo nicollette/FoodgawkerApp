@@ -21,7 +21,7 @@ FoodgawkerApp.Collections.Recipes = Backbone.Collection.extend({
       }
     })
   },
-  
+    
   parseResults: function (response) {
     var recipes = [];
     response.forEach(function(recipe) {

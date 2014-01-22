@@ -46,4 +46,6 @@ FoodgawkerApp::Application.configure do
       :s3_host_name => "s3.amazonaws.com"
     }
   }
+  
+  config.action_mailer.delivery_method = :letter_opener
 end
