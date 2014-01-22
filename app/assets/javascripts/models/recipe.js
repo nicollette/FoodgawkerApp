@@ -1,4 +1,6 @@
 FoodgawkerApp.Models.Recipe = Backbone.Model.extend({
+  urlRoot: "/api/recipes",
+  
   parse: function (data) {
     if(data.favorites) {
       data.favorites = 

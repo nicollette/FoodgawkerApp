@@ -17,4 +17,9 @@ class Api::RecipesController < ApplicationController
       render :show
     end
   end
+  
+  def show
+    @recipe = Recipe.find(params[:id]);
+    render :show
+  end
 end

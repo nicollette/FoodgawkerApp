@@ -8,7 +8,7 @@ FoodgawkerApp::Application.routes.draw do
     resources :search, :only => [:index],
                       :defaults => {:format => "json"}
     resources :top_recipes, :only => [:index]
-    resources :recipes, :only => [:index, :create], 
+    resources :recipes, :only => [:index, :create, :show], 
                         :defaults => {:format => "json"}
     resources :favorite, :only => [:create, :destroy],
                          :defaults => {:format => "json"}

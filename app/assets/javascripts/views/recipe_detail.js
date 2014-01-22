@@ -7,22 +7,19 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   },
   
   initialize: function () {
-    this.listenTo(this.model, "all", this.render)
+    // this.listenTo(this.model, "all", this.render)
   },
   
   render: function () {
     var relatedRecipes = this.selectRelatedRecipes();
     var content = this.template({ 
       recipe: this.model,
-      relatedRecipes: relatedRecipes 
+      relatedRecipes: relatedRecipes.models
     });
-    
     this.$el.html(content);
-    
-    debugger;
     return this;
   },
-  
+ 
   renderSideBar: function () {
     
   },
@@ -60,7 +57,7 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
     var maxIdx = recipes.length - 1
     while(selected.length < 6) {
       var randRecipe = recipes[Math.floor(Math.random() * maxIdx)]
-      if(!_.contains(selected.pluck("id"), randRecipe.id)) {
+      if(_.contains(selected.pluck("id"), randRecipe.id) === false) {
         selected.push(randRecipe)
       }
     }

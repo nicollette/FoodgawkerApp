@@ -80,11 +80,19 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   detail: function (id) {
-    var recipe = FoodgawkerApp.Data.recipes.get(id);
-    var view = new FoodgawkerApp.Views.RecipeDetail({
-      model: recipe
-    });
-    this._swapView(view);
+    // need to fetch recipe
+    // var recipe = FoodgawkerApp.Data.recipes.get(id);
+    var router = this;
+    var recipe = new FoodgawkerApp.Models.Recipe({id: id})
+    recipe.fetch({
+      success: function () {
+        var view = new FoodgawkerApp.Views.RecipeDetail({
+          model: recipe
+        });
+        router._swapView(view);
+      }
+    })
+
   },
   
   favorites: function () {

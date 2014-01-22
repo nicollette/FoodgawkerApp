@@ -1,57 +1,68 @@
 <h1><%= recipe.get("title") %></h1>
 <br>
-<img class="large" src="<%= recipe.get('large_photo_url')%>">
+<div class="row">
+  <div class="col-md-8">
+    <img class="large shadow" src="<%= recipe.get('large_photo_url')%>">
+    <br>
+    <p>Description: <%= recipe.get("description") %></p>
+    <p>Total Time: <%= recipe.get("total_time") %> minutes</p>
+    <p><a href="<%= recipe.get("blog_url")%>">source</a></p>
+    <p>Added by: <%= recipe.get("username") %></p>
 
-<p>Description: <%= recipe.get("description") %></p>
-<p>Total Time: <%= recipe.get("total_time") %></p>
-<p>Blog link: <%= recipe.get("blog_url")%></p>
-<p>Added by: <%= recipe.get("username") %></p>
-
-<% if (recipe.get("favorites").length < 1 ) { %>
-  <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
-<% } else { %>
-  <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
-<% } %>
-
-<ul>
-<% recipe.get("categories").forEach(function(category) { %>
-  <li><%= category.name %></li>
-<% }) %>
-</ul>
-
-<!-- <div id="side-bar">    
-  <div class="row" id="row1">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img data-src="<%= relatedRecipes[0]">
-      </a>
-    </div>
-    ...
-  </div>
-  
-  <div class="row" id="row2">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img data-src="holder.js/100%x180" alt="...">
-      </a>
-    </div>
-    ...
-  </div>
-  
-  <div class="row" id="row3">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img data-src="holder.js/100%x180" alt="...">
-      </a>
-    </div>
-    ...
-  </div>
-  
-  <% var colCount = 0 %>
-  <% var rowCount = 0 %>
-  <% relatedRecipes.each(function(recipe) { %>
-    <% if(colCount < 2) { %>
-      
+    <% if (recipe.get("favorites").length < 1 ) { %>
+      <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
+    <% } else { %>
+      <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
     <% } %>
-  <% })%>
-</div> -->
+    
+    <h5>Categories</h5>
+    <ul>
+    <% recipe.get("categories").forEach(function(category) { %>
+      <li><%= category.name %></li>
+    <% }) %>
+    </ul>
+  </div>
+  
+  <div id="side-bar" class="col-md-4">
+    <center><h3>peep these tasty recipes</h3></center>
+    <div class="row" id="row1">
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[0].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[0].get('med_photo_url') %>">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[1].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[1].get('med_photo_url') %>">
+        </a>
+      </div>
+    </div>
+    
+    <div class="row" id="row2">
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[2].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[2].get('med_photo_url') %>">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[3].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[3].get('med_photo_url') %>">
+        </a>
+      </div>
+    </div>
+    
+    <div class="row" id="row3">
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[4].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[4].get('med_photo_url') %>">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="#recipes/<%= relatedRecipes[5].id %>" class="thumbnail">
+          <img src="<%= relatedRecipes[5].get('med_photo_url') %>">
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</div>
