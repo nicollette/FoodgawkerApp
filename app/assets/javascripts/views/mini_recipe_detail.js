@@ -10,16 +10,13 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite",
     "click img": "toggleModal", 
-    // "mouseenter img.detail": "showTitle", 
+    "mouseenter img.detail": "showTitle", 
     "click button#share": "emailRecipe"
   },
   
   render: function () {
     var content = this.template({ recipe: this.model });
-    var that = this;
     this.$el.html(content);
-
-    this.$el.find("img.detail").on("mouseenter", this.showTitle.bind(this));
     return this;
   },
   
@@ -38,18 +35,11 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     })
   },
   
-  showTitle: function (event) {
-
-
-    
-    this.throttledShowTitle(event)();
-  },
-  
-  throttledShowTitle: function (event) {
+  showTitle: function (event) {    
     var view = this;
 
     var recipeId = $(event.target).attr("data-recipe-id");
-    var throttled = _.throttle(function() {
+    _.throttle(function() {
       $("#img" + recipeId).off('mouseenter');
       $("#header" + recipeId).show()
       $("#overlay-img" + recipeId).show()
@@ -59,8 +49,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
           $("#overlay-img" + recipeId).hide()
           $("#img" + recipeId).on("mouseenter", view.showTitle.bind(view));
         }) 
-    }, 0)
-    return throttled;
+    }, 0)()
   },
   
   toggleModal: function (event) {
