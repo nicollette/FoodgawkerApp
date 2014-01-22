@@ -1,6 +1,10 @@
 <div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
-  <center><h4 class="hover-header" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><%= recipe.get("title").toUpperCase() %></h4></center>
-  <img id="img<%= recipe.id %>" data-recipe-id="<%= recipe.id %>" class="img-circle small shadow" src="<%= recipe.get('med_photo_url')%>">
+  <img id="overlay-img<%= recipe.id %>" data-recipe-id="<%= recipe.id %>" class="img-circle small overlay">
+    <div class="hover-header" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><%= recipe.get("title").toUpperCase() %></div>
+  <!-- <center><h4 class="hover-header" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><%= recipe.get("title").toUpperCase() %></h4></center> -->
+   
+  <img id="img<%= recipe.id %>" data-recipe-id="<%= recipe.id %>" class="detail img-circle small shadow" src="<%= recipe.get('med_photo_url')%>">
+  
   <br><br>
   <p class="detail-desc"><%= recipe.get("description")%> <a href="#recipes/<%= recipe.id %>">More Info</a></p>
   
@@ -29,7 +33,7 @@
       </div>
       <div class="modal-body">
         
-        <center><a href="<%= recipe.get('blog_url') %>"><img class="large" src="<%= recipe.get('large_photo_url')%>"></a></center>
+        <center><a href="<%= recipe.get('blog_url') %>" target="_blank"><img class="large" src="<%= recipe.get('large_photo_url')%>"></a></center>
         <br>
         <p><%= recipe.get("description")%></p>
         <p>Total Time: <%= recipe.get("total_time") %> minutes</p>
