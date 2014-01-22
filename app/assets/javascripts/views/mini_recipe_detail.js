@@ -18,14 +18,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var content = this.template({ recipe: this.model });
     var that = this;
     this.$el.html(content);
-    // this.$el.find('img.detail').hover(
-//       function(){
-//         $("#header" + that.model.id).slideDown('500');
-//       },
-//       function(){
-//         $("#header" + that.model.id).slideUp('500');
-//       }
-//     )
+
     this.$el.find("img.detail").on("mouseenter", this.showTitle.bind(this));
     return this;
   },
@@ -46,14 +39,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   },
   
   showTitle: function (event) {
-    // var recipeId = $(event.target).attr("data-recipe-id");
-    // $("#img" + recipeId).off("mouseenter")
-    // $("#header" + recipeId).slideDown('500').css('display', 'block');
-    // // $("#overlay-img" + recipeId).toggle('700')
-    // $("#img" + recipeId).mouseleave(function () {
-    //   $("#header" + recipeId).slideUp('500');
-    //   // $("#overlay-img" + recipeId).toggle('700');
-    // })  
+
+
     
     this.throttledShowTitle(event)();
   },
@@ -64,16 +51,15 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     var recipeId = $(event.target).attr("data-recipe-id");
     var throttled = _.throttle(function() {
       $("#img" + recipeId).off('mouseenter');
-      // $("#header" + recipeId).slideDown('500').css('display', 'inline-block');
       $("#header" + recipeId).show()
+      $("#overlay-img" + recipeId).show()
 
        $("#header" + recipeId).mouseleave(function () {
-           // $("#header" + recipeId).slideUp('500');
-           $("#header" + recipeId).hide();
-            $("#img" + recipeId).on("mouseenter", view.showTitle.bind(view));
+          $("#header" + recipeId).hide();
+          $("#overlay-img" + recipeId).hide()
+          $("#img" + recipeId).on("mouseenter", view.showTitle.bind(view));
         }) 
     }, 0)
-    // $("#img" + recipeId).off("mouseleave")
     return throttled;
   },
   

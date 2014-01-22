@@ -51,7 +51,7 @@
    height: 275px;
    width: 275px;
    word-wrap: break-word;
-   background-color:gray;
+   color: white;
  }
  
  .hover-header{
@@ -61,7 +61,16 @@
    top: 0;
    z-index: 1px;
  }
- 
+
+.hover-header-text {
+  word-wrap: break-word;
+  color: white;
+  position: absolute;
+  left: 18%;
+  top: 40%;
+   z-index: 1px;
+
+} 
  .modal-content {
    background-color: #E7E6E6;
    opacity: 0.9;
