@@ -191,4 +191,109 @@ ActiveRecord::Base.transaction do
   RecipeCategory.create(recipe_id: r30.id, category_id: c8.id)
   RecipeCategory.create(recipe_id: r30.id, category_id: c10.id)
   RecipeCategory.create(recipe_id: r30.id, category_id: c15.id)
+  
+  r31 = Recipe.create(title: "tempeh teriyaki summer rolls", blog_url: "http://www.riceandcoconut.com/2013/07/tempeh-teriyaki-summer-rolls.html", description: "Tempeh teriyaki summer rolls", ingredients: "vietnamese spring roll wrappers, tempeh, vegetable oil, teriyaki sauce, carrot, cucumber, lettuce, basil, cilantro", total_time: 15, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r31.jpg'))
+  RecipeCategory.create(recipe_id: r31.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r31.id, category_id: c18.id)
+  RecipeCategory.create(recipe_id: r31.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r31.id, category_id: c16.id)
+  
+  r32 = Recipe.create(title: "cranberry walnut chickpea salad sandwich", blog_url: "http://thesimpleveganista.blogspot.com/2013/11/cranberry-walnut-chickpea-salad-sandwich.html", description: "Cranberry Walnut Chickpea Salad Sandwich...Healthy, easy and delicious!", ingredients: "chickpeas, celery, dried cranberries, walnuts, scallions, tahini", total_time: 20, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r32.jpg'))
+  RecipeCategory.create(recipe_id: r32.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r32.id, category_id: c15.id)
+  RecipeCategory.create(recipe_id: r32.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r32.id, category_id: c16.id)
+  
+  r33 = Recipe.create(title: "portobello walnut tacos", blog_url: "http://www.fellowshipofthevegetable.com/portobello-walnut-tacos-wcilantro-lime-rice/", description: "Portobello Mushroom & Walnut Tacos w/Cilantro Lime Rice", ingredients: "rice, lime, cilantro, veggie broth, onion, cumin, walnuts, portobello mushrooms, avocado", total_time: 40, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r33.jpg'))
+  RecipeCategory.create(recipe_id: r33.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r33.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r33.id, category_id: c16.id)
+  RecipeCategory.create(recipe_id: r33.id, category_id: c18.id)
+  
+  r34 = Recipe.create(title: "lentil sloppy joes", blog_url: "http://makingthymeforhealth.com/2013/12/02/lentil-sloppy-joes-vegan-and-gluten-free/", description: "Vegan Lentil Sloppy Joes: an easy meatless meal that will leave you fighting for the leftovers.", ingredients: "lentils, onion, carrots, bell pepper, paprika, tomatoes, mustard powder", total_time: 75, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r34.jpeg'))
+  RecipeCategory.create(recipe_id: r34.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r34.id, category_id: c14.id)
+  RecipeCategory.create(recipe_id: r34.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r34.id, category_id: c16.id)
+  RecipeCategory.create(recipe_id: r34.id, category_id: c18.id)
+
+  r35 = Recipe.create(title: "spicy black bean burger", blog_url: "http://whatthehelldoveganseat.com/black-bean-sweet-potato-and-quinoa-burger/", description: "Delicious vegan burger made with black beans, sweet potato, quinoa, ginger, herbs and spices", ingredients: "sweet potatoes, quinoa, black beans, coriander, onion, oats", total_time: 80, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r35.jpeg'))
+  RecipeCategory.create(recipe_id: r35.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r35.id, category_id: c14.id)
+  RecipeCategory.create(recipe_id: r35.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r35.id, category_id: c16.id)
+  
+  r36 = Recipe.create(title: "roasted tofu kale tacos", blog_url: "http://veganyackattack.com/2013/10/04/roasted-tofu-kale-tacos/", description: "Simple and healthy roasted tofu kale tacos, with homemade tortillas!", ingredients: "firm tofu, chili powder, cumin, white onion, bell pepper, kale, avocado", total_time: 60, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r36.jpeg'))
+  RecipeCategory.create(recipe_id: r36.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r36.id, category_id: c18.id)
+  RecipeCategory.create(recipe_id: r36.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r36.id, category_id: c16.id)
+  
+  r37 = Recipe.create(title: "bbq tempeh sandwich", blog_url: "http://www.cookbookaficionado.com/brown-baggin-it-bbq-tempeh-sandwich/", description: "Vegan BBQ Tempeh Sandwich", ingredients: "tempeh, bbq sauce, vegan mayo, chipotle powder, dijon mustard, red onion, arugula", total_time: 40, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r37.jpeg'))
+  RecipeCategory.create(recipe_id: r37.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r37.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r37.id, category_id: c16.id)
+
+  r38 = Recipe.create(title: "1-hour chocolate & cinnamon-sugar pretzel bites", blog_url: "http://www.averiecooks.com/2014/01/one-hour-chocolate-and-cinnamon-sugar-soft-pretzel-bites.html", description: "1-Hour Chocolate & Cinnamon-Sugar Soft Pretzel Bites - You won't believe how fast & easy it is to DIY! Bread in 1 HOUR!", ingredients: "flour, instant yeast, sugar, cocoa powder, cinnamon", total_time: 60, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r38.jpg'))
+  RecipeCategory.create(recipe_id: r38.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r38.id, category_id: c18.id)
+
+  r39 = Recipe.create(title: "spinach & wild mushroom lasagna", blog_url: "http://www.fettlevegan.com/4/post/2014/01/spinach-wild-mushroom-lasagna-with-basil-almond-cream.html", description: "Spinach & Wild Mushroom Lasagna with Basil Almond Cream", ingredients: "almonds, garlic, dijon mustard, nutritional yeast, basil, gluten-free lasagna, pasta sauce, onion, spinach, vegan cheese", total_time: 45, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r39.jpg'))
+  RecipeCategory.create(recipe_id: r39.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r39.id, category_id: c8.id)
+  RecipeCategory.create(recipe_id: r39.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r39.id, category_id: c12.id)
+
+  r40 = Recipe.create(title: "corned bean hash", blog_url: "http://www.fettlevegan.com/4/post/2013/01/corned-bean-hash.html", description: "Corned BEAN hash", ingredients: "sunflower oil, onion, kidney beans, potatoes, tahini, soy sauce", total_time: 35, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r40.jpg'))
+  RecipeCategory.create(recipe_id: r40.id, category_id: c1.id)
+  RecipeCategory.create(recipe_id: r40.id, category_id: c8.id)
+
+  r41 = Recipe.create(title: "blueberry banana bread", blog_url: "http://noshandnourish.com/content/my-famous-blueberry-banana-bread-made-vegangf", description: "My famous Blueberry Banana Bread -- made vegan and gluten-free.", ingredients: "brown rice flour, baking powder, coconut sugar, almond milk, bananas, flax, blueberries", total_time: 85, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r41.jpg'))
+  RecipeCategory.create(recipe_id: r41.id, category_id: c1.id)
+  RecipeCategory.create(recipe_id: r41.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r41.id, category_id: c7.id)
+  RecipeCategory.create(recipe_id: r41.id, category_id: c18.id)
+  RecipeCategory.create(recipe_id: r41.id, category_id: c8.id)
+
+  r42 = Recipe.create(title: "raw peppermint bark brownies", blog_url: "http://www.oatmealwithafork.com/2013/12/02/raw-peppermint-bark-brownies-vegan-paleo/", description: "Raw Peppermint Bark Brownies...two of my favorite treats in one HEALTHY Christmas-themed bar! Vegan and paleo.", ingredients: "pecans, oats, dates, cocoa powder, peppermint extract, coconut butter, maple syrup", total_time: 20, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r42.jpeg'))
+  RecipeCategory.create(recipe_id: r42.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r42.id, category_id: c18.id)
+
+  r43 = Recipe.create(title: "coconut dried fruit bread", blog_url: "http://roxanashomebaking.com/coconut-dried-fruit-bread-recipe/", description: "A simple, yet delicious quick bread packed with dried fruit and bursting with coconut flavor.", ingredients: "flax meal, vegan butter, coconut oil, vegan cream cheese, sugar, flour, baking powder, dried fruits", total_time: 70, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r43.jpeg'))
+  RecipeCategory.create(recipe_id: r43.id, category_id: c1.id)
+  RecipeCategory.create(recipe_id: r43.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r43.id, category_id: c7.id)
+  RecipeCategory.create(recipe_id: r43.id, category_id: c18.id)
+  
+  r44 = Recipe.create(title: "cranberry orange pancakes", blog_url: "http://veganyackattack.com/2013/11/30/cranberry-orange-pancakes/", description: "Use leftover cranberry sauce, or make your own citrus-y version, to top these fluffy, orange pancakes!", ingredients: "cranberries, orange juice, sugar, non-dairy milk, apple cider vinegar, whole wheat flour, vanilla", total_time: 35, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r44.jpeg'))
+  RecipeCategory.create(recipe_id: r44.id, category_id: c1.id)
+  RecipeCategory.create(recipe_id: r44.id, category_id: c7.id)
+
+  r45 = Recipe.create(title: "roasted vegetable ratatouille", blog_url: "http://www.amuse-your-bouche.com/easy-roasted-vegetable-ratatouille-chickpeas/", description: "Easy roasted vegetable ratatouille with chickpeas (and a secret ingredient that adds heaps of flavour!)", ingredients: "courgette, pepper, mushrooms, onion, chickpeas, tomatoes, bail pesto", total_time: 105, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r45.jpeg'))
+  RecipeCategory.create(recipe_id: r45.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r45.id, category_id: c10.id)
+  
+  r46 = Recipe.create(title: "red lentils & carrots coconut soup", blog_url: "http://theflexitarian.co.uk/recipe-items/red-lentils-carrots-coconut-soup/", description: "Red Lentils and Carrots Coconut Soup. Lovely orange glow with soft, smooth & creamy coconut milk.", ingredients: "red lentils, carrots, onion, garlic, curry powder, coriander, vegetable stock, coconut milk, lemon juice", total_time: 35, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r46.jpeg'))
+  RecipeCategory.create(recipe_id: r46.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r46.id, category_id: c8.id)
+  RecipeCategory.create(recipe_id: r46.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r46.id, category_id: c19.id)
+  
+  r47 = Recipe.create(title: "crispy carrot & potato gnocchi", blog_url: "http://veganmiam.com/recipes/crispy-carrot-potato-gnocchi-with-walnut-pesto", description: "Crispy Carrot & Potato Gnocchi with Walnut Pesto, Sautéed Shiitake Mushrooms, Green Peas, Parsley, and Red Chili Flakes.", ingredients: "basil, walnuts, nutritional yeast, lemon juice, gnocchi, shiitake mushrooms, chili flakes, green peas", total_time: 25, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r47.jpeg'))
+  RecipeCategory.create(recipe_id: r47.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r47.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r47.id, category_id: c12.id)
+  
+  r48 = Recipe.create(title: "teriyaki tempeh sriracha soba", blog_url: "http://www.veganricha.com/2013/05/teriyaki-tempeh-and-shiitake-mushrooms.html", description: "TERIYAKI TEMPEH AND SHIITAKE MUSHROOMS WITH SRIRACHA SOBA. VEGAN RECIPE. EASILY GLUTENFREE.", ingredients: "soy sauce, sugar, rice white vinegar, tempeh, mushrooms", total_time: 30, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r48.jpeg'))
+  RecipeCategory.create(recipe_id: r48.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r48.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r48.id, category_id: c12.id)
+  
+  r49 = Recipe.create(title: "creamy vegan spinach jalapeno dip", blog_url: "http://forealslife.com/blog/creamy-vegan-spinach-jalapeno-dip", description: "Creamy Vegan Spinach Jalapeno Dip. Easy, healthy and delicious!", ingredients: "spinach, silken tofu, lemon juice, miso paste, garlic, jalapeno, nutritional yeast", total_time: 50, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r49.jpg'))
+  RecipeCategory.create(recipe_id: r49.id, category_id: c8.id)
+  RecipeCategory.create(recipe_id: r49.id, category_id: c18.id)
+  
+  r50 = Recipe.create(title: "hoppin john deep dish pie", blog_url: "http://www.veganricha.com/2013/12/black-eyed-peas-tofu-thyme-ricotta-deep.html", description: "Hoppin john style Black eyed Peas, Tofu Ricotta Deep dish Pizza.", ingredients: "black eyed peas, onion, tomato sauce, firm tofu, thyme, garlic powder", total_time: 50, user_id: 3, photo: File.open('/Users/Nicollette/Desktop/final_project/photos/r50.jpg'))
+  RecipeCategory.create(recipe_id: r50.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r50.id, category_id: c10.id)
 end

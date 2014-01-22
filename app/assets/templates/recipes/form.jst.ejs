@@ -34,10 +34,10 @@
   </div>
 
     <label class="col-sm-2 control-label">Categories</label>
-    <div class="form-group col-sm-offset-2 col-sm-10">
+    <div class="form-group col-sm-offset-2 col-sm-5">
       <div class="btn-group" data-toggle="buttons">
         <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
-        <label class="btn btn-primary">
+        <label class="btn btn-primary categeories">
           <input type="checkbox" 
                  id="<%= category.name %>" 
                  name="recipe_categories[<%= category.id %>][category_id]"

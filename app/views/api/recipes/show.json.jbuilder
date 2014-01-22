@@ -1,4 +1,4 @@
-json.(@recipe, :id, :title, :blog_url, :description, :total_time, :user_id, :created_at)
+json.(@recipe, :id, :title, :blog_url, :description, :total_time, :user_id, :created_at, :ingredients)
 json.username(@recipe.user.username)
 json.med_photo_url(@recipe.photo.url(:medium))
 json.large_photo_url(@recipe.photo.url(:large))
