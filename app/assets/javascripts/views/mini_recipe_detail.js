@@ -31,7 +31,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
         url: this.model.get("blog_url")
       },
       success: function (response) {
-        alert("emailed")
+        FoodgawkerApp.flash(["Snail mail sent!"], "info");
       }
     })
   },
