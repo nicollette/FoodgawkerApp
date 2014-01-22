@@ -14,11 +14,14 @@
  @import "bootstrap";
  
 .shadow {
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+  -moz-box-shadow:    3px 3px 5px 0px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 0px #ccc;
+  box-shadow:         3px 3px 5px 0px #ccc;
 }
  
+ div.row{
+   height: 425px;
+ }
  p {
    font-family: "Helvetica"
  }
