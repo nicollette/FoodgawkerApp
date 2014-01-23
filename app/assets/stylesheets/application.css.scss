@@ -71,7 +71,7 @@ div.detail-header {
   padding:7px;
 }
 h4.modal-title {
-  font-size: 19px;
+  font-size: 25px;
   font-weight: bold;
 }
 div.detail-body {
@@ -80,12 +80,22 @@ div.detail-body {
 div.detail-modal {
   height: 550px;
   width: 700px;
+  mar
 } 
 
 img.modal-img {
   width: 350px;
   height: 350px;
 }
+
+h5.modal-text {
+  font-size: 19px;
+}
+
+ .modal-content {
+   background-color: #E7E6E6;
+   opacity: 0.9;
+ }
 
 
 
@@ -154,10 +164,7 @@ img.large {
   z-index: 1px;
 
 } 
- .modal-content {
-   background-color: #E7E6E6;
-   opacity: 0.9;
- }
+
  
  body {
    padding-top: 70px;
