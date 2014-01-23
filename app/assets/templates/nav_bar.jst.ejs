@@ -12,7 +12,7 @@
       <% if(FoodgawkerApp.Data.currentUser.id === undefined) { %>
         <li><button class="nav-bar-btn btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">Sign Up</button><li>
         <li><button class="nav-bar-btn btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">Sign In</button><li>
-
+        <li><button class="nav-bar-btn btn btn-primary btn-sm" id="guest-btn">Guest Log In</button><li>
       <% } else { %>
         <li><a href="#recipes/new">Submit Recipe</a></li>
         <li><a href="#favorites">Favorite Recipes</a></li>

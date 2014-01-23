@@ -61,7 +61,29 @@ h4#uploadText {
   width: 225px;
 }
  
-  
+/************/
+
+/* Detail Modal */
+div.detail-header {
+  padding:7px;
+}
+h4.modal-title {
+  font-size: 19px;
+  font-weight: bold;
+}
+div.detail-body {
+  padding:10px;
+}
+div.detail-modal {
+  height: 700px;
+} 
+
+img.large{
+  width: 375px;
+  height: 375px;
+}
+ 
+ 
 .nav, .navbar-fixed-top, .navbar-nav {
    background-color: #7be0a5;
    opacity:0.9;
@@ -146,11 +168,6 @@ h4#uploadText {
    left: 15px;
    top: 0px;
    z-index: 0px;
- }
- 
- img.large{
-   width: 475px;
-   height: 475px;
  }
  
  div.col-sm-3{

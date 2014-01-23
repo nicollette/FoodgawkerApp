@@ -2,18 +2,20 @@
 #   E# ncoding.default_external = Encoding::UTF_8
 #   Encoding.default_internal = Encoding::UTF_8
 ActiveRecord::Base.transaction do
-  # c1 = Category.create(:name => "Breakfast & Brunch")
-  # c5 = Category.create(:name => "Desserts")
-  # c6 = Category.create(:name => "Dinner")
-  # c7 = Category.create(:name => "Fruit")
-  # c8 = Category.create(:name => "Gluten Free")
-  # c10 = Category.create(:name => "Lunch")
-  # c12 = Category.create(:name => "Pasta & Noodles")
-  # c14 = Category.create(:name => "Rice & Grains")
-  # c15 = Category.create(:name => "Salads")
-  # c16 = Category.create(:name => "Sandwiches & Wraps")
-  # c18 = Category.create(:name => "Snacks")
-  # c19 = Category.create(:name => "Soups")
+  c1 = Category.create(:name => "Breakfast & Brunch")
+  c5 = Category.create(:name => "Desserts")
+  c6 = Category.create(:name => "Dinner")
+  c7 = Category.create(:name => "Fruit")
+  c8 = Category.create(:name => "Gluten Free")
+  c10 = Category.create(:name => "Lunch")
+  c12 = Category.create(:name => "Pasta & Noodles")
+  c14 = Category.create(:name => "Rice & Grains")
+  c15 = Category.create(:name => "Salads")
+  c16 = Category.create(:name => "Sandwiches & Wraps")
+  c18 = Category.create(:name => "Snacks")
+  c19 = Category.create(:name => "Soups")
+  
+  
   # 
   # u1 = User.create(:username => "nico", :email => "nico@gmail.com", :password => "password")
   # u2 = User.create(:username => "guest1", :email => "guest1@gmail.com", :password => "password")
@@ -97,22 +99,22 @@ ActiveRecord::Base.transaction do
   # RecipeCategory.create(recipe_id: r11.id, category_id: c18.id)
   # 
   # f12 = File.open(Rails.root.join('photos/bo_muffins.jpg').to_s)
-  # r12 = Recipe.create(title: "blueberry oat muffins", blog_url: "http://www.oatmealwithafork.com/2014/01/17/sugar-free-guilt-free-blueberry-oat-muffins-gf-vegan/", description: "Sugar-Free, Guilt-Free Blueberry Oat Muffins...made from whole food ingredients like oats and dates, and only 106 calories each!", ingredients: "dates, applesauce, oil, dairy-free milk, lemon juice, oats, brown rice flour, baking powder, baking soda, sea salt, cinnamon, stevia, blueberries", total_time: 35, user_id: 1, photo: f12)
-  # f12.close
-  # RecipeCategory.create(recipe_id: r12.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r12.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r12.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r12.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r12.id, category_id: c18.id)
-  # 
-  # f13 = File.open(Rails.root.join('photos/r13.jpg').to_s)  
-  # r13 = Recipe.create(title: "coconut quinoa granola", blog_url: "http://mangiablog.com/2014/01/13/keen-wah/", description: "A bowl of crunchy quinoa granola chock full of coconut, almonds, & goji berries. Perfect for breakfast or snack. Gluten-free.", ingredients: "quinoa, coconut flakes, almonds, cinnamon, salt, maple syrup, extra virgin olive oil, dried goji berries", total_time: 30, user_id: 1, photo: f13)
-  # f13.close
-  # RecipeCategory.create(recipe_id: r13.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r13.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r13.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r13.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r13.id, category_id: c18.id)
+#   r12 = Recipe.create(title: "blueberry oat muffins", blog_url: "http://www.oatmealwithafork.com/2014/01/17/sugar-free-guilt-free-blueberry-oat-muffins-gf-vegan/", description: "Sugar-Free, Guilt-Free Blueberry Oat Muffins...made from whole food ingredients like oats and dates, and only 106 calories each!", ingredients: "dates, applesauce, oil, dairy-free milk, lemon juice, oats, brown rice flour, baking powder, baking soda, sea salt, cinnamon, stevia, blueberries", total_time: 35, user_id: 1, photo: f12)
+#   f12.close
+#   RecipeCategory.create(recipe_id: r12.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r12.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r12.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r12.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r12.id, category_id: c18.id)
+#   
+#   f13 = File.open(Rails.root.join('photos/r13.jpg').to_s)  
+#   r13 = Recipe.create(title: "coconut quinoa granola", blog_url: "http://mangiablog.com/2014/01/13/keen-wah/", description: "A bowl of crunchy quinoa granola chock full of coconut, almonds, & goji berries. Perfect for breakfast or snack. Gluten-free.", ingredients: "quinoa, coconut flakes, almonds, cinnamon, salt, maple syrup, extra virgin olive oil, dried goji berries", total_time: 30, user_id: 1, photo: f13)
+#   f13.close
+#   RecipeCategory.create(recipe_id: r13.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r13.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r13.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r13.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r13.id, category_id: c18.id)
   # 
   # f14 = File.open(Rails.root.join('photos/crbuns.jpg').to_s)
   # r14 = Recipe.create(title: "cinnamon raison buns", blog_url: "http://swissmissinthekitchen.blogspot.ch/2014/01/vegan-cinnamon-raisin-buns.html", description: "Vegan cinnamon raisin buns made with coconut oil and spelt flour!", ingredients: "spelt flour, salt, maple syrup, stevia, vanilla, yeast, almond milk, coconut oil, raisins, cinnamon", total_time: 60, user_id: 1, photo: f14)
@@ -128,7 +130,7 @@ ActiveRecord::Base.transaction do
   # RecipeCategory.create(recipe_id: r15.id, category_id: c1.id)
   # RecipeCategory.create(recipe_id: r15.id, category_id: c7.id)
   # RecipeCategory.create(recipe_id: r15.id, category_id: c8.id)
-  # 
+  
   # f16 = File.open(Rails.root.join('photos/r16.jpg').to_s)
   # r16 = Recipe.create(title: "soyrizo kelp noodle casserole", blog_url: "http://www.fellowshipofthevegetable.com/soyrizo-kelp-noodle-casserole/", description: "Kelp noodles baked with spicy soyrizo, sautéed veggies and tomato sauce.", ingredients: "kelp noodles, olive oil, onion, celery, soyrizo, tomato sauce, daiya cheese, parsley", total_time: 55, user_id: 2, photo: f16)
   # f16.close
@@ -194,207 +196,207 @@ ActiveRecord::Base.transaction do
   # RecipeCategory.create(recipe_id: r23.id, category_id: c10.id)
   # RecipeCategory.create(recipe_id: r23.id, category_id: c14.id)
   # RecipeCategory.create(recipe_id: r23.id, category_id: c15.id)
-  # 
+  
   # f24 = File.open(Rails.root.join('photos/r24.jpg').to_s)
-  # r24 = Recipe.create(title: "vegan naked burrito", blog_url: "http://vegieproject.com/vegan-naked-burrito/", description: "Vegan naked burrito with brown rice, black beans, pico de gallo salsa, guacamole and charred corn.", ingredients: "brown rice, black beans, onion, garlic, cumin, paprika, corn, olive oil, tomatoes, lime, avocado", total_time: 30, user_id: 2, photo: f24)
-  # f24.close
-  # RecipeCategory.create(recipe_id: r24.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r24.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r24.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r24.id, category_id: c16.id)
-  # 
-  # f25 = File.open(Rails.root.join('photos/r25.jpg').to_s)
-  # r25 = Recipe.create(title: "winter quinoa croquettes", blog_url: "http://chelrabbit.com/2013/12/17/quinoa-croquettes/", description: "Quinoa Croquettes with pecans and cranberries. With a Satsuma Mandarin Sauce.", ingredients: "quinoa, scallion, garlic, salt, lemon, buckwheat flour, oat flour, tapioca flour, pecans, cranberries, satsuma mandarin juice, soy sauce, maple syrup, ginger", total_time: 25, user_id: 2, photo: f25)
-  # f25.close
-  # RecipeCategory.create(recipe_id: r25.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r25.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r25.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r25.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r25.id, category_id: c18.id)
-  # 
-  # f26 = File.open(Rails.root.join('photos/r26.jpg').to_s)
-  # r26 = Recipe.create(title: "deconstructed falafel bowl", blog_url: "http://veganyackattack.com/2014/01/18/deconstructed-falafel-bowl/", description: "Healthy, easy and delicious bowl of Falafel goodness, without all of the work!", ingredients: "chickpeas, lettuce, cucumber, tomatoes, hummus, tahini, garlic, cumin, coriander, salt, pepper, cayeene, lemon", total_time: 50, user_id: 2, photo: f26)
-  # f26.close
-  # RecipeCategory.create(recipe_id: r26.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r26.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r26.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r26.id, category_id: c15.id)
-  # 
-  # f27 = File.open(Rails.root.join('photos/r27.jpg').to_s)
-  # r27 = Recipe.create(title: "chickpea salad stuffed avocados", blog_url: "http://coconutandberries.com/2014/01/13/chickpea-salad-stuffed-avocados/", description: "A fun way to serve this delicious and nutritious food. Chickpea Salad Stuffed Avocados.", ingredients: "chickpeas, carrot, garlic, olive oil, lime, tamari, cayenne pepper, avocados", total_time: 15, user_id: 2, photo: f27)
-  # f27.close
-  # RecipeCategory.create(recipe_id: r27.id, category_id: c18.id)
-  # RecipeCategory.create(recipe_id: r27.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r27.id, category_id: c15.id)
-  # 
-  # f28 = File.open(Rails.root.join('photos/r28.jpg').to_s)
-  # r28 = Recipe.create(title: "roasted sweet potato salad", blog_url: "http://joanne-eatswellwithothers.com/2013/12/roasted-sweet-potato-salad-with-cranberry-chipotle-dressing.html", description: "Add a little bit of spice to your table with this sweet and smoky roasted sweet potato salad with cranberry-chipotle dressing.", ingredients: "sweet potatoes, olive oil, salt, black pepper, cranberries, honey, chipotle chile, pepitas, scallions, cilantro", total_time: 35, user_id: 2, photo: f28)
-  # f28.close
-  # RecipeCategory.create(recipe_id: r28.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r28.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r28.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r28.id, category_id: c15.id)
-  # RecipeCategory.create(recipe_id: r28.id, category_id: c18.id) 
-  # 
-  # f29 = File.open(Rails.root.join('photos/r29.jpg').to_s)
-  # r29 = Recipe.create(title: "chickpea and avocado salad sandwich", blog_url: "http://jordansfamilyoffoodies.com/2014/01/06/chickpea-and-avocado-salad-sandwich/", description: "Pan roasted chickpeas with smoked paprika, cilantro, crunchy red onion, and smooth creamy avocado make up this delicious sandwich.", ingredients: "garbanzo beans, avocado, red onion, cilantro, lime, paprika, spinach, bread, dijon mustard", total_time: 35, user_id: 2, photo: f29)
-  # f29.close
-  # RecipeCategory.create(recipe_id: r29.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r29.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r29.id, category_id: c15.id)
-  # RecipeCategory.create(recipe_id: r29.id, category_id: c16.id)
-  # 
-  # f30 = File.open(Rails.root.join('photos/r30.jpeg').to_s)
-  # r30 = Recipe.create(title: "autumn kale salad", blog_url: "http://blog.vegancuts.com/recipes/autumn-kale-salad-recipe/", description: "A sweet, Autumn Kale Salad with roasted sweet potatoes, and a citrus vinaigrette.", ingredients: "sweet potatoes, orange juice, olive oil, agave nectar, apple cider vinegar, dijon mustard, ginger, cinnamon, kale, cranberries", total_time: 35, user_id: 2, photo: f30)
-  # f30.close
-  # RecipeCategory.create(recipe_id: r30.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r30.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r30.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r30.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r30.id, category_id: c15.id)
-  # 
-  # f31 = File.open(Rails.root.join('photos/r31.jpg').to_s)  
-  # r31 = Recipe.create(title: "tempeh teriyaki summer rolls", blog_url: "http://www.riceandcoconut.com/2013/07/tempeh-teriyaki-summer-rolls.html", description: "Tempeh teriyaki summer rolls", ingredients: "vietnamese spring roll wrappers, tempeh, vegetable oil, teriyaki sauce, carrot, cucumber, lettuce, basil, cilantro", total_time: 15, user_id: 3, photo: f31)
-  # f31.close
-  # RecipeCategory.create(recipe_id: r31.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r31.id, category_id: c18.id)
-  # RecipeCategory.create(recipe_id: r31.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r31.id, category_id: c16.id)
-  # 
-  # f32 = File.open(Rails.root.join('photos/r32.jpg').to_s)
-  # r32 = Recipe.create(title: "cranberry walnut chickpea salad sandwich", blog_url: "http://thesimpleveganista.blogspot.com/2013/11/cranberry-walnut-chickpea-salad-sandwich.html", description: "Cranberry Walnut Chickpea Salad Sandwich...Healthy, easy and delicious!", ingredients: "chickpeas, celery, dried cranberries, walnuts, scallions, tahini", total_time: 20, user_id: 3, photo: f32)
-  # f32.close
-  # RecipeCategory.create(recipe_id: r32.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r32.id, category_id: c15.id)
-  # RecipeCategory.create(recipe_id: r32.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r32.id, category_id: c16.id)
-  # 
-  # f33 = File.open(Rails.root.join('photos/r33.jpg').to_s)
-  # r33 = Recipe.create(title: "portobello walnut tacos", blog_url: "http://www.fellowshipofthevegetable.com/portobello-walnut-tacos-wcilantro-lime-rice/", description: "Portobello Mushroom & Walnut Tacos w/Cilantro Lime Rice", ingredients: "rice, lime, cilantro, veggie broth, onion, cumin, walnuts, portobello mushrooms, avocado", total_time: 40, user_id: 3, photo: f33)
-  # f33.close
-  # RecipeCategory.create(recipe_id: r33.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r33.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r33.id, category_id: c16.id)
-  # RecipeCategory.create(recipe_id: r33.id, category_id: c18.id)
-  # 
-  # f34 = File.open(Rails.root.join('photos/r34.jpeg').to_s)
-  # r34 = Recipe.create(title: "lentil sloppy joes", blog_url: "http://makingthymeforhealth.com/2013/12/02/lentil-sloppy-joes-vegan-and-gluten-free/", description: "Vegan Lentil Sloppy Joes: an easy meatless meal that will leave you fighting for the leftovers.", ingredients: "lentils, onion, carrots, bell pepper, paprika, tomatoes, mustard powder", total_time: 75, user_id: 3, photo: f34)
-  # f34.close
-  # RecipeCategory.create(recipe_id: r34.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r34.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r34.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r34.id, category_id: c16.id)
-  # RecipeCategory.create(recipe_id: r34.id, category_id: c18.id)
-  # 
-  # f35 = File.open(Rails.root.join('photos/r35.jpeg').to_s)
-  # r35 = Recipe.create(title: "spicy black bean burger", blog_url: "http://whatthehelldoveganseat.com/black-bean-sweet-potato-and-quinoa-burger/", description: "Delicious vegan burger made with black beans, sweet potato, quinoa, ginger, herbs and spices", ingredients: "sweet potatoes, quinoa, black beans, coriander, onion, oats", total_time: 80, user_id: 3, photo:f35)
-  # f35.close
-  # RecipeCategory.create(recipe_id: r35.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r35.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r35.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r35.id, category_id: c16.id)
-  # 
-  # f36 = File.open(Rails.root.join('photos/r36.jpeg').to_s)  
-  # r36 = Recipe.create(title: "roasted tofu kale tacos", blog_url: "http://veganyackattack.com/2013/10/04/roasted-tofu-kale-tacos/", description: "Simple and healthy roasted tofu kale tacos, with homemade tortillas!", ingredients: "firm tofu, chili powder, cumin, white onion, bell pepper, kale, avocado", total_time: 60, user_id: 3, photo: f36)
-  # f36.close
-  # RecipeCategory.create(recipe_id: r36.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r36.id, category_id: c18.id)
-  # RecipeCategory.create(recipe_id: r36.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r36.id, category_id: c16.id)
-  # 
-  # f37 = File.open(Rails.root.join('photos/r37.jpeg').to_s)  
-  # r37 = Recipe.create(title: "bbq tempeh sandwich", blog_url: "http://www.cookbookaficionado.com/brown-baggin-it-bbq-tempeh-sandwich/", description: "Vegan BBQ Tempeh Sandwich", ingredients: "tempeh, bbq sauce, vegan mayo, chipotle powder, dijon mustard, red onion, arugula", total_time: 40, user_id: 3, photo: f37)
-  # f37.close
-  # RecipeCategory.create(recipe_id: r37.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r37.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r37.id, category_id: c16.id)
-  # 
-  # f38 = File.open(Rails.root.join('photos/r38.jpg').to_s)
-  # r38 = Recipe.create(title: "1-hour chocolate & cinnamon-sugar pretzel bites", blog_url: "http://www.averiecooks.com/2014/01/one-hour-chocolate-and-cinnamon-sugar-soft-pretzel-bites.html", description: "1-Hour Chocolate & Cinnamon-Sugar Soft Pretzel Bites - You won't believe how fast & easy it is to DIY! Bread in 1 HOUR!", ingredients: "flour, instant yeast, sugar, cocoa powder, cinnamon", total_time: 60, user_id: 3, photo: f38)
-  # f38.close
-  # RecipeCategory.create(recipe_id: r38.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r38.id, category_id: c18.id)
-  # 
-  # f39 = File.open(Rails.root.join('photos/r39.jpg').to_s)
-  # r39 = Recipe.create(title: "spinach & wild mushroom lasagna", blog_url: "http://www.fettlevegan.com/4/post/2014/01/spinach-wild-mushroom-lasagna-with-basil-almond-cream.html", description: "Spinach & Wild Mushroom Lasagna with Basil Almond Cream", ingredients: "almonds, garlic, dijon mustard, nutritional yeast, basil, gluten-free lasagna, pasta sauce, onion, spinach, vegan cheese", total_time: 45, user_id: 3, photo: f39)
-  # f39.close
-  # RecipeCategory.create(recipe_id: r39.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r39.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r39.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r39.id, category_id: c12.id)
-  # 
-  # f40 = File.open(Rails.root.join('photos/r40.jpg').to_s) 
-  # r40 = Recipe.create(title: "corned bean hash", blog_url: "http://www.fettlevegan.com/4/post/2013/01/corned-bean-hash.html", description: "Corned BEAN hash", ingredients: "sunflower oil, onion, kidney beans, potatoes, tahini, soy sauce", total_time: 35, user_id: 3, photo: f40)
-  # f40.close
-  # RecipeCategory.create(recipe_id: r40.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r40.id, category_id: c8.id)
-  # 
-  # f41 = File.open(Rails.root.join('photos/r41.jpg').to_s)
-  # r41 = Recipe.create(title: "blueberry banana bread", blog_url: "http://noshandnourish.com/content/my-famous-blueberry-banana-bread-made-vegangf", description: "My famous Blueberry Banana Bread -- made vegan and gluten-free.", ingredients: "brown rice flour, baking powder, coconut sugar, almond milk, bananas, flax, blueberries", total_time: 85, user_id: 3, photo: f41)
-  # f41.close
-  # RecipeCategory.create(recipe_id: r41.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r41.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r41.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r41.id, category_id: c18.id)
-  # RecipeCategory.create(recipe_id: r41.id, category_id: c8.id)
-  # 
-  # f42 = File.open(Rails.root.join('photos/r42.jpeg').to_s)
-  # r42 = Recipe.create(title: "raw peppermint bark brownies", blog_url: "http://www.oatmealwithafork.com/2013/12/02/raw-peppermint-bark-brownies-vegan-paleo/", description: "Raw Peppermint Bark Brownies...two of my favorite treats in one HEALTHY Christmas-themed bar! Vegan and paleo.", ingredients: "pecans, oats, dates, cocoa powder, peppermint extract, coconut butter, maple syrup", total_time: 20, user_id: 3, photo: f42)
-  # f42.close
-  # RecipeCategory.create(recipe_id: r42.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r42.id, category_id: c18.id)
-  # 
-  # f43 = File.open(Rails.root.join('photos/r43.jpeg').to_s)
-  # r43 = Recipe.create(title: "coconut dried fruit bread", blog_url: "http://roxanashomebaking.com/coconut-dried-fruit-bread-recipe/", description: "A simple, yet delicious quick bread packed with dried fruit and bursting with coconut flavor.", ingredients: "flax meal, vegan butter, coconut oil, vegan cream cheese, sugar, flour, baking powder, dried fruits", total_time: 70, user_id: 3, photo: f43)
-  # f43.close
-  # RecipeCategory.create(recipe_id: r43.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r43.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r43.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r43.id, category_id: c18.id)
-  # 
-  # f44 = File.open(Rails.root.join('photos/r44.jpeg').to_s)  
-  # r44 = Recipe.create(title: "cranberry orange pancakes", blog_url: "http://veganyackattack.com/2013/11/30/cranberry-orange-pancakes/", description: "Use leftover cranberry sauce, or make your own citrus-y version, to top these fluffy, orange pancakes!", ingredients: "cranberries, orange juice, sugar, non-dairy milk, apple cider vinegar, whole wheat flour, vanilla", total_time: 35, user_id: 3, photo: f44)
-  # f44.close
-  # RecipeCategory.create(recipe_id: r44.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r44.id, category_id: c7.id)
-  # 
-  # f45 = File.open(Rails.root.join('photos/r45.jpeg').to_s)
-  # r45 = Recipe.create(title: "roasted vegetable ratatouille", blog_url: "http://www.amuse-your-bouche.com/easy-roasted-vegetable-ratatouille-chickpeas/", description: "Easy roasted vegetable ratatouille with chickpeas (and a secret ingredient that adds heaps of flavour!)", ingredients: "courgette, pepper, mushrooms, onion, chickpeas, tomatoes, bail pesto", total_time: 105, user_id: 3, photo: f45)
-  # f45.close
-  # RecipeCategory.create(recipe_id: r45.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r45.id, category_id: c10.id)
-  # 
-  # f46 = File.open(Rails.root.join('photos/r46.jpeg').to_s)  
-  # r46 = Recipe.create(title: "red lentils & carrots coconut soup", blog_url: "http://theflexitarian.co.uk/recipe-items/red-lentils-carrots-coconut-soup/", description: "Red Lentils and Carrots Coconut Soup. Lovely orange glow with soft, smooth & creamy coconut milk.", ingredients: "red lentils, carrots, onion, garlic, curry powder, coriander, vegetable stock, coconut milk, lemon juice", total_time: 35, user_id: 3, photo: f46)
-  # f46.close
-  # RecipeCategory.create(recipe_id: r46.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r46.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r46.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r46.id, category_id: c19.id)
-  # 
-  # f47 = File.open(Rails.root.join('photos/r47.jpeg').to_s)  
-  # r47 = Recipe.create(title: "crispy carrot & potato gnocchi", blog_url: "http://veganmiam.com/recipes/crispy-carrot-potato-gnocchi-with-walnut-pesto", description: "Crispy Carrot & Potato Gnocchi with Walnut Pesto, Sautéed Shiitake Mushrooms, Green Peas, Parsley, and Red Chili Flakes.", ingredients: "basil, walnuts, nutritional yeast, lemon juice, gnocchi, shiitake mushrooms, chili flakes, green peas", total_time: 25, user_id: 3, photo: f47)
-  # f47.close
-  # RecipeCategory.create(recipe_id: r47.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r47.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r47.id, category_id: c12.id)
-  # 
-  # f48 = File.open(Rails.root.join('photos/r48.jpeg').to_s)  
-  # r48 = Recipe.create(title: "teriyaki tempeh sriracha soba", blog_url: "http://www.veganricha.com/2013/05/teriyaki-tempeh-and-shiitake-mushrooms.html", description: "TERIYAKI TEMPEH AND SHIITAKE MUSHROOMS WITH SRIRACHA SOBA. VEGAN RECIPE. EASILY GLUTENFREE.", ingredients: "soy sauce, sugar, rice white vinegar, tempeh, mushrooms", total_time: 30, user_id: 3, photo: f48)
-  # f48.close
-  # RecipeCategory.create(recipe_id: r48.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r48.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r48.id, category_id: c12.id)
-  # 
-  # f49 = File.open(Rails.root.join('photos/r49.jpg').to_s)  
-  # r49 = Recipe.create(title: "creamy vegan spinach jalapeno dip", blog_url: "http://forealslife.com/blog/creamy-vegan-spinach-jalapeno-dip", description: "Creamy Vegan Spinach Jalapeno Dip. Easy, healthy and delicious!", ingredients: "spinach, silken tofu, lemon juice, miso paste, garlic, jalapeno, nutritional yeast", total_time: 50, user_id: 3, photo: f49)
-  # f49.close
-  # RecipeCategory.create(recipe_id: r49.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r49.id, category_id: c18.id)
-  # 
-  # f50 = File.open(Rails.root.join('photos/r50.jpg').to_s)
-  # r50 = Recipe.create(title: "hoppin john deep dish pie", blog_url: "http://www.veganricha.com/2013/12/black-eyed-peas-tofu-thyme-ricotta-deep.html", description: "Hoppin john style Black eyed Peas, Tofu Ricotta Deep dish Pizza.", ingredients: "black eyed peas, onion, tomato sauce, firm tofu, thyme, garlic powder", total_time: 50, user_id: 3, photo: f50)
-  # f50.close
-  # RecipeCategory.create(recipe_id: r50.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r50.id, category_id: c10.id)
+#   r24 = Recipe.create(title: "vegan naked burrito", blog_url: "http://vegieproject.com/vegan-naked-burrito/", description: "Vegan naked burrito with brown rice, black beans, pico de gallo salsa, guacamole and charred corn.", ingredients: "brown rice, black beans, onion, garlic, cumin, paprika, corn, olive oil, tomatoes, lime, avocado", total_time: 30, user_id: 2, photo: f24)
+#   f24.close
+#   RecipeCategory.create(recipe_id: r24.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r24.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r24.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r24.id, category_id: c16.id)
+#   
+#   f25 = File.open(Rails.root.join('photos/r25.jpg').to_s)
+#   r25 = Recipe.create(title: "winter quinoa croquettes", blog_url: "http://chelrabbit.com/2013/12/17/quinoa-croquettes/", description: "Quinoa Croquettes with pecans and cranberries. With a Satsuma Mandarin Sauce.", ingredients: "quinoa, scallion, garlic, salt, lemon, buckwheat flour, oat flour, tapioca flour, pecans, cranberries, satsuma mandarin juice, soy sauce, maple syrup, ginger", total_time: 25, user_id: 2, photo: f25)
+#   f25.close
+#   RecipeCategory.create(recipe_id: r25.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r25.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r25.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r25.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r25.id, category_id: c18.id)
+#   
+#   f26 = File.open(Rails.root.join('photos/r26.jpg').to_s)
+#   r26 = Recipe.create(title: "deconstructed falafel bowl", blog_url: "http://veganyackattack.com/2014/01/18/deconstructed-falafel-bowl/", description: "Healthy, easy and delicious bowl of Falafel goodness, without all of the work!", ingredients: "chickpeas, lettuce, cucumber, tomatoes, hummus, tahini, garlic, cumin, coriander, salt, pepper, cayeene, lemon", total_time: 50, user_id: 2, photo: f26)
+#   f26.close
+#   RecipeCategory.create(recipe_id: r26.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r26.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r26.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r26.id, category_id: c15.id)
+#   
+#   f27 = File.open(Rails.root.join('photos/r27.jpg').to_s)
+#   r27 = Recipe.create(title: "chickpea salad stuffed avocados", blog_url: "http://coconutandberries.com/2014/01/13/chickpea-salad-stuffed-avocados/", description: "A fun way to serve this delicious and nutritious food. Chickpea Salad Stuffed Avocados.", ingredients: "chickpeas, carrot, garlic, olive oil, lime, tamari, cayenne pepper, avocados", total_time: 15, user_id: 2, photo: f27)
+#   f27.close
+#   RecipeCategory.create(recipe_id: r27.id, category_id: c18.id)
+#   RecipeCategory.create(recipe_id: r27.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r27.id, category_id: c15.id)
+#   
+#   f28 = File.open(Rails.root.join('photos/r28.jpg').to_s)
+#   r28 = Recipe.create(title: "roasted sweet potato salad", blog_url: "http://joanne-eatswellwithothers.com/2013/12/roasted-sweet-potato-salad-with-cranberry-chipotle-dressing.html", description: "Add a little bit of spice to your table with this sweet and smoky roasted sweet potato salad with cranberry-chipotle dressing.", ingredients: "sweet potatoes, olive oil, salt, black pepper, cranberries, honey, chipotle chile, pepitas, scallions, cilantro", total_time: 35, user_id: 2, photo: f28)
+#   f28.close
+#   RecipeCategory.create(recipe_id: r28.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r28.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r28.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r28.id, category_id: c15.id)
+#   RecipeCategory.create(recipe_id: r28.id, category_id: c18.id) 
+#   
+#   f29 = File.open(Rails.root.join('photos/r29.jpg').to_s)
+#   r29 = Recipe.create(title: "chickpea and avocado salad sandwich", blog_url: "http://jordansfamilyoffoodies.com/2014/01/06/chickpea-and-avocado-salad-sandwich/", description: "Pan roasted chickpeas with smoked paprika, cilantro, crunchy red onion, and smooth creamy avocado make up this delicious sandwich.", ingredients: "garbanzo beans, avocado, red onion, cilantro, lime, paprika, spinach, bread, dijon mustard", total_time: 35, user_id: 2, photo: f29)
+#   f29.close
+#   RecipeCategory.create(recipe_id: r29.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r29.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r29.id, category_id: c15.id)
+#   RecipeCategory.create(recipe_id: r29.id, category_id: c16.id)
+#   
+#   f30 = File.open(Rails.root.join('photos/r30.jpeg').to_s)
+#   r30 = Recipe.create(title: "autumn kale salad", blog_url: "http://blog.vegancuts.com/recipes/autumn-kale-salad-recipe/", description: "A sweet, Autumn Kale Salad with roasted sweet potatoes, and a citrus vinaigrette.", ingredients: "sweet potatoes, orange juice, olive oil, agave nectar, apple cider vinegar, dijon mustard, ginger, cinnamon, kale, cranberries", total_time: 35, user_id: 2, photo: f30)
+#   f30.close
+#   RecipeCategory.create(recipe_id: r30.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r30.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r30.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r30.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r30.id, category_id: c15.id)
+#   
+#   f31 = File.open(Rails.root.join('photos/r31.jpg').to_s)  
+#   r31 = Recipe.create(title: "tempeh teriyaki summer rolls", blog_url: "http://www.riceandcoconut.com/2013/07/tempeh-teriyaki-summer-rolls.html", description: "Tempeh teriyaki summer rolls", ingredients: "vietnamese spring roll wrappers, tempeh, vegetable oil, teriyaki sauce, carrot, cucumber, lettuce, basil, cilantro", total_time: 15, user_id: 3, photo: f31)
+#   f31.close
+#   RecipeCategory.create(recipe_id: r31.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r31.id, category_id: c18.id)
+#   RecipeCategory.create(recipe_id: r31.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r31.id, category_id: c16.id)
+#   
+#   f32 = File.open(Rails.root.join('photos/r32.jpg').to_s)
+#   r32 = Recipe.create(title: "cranberry walnut chickpea salad sandwich", blog_url: "http://thesimpleveganista.blogspot.com/2013/11/cranberry-walnut-chickpea-salad-sandwich.html", description: "Cranberry Walnut Chickpea Salad Sandwich...Healthy, easy and delicious!", ingredients: "chickpeas, celery, dried cranberries, walnuts, scallions, tahini", total_time: 20, user_id: 3, photo: f32)
+#   f32.close
+#   RecipeCategory.create(recipe_id: r32.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r32.id, category_id: c15.id)
+#   RecipeCategory.create(recipe_id: r32.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r32.id, category_id: c16.id)
+#   
+#   f33 = File.open(Rails.root.join('photos/r33.jpg').to_s)
+#   r33 = Recipe.create(title: "portobello walnut tacos", blog_url: "http://www.fellowshipofthevegetable.com/portobello-walnut-tacos-wcilantro-lime-rice/", description: "Portobello Mushroom & Walnut Tacos w/Cilantro Lime Rice", ingredients: "rice, lime, cilantro, veggie broth, onion, cumin, walnuts, portobello mushrooms, avocado", total_time: 40, user_id: 3, photo: f33)
+#   f33.close
+#   RecipeCategory.create(recipe_id: r33.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r33.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r33.id, category_id: c16.id)
+#   RecipeCategory.create(recipe_id: r33.id, category_id: c18.id)
+#   
+#   f34 = File.open(Rails.root.join('photos/r34.jpeg').to_s)
+#   r34 = Recipe.create(title: "lentil sloppy joes", blog_url: "http://makingthymeforhealth.com/2013/12/02/lentil-sloppy-joes-vegan-and-gluten-free/", description: "Vegan Lentil Sloppy Joes: an easy meatless meal that will leave you fighting for the leftovers.", ingredients: "lentils, onion, carrots, bell pepper, paprika, tomatoes, mustard powder", total_time: 75, user_id: 3, photo: f34)
+#   f34.close
+#   RecipeCategory.create(recipe_id: r34.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r34.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r34.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r34.id, category_id: c16.id)
+#   RecipeCategory.create(recipe_id: r34.id, category_id: c18.id)
+#   
+#   f35 = File.open(Rails.root.join('photos/r35.jpeg').to_s)
+#   r35 = Recipe.create(title: "spicy black bean burger", blog_url: "http://whatthehelldoveganseat.com/black-bean-sweet-potato-and-quinoa-burger/", description: "Delicious vegan burger made with black beans, sweet potato, quinoa, ginger, herbs and spices", ingredients: "sweet potatoes, quinoa, black beans, coriander, onion, oats", total_time: 80, user_id: 3, photo:f35)
+#   f35.close
+#   RecipeCategory.create(recipe_id: r35.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r35.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r35.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r35.id, category_id: c16.id)
+#   
+#   f36 = File.open(Rails.root.join('photos/r36.jpeg').to_s)  
+#   r36 = Recipe.create(title: "roasted tofu kale tacos", blog_url: "http://veganyackattack.com/2013/10/04/roasted-tofu-kale-tacos/", description: "Simple and healthy roasted tofu kale tacos, with homemade tortillas!", ingredients: "firm tofu, chili powder, cumin, white onion, bell pepper, kale, avocado", total_time: 60, user_id: 3, photo: f36)
+#   f36.close
+#   RecipeCategory.create(recipe_id: r36.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r36.id, category_id: c18.id)
+#   RecipeCategory.create(recipe_id: r36.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r36.id, category_id: c16.id)
+#   
+#   f37 = File.open(Rails.root.join('photos/r37.jpeg').to_s)  
+#   r37 = Recipe.create(title: "bbq tempeh sandwich", blog_url: "http://www.cookbookaficionado.com/brown-baggin-it-bbq-tempeh-sandwich/", description: "Vegan BBQ Tempeh Sandwich", ingredients: "tempeh, bbq sauce, vegan mayo, chipotle powder, dijon mustard, red onion, arugula", total_time: 40, user_id: 3, photo: f37)
+#   f37.close
+#   RecipeCategory.create(recipe_id: r37.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r37.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r37.id, category_id: c16.id)
+#   
+#   f38 = File.open(Rails.root.join('photos/r38.jpg').to_s)
+#   r38 = Recipe.create(title: "1-hour chocolate & cinnamon-sugar pretzel bites", blog_url: "http://www.averiecooks.com/2014/01/one-hour-chocolate-and-cinnamon-sugar-soft-pretzel-bites.html", description: "1-Hour Chocolate & Cinnamon-Sugar Soft Pretzel Bites - You won't believe how fast & easy it is to DIY! Bread in 1 HOUR!", ingredients: "flour, instant yeast, sugar, cocoa powder, cinnamon", total_time: 60, user_id: 3, photo: f38)
+#   f38.close
+#   RecipeCategory.create(recipe_id: r38.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r38.id, category_id: c18.id)
+#   
+#   f39 = File.open(Rails.root.join('photos/r39.jpg').to_s)
+#   r39 = Recipe.create(title: "spinach & wild mushroom lasagna", blog_url: "http://www.fettlevegan.com/4/post/2014/01/spinach-wild-mushroom-lasagna-with-basil-almond-cream.html", description: "Spinach & Wild Mushroom Lasagna with Basil Almond Cream", ingredients: "almonds, garlic, dijon mustard, nutritional yeast, basil, gluten-free lasagna, pasta sauce, onion, spinach, vegan cheese", total_time: 45, user_id: 3, photo: f39)
+#   f39.close
+#   RecipeCategory.create(recipe_id: r39.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r39.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r39.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r39.id, category_id: c12.id)
+#   
+#   f40 = File.open(Rails.root.join('photos/r40.jpg').to_s) 
+#   r40 = Recipe.create(title: "corned bean hash", blog_url: "http://www.fettlevegan.com/4/post/2013/01/corned-bean-hash.html", description: "Corned BEAN hash", ingredients: "sunflower oil, onion, kidney beans, potatoes, tahini, soy sauce", total_time: 35, user_id: 3, photo: f40)
+#   f40.close
+#   RecipeCategory.create(recipe_id: r40.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r40.id, category_id: c8.id)
+#   
+#   f41 = File.open(Rails.root.join('photos/r41.jpg').to_s)
+#   r41 = Recipe.create(title: "blueberry banana bread", blog_url: "http://noshandnourish.com/content/my-famous-blueberry-banana-bread-made-vegangf", description: "My famous Blueberry Banana Bread -- made vegan and gluten-free.", ingredients: "brown rice flour, baking powder, coconut sugar, almond milk, bananas, flax, blueberries", total_time: 85, user_id: 3, photo: f41)
+#   f41.close
+#   RecipeCategory.create(recipe_id: r41.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r41.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r41.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r41.id, category_id: c18.id)
+#   RecipeCategory.create(recipe_id: r41.id, category_id: c8.id)
+#   
+#   f42 = File.open(Rails.root.join('photos/r42.jpeg').to_s)
+#   r42 = Recipe.create(title: "raw peppermint bark brownies", blog_url: "http://www.oatmealwithafork.com/2013/12/02/raw-peppermint-bark-brownies-vegan-paleo/", description: "Raw Peppermint Bark Brownies...two of my favorite treats in one HEALTHY Christmas-themed bar! Vegan and paleo.", ingredients: "pecans, oats, dates, cocoa powder, peppermint extract, coconut butter, maple syrup", total_time: 20, user_id: 3, photo: f42)
+#   f42.close
+#   RecipeCategory.create(recipe_id: r42.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r42.id, category_id: c18.id)
+#   
+#   f43 = File.open(Rails.root.join('photos/r43.jpeg').to_s)
+#   r43 = Recipe.create(title: "coconut dried fruit bread", blog_url: "http://roxanashomebaking.com/coconut-dried-fruit-bread-recipe/", description: "A simple, yet delicious quick bread packed with dried fruit and bursting with coconut flavor.", ingredients: "flax meal, vegan butter, coconut oil, vegan cream cheese, sugar, flour, baking powder, dried fruits", total_time: 70, user_id: 3, photo: f43)
+#   f43.close
+#   RecipeCategory.create(recipe_id: r43.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r43.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r43.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r43.id, category_id: c18.id)
+#   
+#   f44 = File.open(Rails.root.join('photos/r44.jpeg').to_s)  
+#   r44 = Recipe.create(title: "cranberry orange pancakes", blog_url: "http://veganyackattack.com/2013/11/30/cranberry-orange-pancakes/", description: "Use leftover cranberry sauce, or make your own citrus-y version, to top these fluffy, orange pancakes!", ingredients: "cranberries, orange juice, sugar, non-dairy milk, apple cider vinegar, whole wheat flour, vanilla", total_time: 35, user_id: 3, photo: f44)
+#   f44.close
+#   RecipeCategory.create(recipe_id: r44.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r44.id, category_id: c7.id)
+#   
+#   f45 = File.open(Rails.root.join('photos/r45.jpeg').to_s)
+#   r45 = Recipe.create(title: "roasted vegetable ratatouille", blog_url: "http://www.amuse-your-bouche.com/easy-roasted-vegetable-ratatouille-chickpeas/", description: "Easy roasted vegetable ratatouille with chickpeas (and a secret ingredient that adds heaps of flavour!)", ingredients: "courgette, pepper, mushrooms, onion, chickpeas, tomatoes, bail pesto", total_time: 105, user_id: 3, photo: f45)
+#   f45.close
+#   RecipeCategory.create(recipe_id: r45.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r45.id, category_id: c10.id)
+#   
+#   f46 = File.open(Rails.root.join('photos/r46.jpeg').to_s)  
+#   r46 = Recipe.create(title: "red lentils & carrots coconut soup", blog_url: "http://theflexitarian.co.uk/recipe-items/red-lentils-carrots-coconut-soup/", description: "Red Lentils and Carrots Coconut Soup. Lovely orange glow with soft, smooth & creamy coconut milk.", ingredients: "red lentils, carrots, onion, garlic, curry powder, coriander, vegetable stock, coconut milk, lemon juice", total_time: 35, user_id: 3, photo: f46)
+#   f46.close
+#   RecipeCategory.create(recipe_id: r46.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r46.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r46.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r46.id, category_id: c19.id)
+#   
+#   f47 = File.open(Rails.root.join('photos/r47.jpeg').to_s)  
+#   r47 = Recipe.create(title: "crispy carrot & potato gnocchi", blog_url: "http://veganmiam.com/recipes/crispy-carrot-potato-gnocchi-with-walnut-pesto", description: "Crispy Carrot & Potato Gnocchi with Walnut Pesto, Sautéed Shiitake Mushrooms, Green Peas, Parsley, and Red Chili Flakes.", ingredients: "basil, walnuts, nutritional yeast, lemon juice, gnocchi, shiitake mushrooms, chili flakes, green peas", total_time: 25, user_id: 3, photo: f47)
+#   f47.close
+#   RecipeCategory.create(recipe_id: r47.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r47.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r47.id, category_id: c12.id)
+#   
+#   f48 = File.open(Rails.root.join('photos/r48.jpeg').to_s)  
+#   r48 = Recipe.create(title: "teriyaki tempeh sriracha soba", blog_url: "http://www.veganricha.com/2013/05/teriyaki-tempeh-and-shiitake-mushrooms.html", description: "TERIYAKI TEMPEH AND SHIITAKE MUSHROOMS WITH SRIRACHA SOBA. VEGAN RECIPE. EASILY GLUTENFREE.", ingredients: "soy sauce, sugar, rice white vinegar, tempeh, mushrooms", total_time: 30, user_id: 3, photo: f48)
+#   f48.close
+#   RecipeCategory.create(recipe_id: r48.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r48.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r48.id, category_id: c12.id)
+#   
+#   f49 = File.open(Rails.root.join('photos/r49.jpg').to_s)  
+#   r49 = Recipe.create(title: "creamy vegan spinach jalapeno dip", blog_url: "http://forealslife.com/blog/creamy-vegan-spinach-jalapeno-dip", description: "Creamy Vegan Spinach Jalapeno Dip. Easy, healthy and delicious!", ingredients: "spinach, silken tofu, lemon juice, miso paste, garlic, jalapeno, nutritional yeast", total_time: 50, user_id: 3, photo: f49)
+#   f49.close
+#   RecipeCategory.create(recipe_id: r49.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r49.id, category_id: c18.id)
+#   
+#   f50 = File.open(Rails.root.join('photos/r50.jpg').to_s)
+#   r50 = Recipe.create(title: "hoppin john deep dish pie", blog_url: "http://www.veganricha.com/2013/12/black-eyed-peas-tofu-thyme-ricotta-deep.html", description: "Hoppin john style Black eyed Peas, Tofu Ricotta Deep dish Pizza.", ingredients: "black eyed peas, onion, tomato sauce, firm tofu, thyme, garlic powder", total_time: 50, user_id: 3, photo: f50)
+#   f50.close
+#   RecipeCategory.create(recipe_id: r50.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r50.id, category_id: c10.id)
 end

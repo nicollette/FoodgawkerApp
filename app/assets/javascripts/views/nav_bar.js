@@ -4,11 +4,42 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
   events: {
     "click button#sign-in-btn": "signIn",
     "click button#sign-out-btn": "signOut", 
-    "mouseover #search-nav": "showSearchForm"
+    "mouseover #search-nav": "showSearchForm",
+    "click button#guest-btn": "loginGuest"
   },
   
   initialize: function () {
     this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
+  },
+  
+  loginGuest: function (event) {
+    event.preventDefault();
+    
+    this.model = new FoodgawkerApp.Models.Session();
+    var session = this.model
+    var attrs = { 
+      user: {
+        username: "guest",
+        password: "password"
+      }
+    }
+    this.model.set(attrs);
+
+    this.model.save({}, {
+      success: function (response) {
+        FoodgawkerApp.Data.session = session;
+        delete response.attributes["user"];
+        FoodgawkerApp.flash(
+          ["Welcome " + response.attributes["username"] + "!"], 
+          "success"
+        )
+        
+        setTimeout(function () {
+          FoodgawkerApp.Data.currentUser.set(response.attributes)          
+        }, 1000);
+
+      }
+    });
   },
   
   showSearchForm: function (event) {

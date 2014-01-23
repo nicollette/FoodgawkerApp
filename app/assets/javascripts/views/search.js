@@ -24,8 +24,9 @@ FoodgawkerApp.Views.Search = Backbone.View.extend({
      $(".container").html(resultsView.render().$el);
      this.childViews.push(resultsView);
      this.childViews.concat(resultsView.childViews);
+     // Backbone.history.navigate("#results", { trigger: false })
     } 
-  },
+   },
   
   search: function (event) {
     event.preventDefault();
