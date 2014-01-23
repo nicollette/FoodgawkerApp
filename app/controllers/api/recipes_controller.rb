@@ -7,7 +7,7 @@ class Api::RecipesController < ApplicationController
   
   def create
     if params[:sample]
-      f = File.open(Rails.public_path + '/my_sample_image.jpg')
+      f = File.open(Rails.public_path + '/pancakes.jpg')
       params[:recipe][:photo] = f
     end
     

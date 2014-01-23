@@ -17,10 +17,23 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
   fillForm: function (event) {
    event.preventDefault();
    var that = this;
+   
    $("div#noImg").hide();
-   $("img#preview").attr("src", '/my_sample_image.jpg'); 
-   that.model.set({ sample: true });  
-
+   $("img#preview").attr("src", '/pancakes.jpg'); 
+   that.model.set({ sample: true });
+   
+   $("#photo-group").hide();
+   $("#sample-photo-group").show();
+   this.$("#title").val("cinnamon roll pancakes");  
+this.$("#blog_url").val("http://minimalistbaker.com/vegan-cinnamon-roll-pancakes/");
+  this.$("#description").val("These cinnamon roll pancakes are legit and only require 8 ingredients!")
+  this.$("#ingredients").val("almond milk, vegan butter, whole wheat pastry flour, cinnamon, sugar, salt, yeast");  
+  this.$("#total_time").val("65");
+  
+  this.$(".btn-group input#input-cat1").prop('checked', true);
+  this.$("label#label-cat1").addClass('active');
+  this.$(".btn-group input#input-cat2").prop('checked', true);
+  this.$("label#label-cat2").addClass('active');
   },
   
   encodeFile: function (event) {
