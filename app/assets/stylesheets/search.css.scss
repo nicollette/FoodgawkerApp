@@ -1,3 +1,48 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+form#search-form {
+  width: 700px;
+  position: absolute;
+  left: 15%;
+  background-color: #F5F3F3;
+  padding: 20px;
+}
+
+div.categories {
+  width: 490px;
+}
+
+label.btn.btn-primary.category{
+  width: 145px;
+  height: 40px;
+}
+
+label.category {
+  word-wrap: break-word;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input.keyword {
+  width: 445px;
+  font-size:16px;
+}
+
+label.btn-primary.category {
+  background-color:gray;
+}
+
+.btn.btn-default {
+  font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+label.control-label {
+  font-size:16px;
+}
+
+ form#search-form {
+   display: none;
+ }

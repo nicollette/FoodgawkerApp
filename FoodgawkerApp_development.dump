@@ -1,0 +1,968 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: categories; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE categories (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.categories OWNER TO "Nicollette";
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.categories_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE categories_id_seq OWNED BY categories.id;
+
+
+--
+-- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE delayed_jobs (
+    id integer NOT NULL,
+    priority integer DEFAULT 0 NOT NULL,
+    attempts integer DEFAULT 0 NOT NULL,
+    handler text NOT NULL,
+    last_error text,
+    run_at timestamp without time zone,
+    locked_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    locked_by character varying(255),
+    queue character varying(255),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.delayed_jobs OWNER TO "Nicollette";
+
+--
+-- Name: delayed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE delayed_jobs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.delayed_jobs_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: delayed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE delayed_jobs_id_seq OWNED BY delayed_jobs.id;
+
+
+--
+-- Name: favorites; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE favorites (
+    id integer NOT NULL,
+    recipe_id integer NOT NULL,
+    user_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.favorites OWNER TO "Nicollette";
+
+--
+-- Name: favorites_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE favorites_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.favorites_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: favorites_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE favorites_id_seq OWNED BY favorites.id;
+
+
+--
+-- Name: ingredients; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE ingredients (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.ingredients OWNER TO "Nicollette";
+
+--
+-- Name: ingredients_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE ingredients_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.ingredients_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: ingredients_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE ingredients_id_seq OWNED BY ingredients.id;
+
+
+--
+-- Name: recipe_categories; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE recipe_categories (
+    id integer NOT NULL,
+    recipe_id integer NOT NULL,
+    category_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.recipe_categories OWNER TO "Nicollette";
+
+--
+-- Name: recipe_categories_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE recipe_categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.recipe_categories_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: recipe_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE recipe_categories_id_seq OWNED BY recipe_categories.id;
+
+
+--
+-- Name: recipe_ingredients; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE recipe_ingredients (
+    id integer NOT NULL,
+    recipe_id integer NOT NULL,
+    ingredient_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.recipe_ingredients OWNER TO "Nicollette";
+
+--
+-- Name: recipe_ingredients_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE recipe_ingredients_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.recipe_ingredients_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: recipe_ingredients_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE recipe_ingredients_id_seq OWNED BY recipe_ingredients.id;
+
+
+--
+-- Name: recipes; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE recipes (
+    id integer NOT NULL,
+    title character varying(255) NOT NULL,
+    blog_url character varying(255) NOT NULL,
+    description text,
+    total_time integer,
+    user_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    photo_file_name character varying(255),
+    photo_content_type character varying(255),
+    photo_file_size integer,
+    photo_updated_at timestamp without time zone,
+    ingredients character varying(255),
+    favorites_count integer DEFAULT 0
+);
+
+
+ALTER TABLE public.recipes OWNER TO "Nicollette";
+
+--
+-- Name: recipes_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE recipes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.recipes_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: recipes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE recipes_id_seq OWNED BY recipes.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE schema_migrations (
+    version character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO "Nicollette";
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    username character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password_digest character varying(255) NOT NULL,
+    session_token character varying(255) NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO "Nicollette";
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: Nicollette
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO "Nicollette";
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Nicollette
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY categories ALTER COLUMN id SET DEFAULT nextval('categories_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY delayed_jobs ALTER COLUMN id SET DEFAULT nextval('delayed_jobs_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY favorites ALTER COLUMN id SET DEFAULT nextval('favorites_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY ingredients ALTER COLUMN id SET DEFAULT nextval('ingredients_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY recipe_categories ALTER COLUMN id SET DEFAULT nextval('recipe_categories_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY recipe_ingredients ALTER COLUMN id SET DEFAULT nextval('recipe_ingredients_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY recipes ALTER COLUMN id SET DEFAULT nextval('recipes_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Nicollette
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY categories (id, name, created_at, updated_at) FROM stdin;
+1	Breakfast & Brunch	2014-01-23 00:16:54.00974	2014-01-23 00:16:54.00974
+2	Desserts	2014-01-23 00:16:54.058097	2014-01-23 00:16:54.058097
+3	Dinner	2014-01-23 00:16:54.061505	2014-01-23 00:16:54.061505
+4	Fruit	2014-01-23 00:16:54.064469	2014-01-23 00:16:54.064469
+5	Gluten Free	2014-01-23 00:16:54.068928	2014-01-23 00:16:54.068928
+6	Lunch	2014-01-23 00:16:54.071925	2014-01-23 00:16:54.071925
+7	Pasta & Noodles	2014-01-23 00:16:54.074674	2014-01-23 00:16:54.074674
+8	Rice & Grains	2014-01-23 00:16:54.077274	2014-01-23 00:16:54.077274
+9	Salads	2014-01-23 00:16:54.080015	2014-01-23 00:16:54.080015
+10	Sandwiches & Wraps	2014-01-23 00:16:54.083018	2014-01-23 00:16:54.083018
+11	Snacks	2014-01-23 00:16:54.086228	2014-01-23 00:16:54.086228
+12	Soups	2014-01-23 00:16:54.088905	2014-01-23 00:16:54.088905
+\.
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('categories_id_seq', 12, true);
+
+
+--
+-- Data for Name: delayed_jobs; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY delayed_jobs (id, priority, attempts, handler, last_error, run_at, locked_at, failed_at, locked_by, queue, created_at, updated_at) FROM stdin;
+1	0	0	--- !ruby/object:Delayed::PerformableMailer\nobject: !ruby/class 'RecipeMailer'\nmethod_name: :share_recipe_email\nargs:\n- !ruby/ActiveRecord:User\n  attributes:\n    id: 1\n    username: nico\n    email: nico@gmail.com\n    password_digest: $2a$10$IpXzPjtRO5R/9pmfkOP/ee3tJ/wowQtHJeuCD/g9/Q5TlHfrLd2Rq\n    session_token: L5PBOHkQzXoO8hERVywWRw\n    created_at: 2014-01-23 00:16:54.268741000 Z\n    updated_at: 2014-01-23 01:07:27.892850000 Z\n- http://forealslife.com/blog/creamy-vegan-spinach-jalapeno-dip\n	\N	2014-01-23 01:33:14.733803	\N	\N	\N	\N	2014-01-23 01:33:14.749472	2014-01-23 01:33:14.749472
+\.
+
+
+--
+-- Name: delayed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('delayed_jobs_id_seq', 1, true);
+
+
+--
+-- Data for Name: favorites; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY favorites (id, recipe_id, user_id, created_at, updated_at) FROM stdin;
+1	2	1	2014-01-23 01:19:02.162529	2014-01-23 01:19:02.162529
+2	6	1	2014-01-23 01:19:06.245305	2014-01-23 01:19:06.245305
+3	11	1	2014-01-23 01:19:16.294258	2014-01-23 01:19:16.294258
+5	49	1	2014-01-23 01:34:30.492891	2014-01-23 01:34:30.492891
+6	45	1	2014-01-23 02:37:39.468967	2014-01-23 02:37:39.468967
+\.
+
+
+--
+-- Name: favorites_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('favorites_id_seq', 6, true);
+
+
+--
+-- Data for Name: ingredients; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY ingredients (id, name, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: ingredients_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('ingredients_id_seq', 1, false);
+
+
+--
+-- Data for Name: recipe_categories; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY recipe_categories (id, recipe_id, category_id, created_at, updated_at) FROM stdin;
+1	1	2	2014-01-23 00:16:57.896989	2014-01-23 00:16:57.896989
+2	1	5	2014-01-23 00:16:57.90373	2014-01-23 00:16:57.90373
+3	2	1	2014-01-23 00:16:59.427688	2014-01-23 00:16:59.427688
+4	2	2	2014-01-23 00:16:59.433043	2014-01-23 00:16:59.433043
+5	2	11	2014-01-23 00:16:59.437585	2014-01-23 00:16:59.437585
+6	3	3	2014-01-23 00:17:00.909384	2014-01-23 00:17:00.909384
+7	3	6	2014-01-23 00:17:00.914445	2014-01-23 00:17:00.914445
+8	3	8	2014-01-23 00:17:00.918572	2014-01-23 00:17:00.918572
+9	4	3	2014-01-23 00:17:02.67417	2014-01-23 00:17:02.67417
+10	4	5	2014-01-23 00:17:02.678975	2014-01-23 00:17:02.678975
+11	4	6	2014-01-23 00:17:02.683294	2014-01-23 00:17:02.683294
+12	4	8	2014-01-23 00:17:02.702859	2014-01-23 00:17:02.702859
+13	5	3	2014-01-23 00:17:04.223152	2014-01-23 00:17:04.223152
+14	5	4	2014-01-23 00:17:04.228171	2014-01-23 00:17:04.228171
+15	5	6	2014-01-23 00:17:04.232576	2014-01-23 00:17:04.232576
+16	5	8	2014-01-23 00:17:04.236757	2014-01-23 00:17:04.236757
+17	6	2	2014-01-23 00:17:05.599606	2014-01-23 00:17:05.599606
+18	7	3	2014-01-23 00:17:06.872848	2014-01-23 00:17:06.872848
+19	7	6	2014-01-23 00:17:06.877985	2014-01-23 00:17:06.877985
+20	7	12	2014-01-23 00:17:06.882139	2014-01-23 00:17:06.882139
+21	8	5	2014-01-23 00:17:08.369964	2014-01-23 00:17:08.369964
+22	8	11	2014-01-23 00:17:08.374586	2014-01-23 00:17:08.374586
+23	9	3	2014-01-23 00:17:10.072764	2014-01-23 00:17:10.072764
+24	9	5	2014-01-23 00:17:10.078107	2014-01-23 00:17:10.078107
+25	9	6	2014-01-23 00:17:10.083393	2014-01-23 00:17:10.083393
+26	9	12	2014-01-23 00:17:10.088392	2014-01-23 00:17:10.088392
+27	10	3	2014-01-23 00:17:12.099039	2014-01-23 00:17:12.099039
+28	10	6	2014-01-23 00:17:12.10364	2014-01-23 00:17:12.10364
+29	10	7	2014-01-23 00:17:12.107988	2014-01-23 00:17:12.107988
+30	11	1	2014-01-23 00:17:14.070499	2014-01-23 00:17:14.070499
+31	11	2	2014-01-23 00:17:14.075933	2014-01-23 00:17:14.075933
+32	11	4	2014-01-23 00:17:14.082345	2014-01-23 00:17:14.082345
+33	11	11	2014-01-23 00:17:14.09037	2014-01-23 00:17:14.09037
+34	12	1	2014-01-23 00:17:15.312716	2014-01-23 00:17:15.312716
+35	12	2	2014-01-23 00:17:15.317975	2014-01-23 00:17:15.317975
+36	12	4	2014-01-23 00:17:15.322859	2014-01-23 00:17:15.322859
+37	12	5	2014-01-23 00:17:15.327109	2014-01-23 00:17:15.327109
+38	12	11	2014-01-23 00:17:15.331183	2014-01-23 00:17:15.331183
+39	13	1	2014-01-23 00:17:16.848211	2014-01-23 00:17:16.848211
+40	13	4	2014-01-23 00:17:16.853328	2014-01-23 00:17:16.853328
+41	13	5	2014-01-23 00:17:16.858106	2014-01-23 00:17:16.858106
+42	13	8	2014-01-23 00:17:16.86282	2014-01-23 00:17:16.86282
+43	13	11	2014-01-23 00:17:16.866944	2014-01-23 00:17:16.866944
+44	14	1	2014-01-23 00:17:18.359232	2014-01-23 00:17:18.359232
+45	14	2	2014-01-23 00:17:18.364463	2014-01-23 00:17:18.364463
+46	14	5	2014-01-23 00:17:18.369294	2014-01-23 00:17:18.369294
+47	14	11	2014-01-23 00:17:18.373772	2014-01-23 00:17:18.373772
+48	15	1	2014-01-23 00:17:20.007481	2014-01-23 00:17:20.007481
+49	15	4	2014-01-23 00:17:20.012375	2014-01-23 00:17:20.012375
+50	15	5	2014-01-23 00:17:20.016503	2014-01-23 00:17:20.016503
+51	16	3	2014-01-23 00:17:21.645531	2014-01-23 00:17:21.645531
+52	16	6	2014-01-23 00:17:21.650777	2014-01-23 00:17:21.650777
+53	16	7	2014-01-23 00:17:21.655537	2014-01-23 00:17:21.655537
+54	17	3	2014-01-23 00:17:23.213895	2014-01-23 00:17:23.213895
+55	17	6	2014-01-23 00:17:23.218499	2014-01-23 00:17:23.218499
+56	17	7	2014-01-23 00:17:23.222892	2014-01-23 00:17:23.222892
+57	17	12	2014-01-23 00:17:23.226903	2014-01-23 00:17:23.226903
+58	18	3	2014-01-23 00:17:24.13708	2014-01-23 00:17:24.13708
+59	18	5	2014-01-23 00:17:24.141587	2014-01-23 00:17:24.141587
+60	18	6	2014-01-23 00:17:24.185965	2014-01-23 00:17:24.185965
+61	18	7	2014-01-23 00:17:24.190531	2014-01-23 00:17:24.190531
+62	18	9	2014-01-23 00:17:24.197612	2014-01-23 00:17:24.197612
+63	19	3	2014-01-23 00:17:25.721269	2014-01-23 00:17:25.721269
+64	19	5	2014-01-23 00:17:25.726566	2014-01-23 00:17:25.726566
+65	19	6	2014-01-23 00:17:25.73074	2014-01-23 00:17:25.73074
+66	19	7	2014-01-23 00:17:25.737385	2014-01-23 00:17:25.737385
+67	20	3	2014-01-23 00:17:27.52196	2014-01-23 00:17:27.52196
+68	20	6	2014-01-23 00:17:27.527452	2014-01-23 00:17:27.527452
+69	20	7	2014-01-23 00:17:27.532247	2014-01-23 00:17:27.532247
+70	20	12	2014-01-23 00:17:27.536975	2014-01-23 00:17:27.536975
+71	21	5	2014-01-23 00:17:29.071601	2014-01-23 00:17:29.071601
+72	21	6	2014-01-23 00:17:29.079905	2014-01-23 00:17:29.079905
+73	21	8	2014-01-23 00:17:29.084439	2014-01-23 00:17:29.084439
+74	21	9	2014-01-23 00:17:29.088678	2014-01-23 00:17:29.088678
+75	21	11	2014-01-23 00:17:29.094782	2014-01-23 00:17:29.094782
+76	22	1	2014-01-23 00:17:30.828928	2014-01-23 00:17:30.828928
+77	22	4	2014-01-23 00:17:30.841528	2014-01-23 00:17:30.841528
+78	22	5	2014-01-23 00:17:30.874535	2014-01-23 00:17:30.874535
+79	22	8	2014-01-23 00:17:30.879941	2014-01-23 00:17:30.879941
+80	22	11	2014-01-23 00:17:30.885163	2014-01-23 00:17:30.885163
+81	23	3	2014-01-23 00:17:32.341052	2014-01-23 00:17:32.341052
+82	23	6	2014-01-23 00:17:32.34819	2014-01-23 00:17:32.34819
+83	23	8	2014-01-23 00:17:32.355815	2014-01-23 00:17:32.355815
+84	23	9	2014-01-23 00:17:32.361149	2014-01-23 00:17:32.361149
+85	24	3	2014-01-23 00:17:33.77201	2014-01-23 00:17:33.77201
+86	24	6	2014-01-23 00:17:33.778561	2014-01-23 00:17:33.778561
+87	24	8	2014-01-23 00:17:33.783567	2014-01-23 00:17:33.783567
+88	24	10	2014-01-23 00:17:33.787579	2014-01-23 00:17:33.787579
+89	25	3	2014-01-23 00:17:35.8643	2014-01-23 00:17:35.8643
+90	25	5	2014-01-23 00:17:35.869755	2014-01-23 00:17:35.869755
+91	25	6	2014-01-23 00:17:35.8742	2014-01-23 00:17:35.8742
+92	25	8	2014-01-23 00:17:35.878428	2014-01-23 00:17:35.878428
+93	25	11	2014-01-23 00:17:35.882732	2014-01-23 00:17:35.882732
+94	26	3	2014-01-23 00:17:37.461742	2014-01-23 00:17:37.461742
+95	26	5	2014-01-23 00:17:37.487997	2014-01-23 00:17:37.487997
+96	26	6	2014-01-23 00:17:37.49248	2014-01-23 00:17:37.49248
+97	26	9	2014-01-23 00:17:37.496678	2014-01-23 00:17:37.496678
+98	27	11	2014-01-23 00:17:38.783059	2014-01-23 00:17:38.783059
+99	27	6	2014-01-23 00:17:38.788285	2014-01-23 00:17:38.788285
+100	27	9	2014-01-23 00:17:38.793013	2014-01-23 00:17:38.793013
+101	28	4	2014-01-23 00:17:40.551605	2014-01-23 00:17:40.551605
+102	28	5	2014-01-23 00:17:40.557223	2014-01-23 00:17:40.557223
+103	28	6	2014-01-23 00:17:40.561919	2014-01-23 00:17:40.561919
+104	28	9	2014-01-23 00:17:40.566171	2014-01-23 00:17:40.566171
+105	28	11	2014-01-23 00:17:40.570379	2014-01-23 00:17:40.570379
+106	29	5	2014-01-23 00:17:42.157945	2014-01-23 00:17:42.157945
+107	29	6	2014-01-23 00:17:42.163417	2014-01-23 00:17:42.163417
+108	29	9	2014-01-23 00:17:42.167781	2014-01-23 00:17:42.167781
+109	29	10	2014-01-23 00:17:42.172446	2014-01-23 00:17:42.172446
+110	30	3	2014-01-23 00:17:43.824967	2014-01-23 00:17:43.824967
+111	30	4	2014-01-23 00:17:43.830472	2014-01-23 00:17:43.830472
+112	30	5	2014-01-23 00:17:43.896126	2014-01-23 00:17:43.896126
+113	30	6	2014-01-23 00:17:43.901054	2014-01-23 00:17:43.901054
+114	30	9	2014-01-23 00:17:43.907688	2014-01-23 00:17:43.907688
+115	31	3	2014-01-23 00:17:45.470002	2014-01-23 00:17:45.470002
+116	31	11	2014-01-23 00:17:45.475508	2014-01-23 00:17:45.475508
+117	31	6	2014-01-23 00:17:45.480735	2014-01-23 00:17:45.480735
+118	31	10	2014-01-23 00:17:45.485351	2014-01-23 00:17:45.485351
+119	32	3	2014-01-23 00:17:46.858528	2014-01-23 00:17:46.858528
+120	32	9	2014-01-23 00:17:46.863423	2014-01-23 00:17:46.863423
+121	32	6	2014-01-23 00:17:46.867563	2014-01-23 00:17:46.867563
+122	32	10	2014-01-23 00:17:46.871638	2014-01-23 00:17:46.871638
+123	33	3	2014-01-23 00:17:48.329794	2014-01-23 00:17:48.329794
+124	33	6	2014-01-23 00:17:48.335372	2014-01-23 00:17:48.335372
+125	33	10	2014-01-23 00:17:48.339799	2014-01-23 00:17:48.339799
+126	33	11	2014-01-23 00:17:48.344298	2014-01-23 00:17:48.344298
+127	34	3	2014-01-23 00:17:50.93697	2014-01-23 00:17:50.93697
+128	34	8	2014-01-23 00:17:50.942315	2014-01-23 00:17:50.942315
+129	34	6	2014-01-23 00:17:50.946682	2014-01-23 00:17:50.946682
+130	34	10	2014-01-23 00:17:50.950904	2014-01-23 00:17:50.950904
+131	34	11	2014-01-23 00:17:50.954885	2014-01-23 00:17:50.954885
+132	35	3	2014-01-23 00:17:52.369856	2014-01-23 00:17:52.369856
+133	35	8	2014-01-23 00:17:52.37444	2014-01-23 00:17:52.37444
+134	35	6	2014-01-23 00:17:52.450025	2014-01-23 00:17:52.450025
+135	35	10	2014-01-23 00:17:52.45508	2014-01-23 00:17:52.45508
+136	36	3	2014-01-23 00:17:53.902071	2014-01-23 00:17:53.902071
+137	36	11	2014-01-23 00:17:53.907544	2014-01-23 00:17:53.907544
+138	36	6	2014-01-23 00:17:53.912701	2014-01-23 00:17:53.912701
+139	36	10	2014-01-23 00:17:53.916979	2014-01-23 00:17:53.916979
+140	37	3	2014-01-23 00:17:55.160601	2014-01-23 00:17:55.160601
+141	37	6	2014-01-23 00:17:55.165988	2014-01-23 00:17:55.165988
+142	37	10	2014-01-23 00:17:55.170359	2014-01-23 00:17:55.170359
+143	38	2	2014-01-23 00:17:56.789054	2014-01-23 00:17:56.789054
+144	38	11	2014-01-23 00:17:56.793852	2014-01-23 00:17:56.793852
+145	39	3	2014-01-23 00:17:58.25049	2014-01-23 00:17:58.25049
+146	39	5	2014-01-23 00:17:58.256825	2014-01-23 00:17:58.256825
+147	39	6	2014-01-23 00:17:58.261101	2014-01-23 00:17:58.261101
+148	39	7	2014-01-23 00:17:58.265678	2014-01-23 00:17:58.265678
+149	40	1	2014-01-23 00:18:00.311729	2014-01-23 00:18:00.311729
+150	40	5	2014-01-23 00:18:00.31837	2014-01-23 00:18:00.31837
+151	41	1	2014-01-23 00:18:01.848685	2014-01-23 00:18:01.848685
+152	41	2	2014-01-23 00:18:01.853809	2014-01-23 00:18:01.853809
+153	41	4	2014-01-23 00:18:01.858557	2014-01-23 00:18:01.858557
+154	41	11	2014-01-23 00:18:01.863012	2014-01-23 00:18:01.863012
+155	41	5	2014-01-23 00:18:01.867126	2014-01-23 00:18:01.867126
+156	42	2	2014-01-23 00:18:03.195833	2014-01-23 00:18:03.195833
+157	42	11	2014-01-23 00:18:03.201278	2014-01-23 00:18:03.201278
+158	43	1	2014-01-23 00:18:04.455501	2014-01-23 00:18:04.455501
+159	43	2	2014-01-23 00:18:04.460874	2014-01-23 00:18:04.460874
+160	43	4	2014-01-23 00:18:04.465194	2014-01-23 00:18:04.465194
+161	43	11	2014-01-23 00:18:04.46956	2014-01-23 00:18:04.46956
+162	44	1	2014-01-23 00:18:06.077943	2014-01-23 00:18:06.077943
+163	44	4	2014-01-23 00:18:06.083402	2014-01-23 00:18:06.083402
+164	45	3	2014-01-23 00:18:07.462268	2014-01-23 00:18:07.462268
+165	45	6	2014-01-23 00:18:07.467045	2014-01-23 00:18:07.467045
+166	46	3	2014-01-23 00:18:08.946203	2014-01-23 00:18:08.946203
+167	46	5	2014-01-23 00:18:08.951661	2014-01-23 00:18:08.951661
+168	46	6	2014-01-23 00:18:08.956437	2014-01-23 00:18:08.956437
+169	46	12	2014-01-23 00:18:08.960853	2014-01-23 00:18:08.960853
+170	47	3	2014-01-23 00:18:10.347642	2014-01-23 00:18:10.347642
+171	47	6	2014-01-23 00:18:10.353178	2014-01-23 00:18:10.353178
+172	47	7	2014-01-23 00:18:10.358025	2014-01-23 00:18:10.358025
+173	48	3	2014-01-23 00:18:12.03747	2014-01-23 00:18:12.03747
+174	48	6	2014-01-23 00:18:12.042853	2014-01-23 00:18:12.042853
+175	48	7	2014-01-23 00:18:12.047578	2014-01-23 00:18:12.047578
+176	49	5	2014-01-23 00:18:13.656874	2014-01-23 00:18:13.656874
+177	49	11	2014-01-23 00:18:13.664146	2014-01-23 00:18:13.664146
+178	50	3	2014-01-23 00:18:15.100507	2014-01-23 00:18:15.100507
+179	50	6	2014-01-23 00:18:15.105854	2014-01-23 00:18:15.105854
+180	52	1	2014-01-23 01:27:27.153365	2014-01-23 01:27:27.153365
+\.
+
+
+--
+-- Name: recipe_categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('recipe_categories_id_seq', 180, true);
+
+
+--
+-- Data for Name: recipe_ingredients; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY recipe_ingredients (id, recipe_id, ingredient_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: recipe_ingredients_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('recipe_ingredients_id_seq', 1, false);
+
+
+--
+-- Data for Name: recipes; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY recipes (id, title, blog_url, description, total_time, user_id, created_at, updated_at, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, ingredients, favorites_count) FROM stdin;
+1	joyous carrot cake	http://www.wholeheartedeats.com/2014/01/one-year-some-cake.html	Carrot Cake healthy enough to eat for Breakfast {Gluten Free, Oil/ Refined Sugar Free}	80	1	2014-01-23 00:16:55.516989	2014-01-23 00:16:55.516989	carrot_cake.jpg	image/jpeg	36338	2014-01-23 00:16:54.743021	carrot, sugar, apple sauce, vanilla, oats, baking soda, baking powder, cinnamon, sea salt, nutmeg, clove, pineapple, raisins, walnuts	0
+3	mushroom asparagus risotto	http://www.munatycooking.com/2013/12/mushroom-asparagus-risotto-lunchbox-review.html	Creamy and low in calorie risotto.	35	1	2014-01-23 00:16:59.834283	2014-01-23 00:16:59.834283	m_a_risotto.jpg	image/jpeg	82928	2014-01-23 00:16:59.469787	asparagus, white mushroom, Arborio rice, onion, water, olive oil, salt, black pepper	0
+4	spicy butternut squash with quinoa	http://thehonoursystem.com/2014/01/20/spicy-roasted-butternut-squash-with-quinoa-dried-cranberries/	Spicy Roasted Butternut Squash with Quinoa & Dried Cranberries. Gluten Free! Tastes even better for lunch the next day!	45	1	2014-01-23 00:17:01.436083	2014-01-23 00:17:01.436083	r4.jpg	image/jpeg	145933	2014-01-23 00:17:00.972406	butternut squash, shallots, garlic cloves, olive oil, chili flakes, sea salt, pepper, dried cranberries	0
+5	grilled tofu with citrus salsa	http://golubkakitchen.com/2014/01/ginger-marinated-tofu-with-citrus-salsa.html	Ginger marinated tofu with citrus salsa.	60	1	2014-01-23 00:17:03.150941	2014-01-23 00:17:03.150941	tofu_citrus.jpg	image/jpeg	74477	2014-01-23 00:17:02.73921	grapefruit, orange, avocado, red onion, jalapeno chile, cilantro, sea salt, black pepper, lime, extra-firm tofu, tamari, mirin wine, honey, ginger	0
+7	thai pumpkin and coconut soup	http://circusgardener.com/2013/11/03/thai-pumpkin-and-coconut-soup/	Thai pumpkin and coconut soup - a stunningly good soup, perfect for a cold winter's day.	50	1	2014-01-23 00:17:06.023882	2014-01-23 00:17:06.023882	pump_coco_soup.jpg	image/jpeg	60530	2014-01-23 00:17:05.664455	pumpkin, onion, coconut milk, vegetable stock, extra virgin olive oil, sea salt, red chillies, coriander, cumin, lemongrass stalks, ginger, garlic, red onion, lime	0
+8	spicy wasabi hummus	http://forealslife.com/blog/spicy-wasabi-hummus-oil-and-tahini-free	Spicy Wasabi Hummus with toasted sesame seeds. Perfect for spicy food lovers! (Hint - it's really good on a baked potato!)	10	1	2014-01-23 00:17:07.280974	2014-01-23 00:17:07.280974	wasabi_hum.jpg	image/jpeg	65023	2014-01-23 00:17:06.917732	chickpeas, rice vinegar, wasabi, soy sauce, water, seasame seeds, garlic	0
+9	creamy mushroom & quinoa soup	http://www.queenofquinoa.me/2014/01/mushroom-quinoa-soup/	This soup is made creamy and rich with coconut milk, then filled with meaty mushrooms & protein-rich quinoa.	45	1	2014-01-23 00:17:09.026035	2014-01-23 00:17:09.026035	mq_soup.jpg	image/jpeg	57520	2014-01-23 00:17:08.510829	olive oil, mushrooms, shallots, garlic, quinoa flour, coconut milk, vegetable broth, lemon, salt, pepper, sriracha, chives	0
+10	easy lemon herb spaghetti	http://www.sugardishme.com/2014/01/17/easy-lemon-herb-spaghetti/	Dinner on the table in 20 minutes or less with this simple pasta dish that's loaded with flavor.	20	1	2014-01-23 00:17:10.565715	2014-01-23 00:17:10.565715	r10.jpg	image/jpeg	142193	2014-01-23 00:17:10.152659	whole wheat spaghetti, olive oil, garlic, lemon, panko bread crumbs, basil, oregano, salt, black pepper, red pepper flakes	0
+12	blueberry oat muffins	http://www.oatmealwithafork.com/2014/01/17/sugar-free-guilt-free-blueberry-oat-muffins-gf-vegan/	Sugar-Free, Guilt-Free Blueberry Oat Muffins...made from whole food ingredients like oats and dates, and only 106 calories each!	35	1	2014-01-23 00:17:14.614192	2014-01-23 00:17:14.614192	bo_muffins.jpg	image/jpeg	93066	2014-01-23 00:17:14.178166	dates, applesauce, oil, dairy-free milk, lemon juice, oats, brown rice flour, baking powder, baking soda, sea salt, cinnamon, stevia, blueberries	0
+13	coconut quinoa granola	http://mangiablog.com/2014/01/13/keen-wah/	A bowl of crunchy quinoa granola chock full of coconut, almonds, & goji berries. Perfect for breakfast or snack. Gluten-free.	30	1	2014-01-23 00:17:15.811464	2014-01-23 00:17:15.811464	r13.jpg	image/jpeg	63087	2014-01-23 00:17:15.387548	quinoa, coconut flakes, almonds, cinnamon, salt, maple syrup, extra virgin olive oil, dried goji berries	0
+14	cinnamon raison buns	http://swissmissinthekitchen.blogspot.ch/2014/01/vegan-cinnamon-raisin-buns.html	Vegan cinnamon raisin buns made with coconut oil and spelt flour!	60	1	2014-01-23 00:17:17.284331	2014-01-23 00:17:17.284331	crbuns.jpg	image/jpeg	77549	2014-01-23 00:17:16.923794	spelt flour, salt, maple syrup, stevia, vanilla, yeast, almond milk, coconut oil, raisins, cinnamon	0
+15	banana pecan pancakes	http://thefitchen.com/2013/12/19/banana-pecan-pancakes/	Healthy, easy pancakes – done in under 30 minutes! Hearty, fluffy, nutty, and caramel-y. Plus, they’re vegan and gluten-free!	30	1	2014-01-23 00:17:18.869831	2014-01-23 00:17:18.869831	r15.jpg	image/jpeg	55889	2014-01-23 00:17:18.457602	oat flour, pecans, coconut milk, baking powder, vanilla, ground flax, sea salt, maple syrup, coconut oil	0
+16	soyrizo kelp noodle casserole	http://www.fellowshipofthevegetable.com/soyrizo-kelp-noodle-casserole/	Kelp noodles baked with spicy soyrizo, sautéed veggies and tomato sauce.	55	2	2014-01-23 00:17:20.404719	2014-01-23 00:17:20.404719	r16.jpg	image/jpeg	83949	2014-01-23 00:17:20.04365	kelp noodles, olive oil, onion, celery, soyrizo, tomato sauce, daiya cheese, parsley	0
+17	easy white bean and tomato soup	http://makingthymeforhealth.com/2013/12/10/easy-white-bean-tomato-soup-vegan/	Easy White Bean & Tomato Soup- a vegan soup that's ready in thirty minutes.	45	2	2014-01-23 00:17:22.063399	2014-01-23 00:17:22.063399	r17.jpg	image/jpeg	73089	2014-01-23 00:17:21.692746	white beans, marinara sauce, vegetable broth, olive oil, swiss chard, onion, carrots, garlic, oregano, salt, pepper, whole wheat elbows	0
+18	raw thai noodle salad	http://www.floridacoastalcooking.com/2013/12/raw-thai-noodle-salad.html	Raw Thai Noodle Salad ~ Easy, Gluten Free and Vegan	15	2	2014-01-23 00:17:23.531785	2014-01-23 00:17:23.531785	r18.jpeg	image/jpeg	51358	2014-01-23 00:17:23.253648	kelp noodles, broccoli, green onion, red cabbage, carrots, seasame seeds, cilantro, nut butter, ume plum vinegar, agave, chili sauce	0
+19	vegan cheesy baked pesto mac	http://boldvegan.com/cheesy-baked-pesto-mac-with-walnut-parm-gluten-free-soy-free/	Vegan Cheesy Baked Pesto Mac with Walnut Parmesan (Gluten Free and Soy Free).	50	2	2014-01-23 00:17:24.538063	2014-01-23 00:17:24.538063	r19.jpeg	image/jpeg	69074	2014-01-23 00:17:24.234036	potato, carrot, onion, water, walnuts, nutritional yeast, basil, garlic, olive oil, turmeric powder, sea salt, pepper, quinoa pasta, walnuts	0
+20	spicy miso udon noodle soup	http://blog.seasonwithspice.com/2013/10/miso-udon-noodle-soup-recipe.html	Miso Udon Noodle Soup with Spicy Korean Chili Dressing	20	2	2014-01-23 00:17:26.201791	2014-01-23 00:17:26.201791	r20.jpeg	image/jpeg	139363	2014-01-23 00:17:25.828247	udon noodles, water, shiitake mushrooms, silken tofu, miso paste, spinach, nori, scallions	0
+6	pistachio ice cream	http://nutritionstripped.com/pistachio-ice-cream/#.Ut4RKmTTky5	A delicious, thick, and creamy non-dairy ice cream with pistachios!	15	1	2014-01-23 00:17:04.727108	2014-01-23 00:17:04.727108	pistachio_ic.jpg	image/jpeg	47064	2014-01-23 00:17:04.310579	bananas, almond milk, pistachio, vanilla, spirulina, cinnamon	1
+11	baked donuts	http://www.myitaliansmorgasbord.com/2014/01/19/egg-and-dairy-free-baked-yeasted-doughnuts-with-strawberry-icing/	Egg and Dairy-Free Baked Yeasted Doughnuts with Strawberry Icing	60	1	2014-01-23 00:17:12.605275	2014-01-23 00:17:12.605275	donuts.jpg	image/jpeg	104931	2014-01-23 00:17:12.142081	bread flour, water, soy flour, sea salt, sugar, yeast, strawberries	1
+21	quinoa stuffed avocados	http://theleancleaneatingmachine.com/2014/01/17/quinoa-stuffed-avocados/	Healthy and refreshing quinoa stuffed avocados make a great appetizer or light meal.	45	2	2014-01-23 00:17:27.969364	2014-01-23 00:17:27.969364	r21.jpg	image/jpeg	83455	2014-01-23 00:17:27.600759	quinoa, vegetable broth, avocado, lime, cilantro, sriracha	0
+22	goji banana mango oats	http://nutritionstripped.com/goji-banana-mango-oats/#.UtftCGRDvHs	A gluten free breakfast porridge with oatmeals, bananas, goji berries, and mango.	20	2	2014-01-23 00:17:29.702703	2014-01-23 00:17:29.702703	r22.jpg	image/jpeg	60388	2014-01-23 00:17:29.182143	gluten-free oats, almond milk, banana, mango, goji berries, cinnamon, vanilla	0
+23	curried bulgur wheat salad	http://www.greatbritishchefs.com/community/curried-bulgur-wheat-salad-recipe	Curried Bulgur Wheat Salad	20	2	2014-01-23 00:17:31.377754	2014-01-23 00:17:31.377754	r23.jpg	image/jpeg	45569	2014-01-23 00:17:30.922419	bulgur wheat, olive oil, agave nectar, curry powder, salt, black pepper, carrot, green pepper, spring onions, sweetcorn, pine nuts, coriander	0
+24	vegan naked burrito	http://vegieproject.com/vegan-naked-burrito/	Vegan naked burrito with brown rice, black beans, pico de gallo salsa, guacamole and charred corn.	30	2	2014-01-23 00:17:32.791353	2014-01-23 00:17:32.791353	r24.jpg	image/jpeg	53824	2014-01-23 00:17:32.393137	brown rice, black beans, onion, garlic, cumin, paprika, corn, olive oil, tomatoes, lime, avocado	0
+25	winter quinoa croquettes	http://chelrabbit.com/2013/12/17/quinoa-croquettes/	Quinoa Croquettes with pecans and cranberries. With a Satsuma Mandarin Sauce.	25	2	2014-01-23 00:17:34.237126	2014-01-23 00:17:34.237126	r25.jpg	image/jpeg	98642	2014-01-23 00:17:33.845092	quinoa, scallion, garlic, salt, lemon, buckwheat flour, oat flour, tapioca flour, pecans, cranberries, satsuma mandarin juice, soy sauce, maple syrup, ginger	0
+26	deconstructed falafel bowl	http://veganyackattack.com/2014/01/18/deconstructed-falafel-bowl/	Healthy, easy and delicious bowl of Falafel goodness, without all of the work!	50	2	2014-01-23 00:17:36.274977	2014-01-23 00:17:36.274977	r26.jpg	image/jpeg	79178	2014-01-23 00:17:35.913298	chickpeas, lettuce, cucumber, tomatoes, hummus, tahini, garlic, cumin, coriander, salt, pepper, cayeene, lemon	0
+27	chickpea salad stuffed avocados	http://coconutandberries.com/2014/01/13/chickpea-salad-stuffed-avocados/	A fun way to serve this delicious and nutritious food. Chickpea Salad Stuffed Avocados.	15	2	2014-01-23 00:17:37.889891	2014-01-23 00:17:37.889891	r27.jpg	image/jpeg	54167	2014-01-23 00:17:37.524978	chickpeas, carrot, garlic, olive oil, lime, tamari, cayenne pepper, avocados	0
+28	roasted sweet potato salad	http://joanne-eatswellwithothers.com/2013/12/roasted-sweet-potato-salad-with-cranberry-chipotle-dressing.html	Add a little bit of spice to your table with this sweet and smoky roasted sweet potato salad with cranberry-chipotle dressing.	35	2	2014-01-23 00:17:39.214603	2014-01-23 00:17:39.214603	r28.jpg	image/jpeg	64509	2014-01-23 00:17:38.849605	sweet potatoes, olive oil, salt, black pepper, cranberries, honey, chipotle chile, pepitas, scallions, cilantro	0
+29	chickpea and avocado salad sandwich	http://jordansfamilyoffoodies.com/2014/01/06/chickpea-and-avocado-salad-sandwich/	Pan roasted chickpeas with smoked paprika, cilantro, crunchy red onion, and smooth creamy avocado make up this delicious sandwich.	35	2	2014-01-23 00:17:41.041609	2014-01-23 00:17:41.041609	r29.jpg	image/jpeg	62969	2014-01-23 00:17:40.613751	garbanzo beans, avocado, red onion, cilantro, lime, paprika, spinach, bread, dijon mustard	0
+30	autumn kale salad	http://blog.vegancuts.com/recipes/autumn-kale-salad-recipe/	A sweet, Autumn Kale Salad with roasted sweet potatoes, and a citrus vinaigrette.	35	2	2014-01-23 00:17:42.5102	2014-01-23 00:17:42.5102	r30.jpeg	image/jpeg	91606	2014-01-23 00:17:42.228367	sweet potatoes, orange juice, olive oil, agave nectar, apple cider vinegar, dijon mustard, ginger, cinnamon, kale, cranberries	0
+31	tempeh teriyaki summer rolls	http://www.riceandcoconut.com/2013/07/tempeh-teriyaki-summer-rolls.html	Tempeh teriyaki summer rolls	15	3	2014-01-23 00:17:44.370485	2014-01-23 00:17:44.370485	r31.jpg	image/jpeg	62726	2014-01-23 00:17:43.938582	vietnamese spring roll wrappers, tempeh, vegetable oil, teriyaki sauce, carrot, cucumber, lettuce, basil, cilantro	0
+32	cranberry walnut chickpea salad sandwich	http://thesimpleveganista.blogspot.com/2013/11/cranberry-walnut-chickpea-salad-sandwich.html	Cranberry Walnut Chickpea Salad Sandwich...Healthy, easy and delicious!	20	3	2014-01-23 00:17:45.910866	2014-01-23 00:17:45.910866	r32.jpg	image/jpeg	74103	2014-01-23 00:17:45.550664	chickpeas, celery, dried cranberries, walnuts, scallions, tahini	0
+33	portobello walnut tacos	http://www.fellowshipofthevegetable.com/portobello-walnut-tacos-wcilantro-lime-rice/	Portobello Mushroom & Walnut Tacos w/Cilantro Lime Rice	40	3	2014-01-23 00:17:47.284748	2014-01-23 00:17:47.284748	r33.jpg	image/jpeg	53084	2014-01-23 00:17:46.931247	rice, lime, cilantro, veggie broth, onion, cumin, walnuts, portobello mushrooms, avocado	0
+34	lentil sloppy joes	http://makingthymeforhealth.com/2013/12/02/lentil-sloppy-joes-vegan-and-gluten-free/	Vegan Lentil Sloppy Joes: an easy meatless meal that will leave you fighting for the leftovers.	75	3	2014-01-23 00:17:48.676063	2014-01-23 00:17:48.676063	r34.jpeg	image/jpeg	74046	2014-01-23 00:17:48.397107	lentils, onion, carrots, bell pepper, paprika, tomatoes, mustard powder	0
+35	spicy black bean burger	http://whatthehelldoveganseat.com/black-bean-sweet-potato-and-quinoa-burger/	Delicious vegan burger made with black beans, sweet potato, quinoa, ginger, herbs and spices	80	3	2014-01-23 00:17:51.290869	2014-01-23 00:17:51.290869	r35.jpeg	image/jpeg	59016	2014-01-23 00:17:51.020106	sweet potatoes, quinoa, black beans, coriander, onion, oats	0
+36	roasted tofu kale tacos	http://veganyackattack.com/2013/10/04/roasted-tofu-kale-tacos/	Simple and healthy roasted tofu kale tacos, with homemade tortillas!	60	3	2014-01-23 00:17:52.788115	2014-01-23 00:17:52.788115	r36.jpeg	image/jpeg	84840	2014-01-23 00:17:52.502858	firm tofu, chili powder, cumin, white onion, bell pepper, kale, avocado	0
+37	bbq tempeh sandwich	http://www.cookbookaficionado.com/brown-baggin-it-bbq-tempeh-sandwich/	Vegan BBQ Tempeh Sandwich	40	3	2014-01-23 00:17:54.238672	2014-01-23 00:17:54.238672	r37.jpeg	image/jpeg	33564	2014-01-23 00:17:53.964068	tempeh, bbq sauce, vegan mayo, chipotle powder, dijon mustard, red onion, arugula	0
+38	1-hour chocolate & cinnamon-sugar pretzel bites	http://www.averiecooks.com/2014/01/one-hour-chocolate-and-cinnamon-sugar-soft-pretzel-bites.html	1-Hour Chocolate & Cinnamon-Sugar Soft Pretzel Bites - You won't believe how fast & easy it is to DIY! Bread in 1 HOUR!	60	3	2014-01-23 00:17:55.677876	2014-01-23 00:17:55.677876	r38.jpg	image/jpeg	61113	2014-01-23 00:17:55.23461	flour, instant yeast, sugar, cocoa powder, cinnamon	0
+39	spinach & wild mushroom lasagna	http://www.fettlevegan.com/4/post/2014/01/spinach-wild-mushroom-lasagna-with-basil-almond-cream.html	Spinach & Wild Mushroom Lasagna with Basil Almond Cream	45	3	2014-01-23 00:17:57.233265	2014-01-23 00:17:57.233265	r39.jpg	image/jpeg	64753	2014-01-23 00:17:56.872428	almonds, garlic, dijon mustard, nutritional yeast, basil, gluten-free lasagna, pasta sauce, onion, spinach, vegan cheese	0
+40	corned bean hash	http://www.fettlevegan.com/4/post/2013/01/corned-bean-hash.html	Corned BEAN hash	35	3	2014-01-23 00:17:58.826453	2014-01-23 00:17:58.826453	r40.jpg	image/jpeg	133223	2014-01-23 00:17:58.325575	sunflower oil, onion, kidney beans, potatoes, tahini, soy sauce	0
+41	blueberry banana bread	http://noshandnourish.com/content/my-famous-blueberry-banana-bread-made-vegangf	My famous Blueberry Banana Bread -- made vegan and gluten-free.	85	3	2014-01-23 00:18:00.724937	2014-01-23 00:18:00.724937	r41.jpg	image/jpeg	76324	2014-01-23 00:18:00.366343	brown rice flour, baking powder, coconut sugar, almond milk, bananas, flax, blueberries	0
+42	raw peppermint bark brownies	http://www.oatmealwithafork.com/2013/12/02/raw-peppermint-bark-brownies-vegan-paleo/	Raw Peppermint Bark Brownies...two of my favorite treats in one HEALTHY Christmas-themed bar! Vegan and paleo.	20	3	2014-01-23 00:18:02.230298	2014-01-23 00:18:02.230298	r42.jpeg	image/jpeg	65156	2014-01-23 00:18:01.916106	pecans, oats, dates, cocoa powder, peppermint extract, coconut butter, maple syrup	0
+43	coconut dried fruit bread	http://roxanashomebaking.com/coconut-dried-fruit-bread-recipe/	A simple, yet delicious quick bread packed with dried fruit and bursting with coconut flavor.	70	3	2014-01-23 00:18:03.512482	2014-01-23 00:18:03.512482	r43.jpeg	image/jpeg	73644	2014-01-23 00:18:03.23139	flax meal, vegan butter, coconut oil, vegan cream cheese, sugar, flour, baking powder, dried fruits	0
+44	cranberry orange pancakes	http://veganyackattack.com/2013/11/30/cranberry-orange-pancakes/	Use leftover cranberry sauce, or make your own citrus-y version, to top these fluffy, orange pancakes!	35	3	2014-01-23 00:18:04.82479	2014-01-23 00:18:04.82479	r44.jpeg	image/jpeg	76260	2014-01-23 00:18:04.530542	cranberries, orange juice, sugar, non-dairy milk, apple cider vinegar, whole wheat flour, vanilla	0
+46	red lentils & carrots coconut soup	http://theflexitarian.co.uk/recipe-items/red-lentils-carrots-coconut-soup/	Red Lentils and Carrots Coconut Soup. Lovely orange glow with soft, smooth & creamy coconut milk.	35	3	2014-01-23 00:18:07.820887	2014-01-23 00:18:07.820887	r46.jpeg	image/jpeg	64281	2014-01-23 00:18:07.539685	red lentils, carrots, onion, garlic, curry powder, coriander, vegetable stock, coconut milk, lemon juice	0
+47	crispy carrot & potato gnocchi	http://veganmiam.com/recipes/crispy-carrot-potato-gnocchi-with-walnut-pesto	Crispy Carrot & Potato Gnocchi with Walnut Pesto, Sautéed Shiitake Mushrooms, Green Peas, Parsley, and Red Chili Flakes.	25	3	2014-01-23 00:18:09.375252	2014-01-23 00:18:09.375252	r47.jpeg	image/jpeg	52688	2014-01-23 00:18:08.993287	basil, walnuts, nutritional yeast, lemon juice, gnocchi, shiitake mushrooms, chili flakes, green peas	0
+48	teriyaki tempeh sriracha soba	http://www.veganricha.com/2013/05/teriyaki-tempeh-and-shiitake-mushrooms.html	TERIYAKI TEMPEH AND SHIITAKE MUSHROOMS WITH SRIRACHA SOBA. VEGAN RECIPE. EASILY GLUTENFREE.	30	3	2014-01-23 00:18:10.683561	2014-01-23 00:18:10.683561	r48.jpeg	image/jpeg	67566	2014-01-23 00:18:10.398984	soy sauce, sugar, rice white vinegar, tempeh, mushrooms	0
+50	hoppin john deep dish pie	http://www.veganricha.com/2013/12/black-eyed-peas-tofu-thyme-ricotta-deep.html	Hoppin john style Black eyed Peas, Tofu Ricotta Deep dish Pizza.	50	3	2014-01-23 00:18:14.065379	2014-01-23 00:18:14.065379	r50.jpg	image/jpeg	61664	2014-01-23 00:18:13.701768	black eyed peas, onion, tomato sauce, firm tofu, thyme, garlic powder	0
+2	pecan-hemp balls	http://cravinggreens.blogspot.ca/2014/01/pecan-hemp-balls.html	Treat yourself to these quick and healthy pecan-hemp balls (no-bake). A delicious boost of healthy fats and dietary fiber.	20	1	2014-01-23 00:16:58.409912	2014-01-23 00:16:58.409912	hemp_balls.jpg	image/jpeg	65887	2014-01-23 00:16:57.935284	pecans, wheat germ, flaxseeds, hemp seeds, cinnamon, nutmeg, salt, apple butter, flaxseed oil	1
+49	creamy vegan spinach jalapeno dip	http://forealslife.com/blog/creamy-vegan-spinach-jalapeno-dip	Creamy Vegan Spinach Jalapeno Dip. Easy, healthy and delicious!	50	3	2014-01-23 00:18:12.446245	2014-01-23 00:18:12.446245	r49.jpg	image/jpeg	50313	2014-01-23 00:18:12.093232	spinach, silken tofu, lemon juice, miso paste, garlic, jalapeno, nutritional yeast	1
+45	roasted vegetable ratatouille	http://www.amuse-your-bouche.com/easy-roasted-vegetable-ratatouille-chickpeas/	Easy roasted vegetable ratatouille with chickpeas (and a secret ingredient that adds heaps of flavour!)	105	3	2014-01-23 00:18:06.489069	2014-01-23 00:18:06.489069	r45.jpeg	image/jpeg	49427	2014-01-23 00:18:06.14594	courgette, pepper, mushrooms, onion, chickpeas, tomatoes, bail pesto	1
+\.
+
+
+--
+-- Name: recipes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('recipes_id_seq', 52, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY schema_migrations (version) FROM stdin;
+20140115173204
+20140115185223
+20140115200718
+20140116193305
+20140116193526
+20140116230903
+20140116231112
+20140117003501
+20140117173657
+20140121233321
+20140122170822
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: Nicollette
+--
+
+COPY users (id, username, email, password_digest, session_token, created_at, updated_at) FROM stdin;
+2	guest1	guest1@gmail.com	$2a$10$2dYEJjKMf0QuCsV40VuusOwG6GpoBSrNBO0ydfOdODHJW8FnN/FeC	DZLUJFQ-UkXTtxHPvH51PA	2014-01-23 00:16:54.385158	2014-01-23 00:16:54.385158
+3	guest2	guest2@gmail.com	$2a$10$Oy6LT0OZfhuOOkuH2Dl0JOY4KorO8xTO/LnwLIc4UdHqKwG1zowu2	kNBONuq4GghsrW6EXr4LwQ	2014-01-23 00:16:54.480414	2014-01-23 00:16:54.480414
+1	nico	nico@gmail.com	$2a$10$IpXzPjtRO5R/9pmfkOP/ee3tJ/wowQtHJeuCD/g9/Q5TlHfrLd2Rq	L5PBOHkQzXoO8hERVywWRw	2014-01-23 00:16:54.268741	2014-01-23 01:07:27.89285
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Nicollette
+--
+
+SELECT pg_catalog.setval('users_id_seq', 3, true);
+
+
+--
+-- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY categories
+    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY delayed_jobs
+    ADD CONSTRAINT delayed_jobs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: favorites_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY favorites
+    ADD CONSTRAINT favorites_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ingredients_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY ingredients
+    ADD CONSTRAINT ingredients_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: recipe_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY recipe_categories
+    ADD CONSTRAINT recipe_categories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: recipe_ingredients_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY recipe_ingredients
+    ADD CONSTRAINT recipe_ingredients_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: recipes_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY recipes
+    ADD CONSTRAINT recipes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX delayed_jobs_priority ON delayed_jobs USING btree (priority, run_at);
+
+
+--
+-- Name: index_categories_on_name; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_categories_on_name ON categories USING btree (name);
+
+
+--
+-- Name: index_favorites_on_user_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_favorites_on_user_id ON favorites USING btree (user_id);
+
+
+--
+-- Name: index_ingredients_on_name; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_ingredients_on_name ON ingredients USING btree (name);
+
+
+--
+-- Name: index_recipe_categories_on_category_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipe_categories_on_category_id ON recipe_categories USING btree (category_id);
+
+
+--
+-- Name: index_recipe_categories_on_recipe_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipe_categories_on_recipe_id ON recipe_categories USING btree (recipe_id);
+
+
+--
+-- Name: index_recipe_ingredients_on_ingredient_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipe_ingredients_on_ingredient_id ON recipe_ingredients USING btree (ingredient_id);
+
+
+--
+-- Name: index_recipe_ingredients_on_recipe_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipe_ingredients_on_recipe_id ON recipe_ingredients USING btree (recipe_id);
+
+
+--
+-- Name: index_recipes_on_title; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipes_on_title ON recipes USING btree (title);
+
+
+--
+-- Name: index_recipes_on_user_id; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_recipes_on_user_id ON recipes USING btree (user_id);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_users_on_email ON users USING btree (email);
+
+
+--
+-- Name: index_users_on_session_token; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_users_on_session_token ON users USING btree (session_token);
+
+
+--
+-- Name: index_users_on_username; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE INDEX index_users_on_username ON users USING btree (username);
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: Nicollette; Tablespace: 
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: Nicollette
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM "Nicollette";
+GRANT ALL ON SCHEMA public TO "Nicollette";
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
