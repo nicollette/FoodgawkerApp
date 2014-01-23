@@ -3,11 +3,18 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   
   events: {
     "click button#favorite": "favorite",
-    "click button#unfavorite": "unfavorite"
+    "click button#unfavorite": "unfavorite",
+    "click button#prev-btn": "previousRecipe"
   },
   
   initialize: function () {
     this.listenTo(this.model, "all", this.render)
+  },
+  
+  previousRecipe: function () {
+    var currIdx = _.indexOf(FoodgawkerApp.Data.recipes.pluck("id"), this.model.id)
+    var prevRecipeId = FoodgawkerApp.Data.recipes[currIdx - 1].id
+    Backbone.history.navigate("recpies/"+ this.model.id - 1, { trigger: true })
   },
   
   render: function () {

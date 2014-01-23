@@ -13,6 +13,12 @@
  */
  @import "bootstrap";
  
+.col-xs-1 {
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  display: inline-block
+}
 .categories {
   word-wrap: break-word;
 }
@@ -66,9 +72,10 @@
   word-wrap: break-word;
   color: white;
   position: absolute;
-  left: 18%;
-  top: 40%;
-   z-index: 1px;
+  left: 11%;
+  top: 41%;
+  width: 225px;
+  z-index: 1px;
 
 } 
  .modal-content {

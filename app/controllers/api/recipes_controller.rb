@@ -22,4 +22,12 @@ class Api::RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id]);
     render :show
   end
+  
+  def prevRecipe
+    
+  end
+  
+  def nextRecipe
+    
+  end
 end

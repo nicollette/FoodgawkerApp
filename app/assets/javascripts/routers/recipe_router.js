@@ -80,8 +80,6 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   detail: function (id) {
-    // need to fetch recipe
-    // var recipe = FoodgawkerApp.Data.recipes.get(id);
     var router = this;
     var recipe = new FoodgawkerApp.Models.Recipe({id: id})
     recipe.fetch({
