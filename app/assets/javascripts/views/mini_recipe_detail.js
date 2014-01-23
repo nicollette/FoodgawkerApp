@@ -9,7 +9,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   events: {
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite",
-    "click img": "toggleModal", 
+    "click div.hover-header": "toggleModal", 
     "mouseenter img.detail": "showTitle", 
     "click button#share": "emailRecipe"
   },

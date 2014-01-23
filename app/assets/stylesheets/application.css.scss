@@ -40,14 +40,11 @@
  p {
    font-family: "Helvetica"
  }
+ 
  a {
    cursor: pointer;
  }
- 
- img {
-   cursor: pointer;
- }
- 
+  
  form#search-form {
    display: none;
  }
@@ -58,15 +55,14 @@
    width: 275px;
    word-wrap: break-word;
    color: white;
- }
- 
- .hover-header{
+   cursor: pointer;
    display: none;
    position: absolute;
-   left: 15px;
+   left: 14px;
    top: 0;
    z-index: 1px;
  }
+
 
 .hover-header-text {
   word-wrap: break-word;
