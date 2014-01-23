@@ -2,23 +2,23 @@
 #   E# ncoding.default_external = Encoding::UTF_8
 #   Encoding.default_internal = Encoding::UTF_8
 ActiveRecord::Base.transaction do
-  c1 = Category.create(:name => "Breakfast & Brunch")
-  c5 = Category.create(:name => "Desserts")
-  c6 = Category.create(:name => "Dinner")
-  c7 = Category.create(:name => "Fruit")
-  c8 = Category.create(:name => "Gluten Free")
-  c10 = Category.create(:name => "Lunch")
-  c12 = Category.create(:name => "Pasta & Noodles")
-  c14 = Category.create(:name => "Rice & Grains")
-  c15 = Category.create(:name => "Salads")
-  c16 = Category.create(:name => "Sandwiches & Wraps")
-  c18 = Category.create(:name => "Snacks")
-  c19 = Category.create(:name => "Soups")
-  
-  u1 = User.create(:username => "nico", :email => "nico@gmail.com", :password => "password")
-  u2 = User.create(:username => "guest1", :email => "guest1@gmail.com", :password => "password")
-  u3 = User.create(:username => "guest2", :email => "guest2@gmail.com", :password => "password")
-    # 
+  # c1 = Category.create(:name => "Breakfast & Brunch")
+  # c5 = Category.create(:name => "Desserts")
+  # c6 = Category.create(:name => "Dinner")
+  # c7 = Category.create(:name => "Fruit")
+  # c8 = Category.create(:name => "Gluten Free")
+  # c10 = Category.create(:name => "Lunch")
+  # c12 = Category.create(:name => "Pasta & Noodles")
+  # c14 = Category.create(:name => "Rice & Grains")
+  # c15 = Category.create(:name => "Salads")
+  # c16 = Category.create(:name => "Sandwiches & Wraps")
+  # c18 = Category.create(:name => "Snacks")
+  # c19 = Category.create(:name => "Soups")
+  # 
+  # u1 = User.create(:username => "nico", :email => "nico@gmail.com", :password => "password")
+  # u2 = User.create(:username => "guest1", :email => "guest1@gmail.com", :password => "password")
+  # u3 = User.create(:username => "guest2", :email => "guest2@gmail.com", :password => "password")
+  #   
   # f1 = File.open(Rails.root.join('photos/carrot_cake.jpg').to_s)
   # r1 = Recipe.create(title: "joyous carrot cake", blog_url: "http://www.wholeheartedeats.com/2014/01/one-year-some-cake.html", description: "Carrot Cake healthy enough to eat for Breakfast {Gluten Free, Oil/ Refined Sugar Free}", ingredients: "carrot, sugar, apple sauce, vanilla, oats, baking soda, baking powder, cinnamon, sea salt, nutmeg, clove, pineapple, raisins, walnuts", total_time: 80, user_id: 1, photo: f1)
   # f1.close
