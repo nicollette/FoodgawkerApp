@@ -22,6 +22,8 @@ FoodgawkerApp.Views.RecipeForm = Backbone.View.extend({
     var reader = new FileReader();
     reader.onload = function(e) {
         console.log(e.target.result);
+        $("div#noImg").hide();
+        $("img#preview").attr("src", e.target.result);
         that.model.set({ photo: e.target.result });
     };
      

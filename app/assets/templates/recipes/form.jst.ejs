@@ -1,55 +1,64 @@
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title</label>
-        <div class="col-sm-10">
-          <input class="form-control" type="text" name="title" id="title">
-        </div>
-  </div>
-
-  <div class="form-group">
-    <label for="blog_url" class="col-sm-2 control-label">Blog Url</label>         <div class="col-sm-10">
-          <input class="form-control" type="text" name="blog_url" id="blog_url">
-        </div>
-  </div>  
-
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Description</label>
-        <div class="col-sm-10">
-          <input class="form-control" type="text" name="description" id="description">
-        </div>
-  </div>
-
-  <div class="form-group">
-    <label for="total_time" class="col-sm-2 control-label">Total Time</label>
-        <div class="col-sm-10">
-          <input class="form-control" type="number" name="total_time" id="total_time">
-        </div>
-  </div>
-
-  <div class="form-group">
-    <label for="photo" class="col-sm-2 control-label">Photo</label>
-    <div class="col-sm-10">
-      <input type="file" id="photo">
-    </div>
-  </div>
-
-    <label class="col-sm-2 control-label">Categories</label>
-    <div class="form-group col-sm-offset-2 col-sm-5">
-      <div class="btn-group" data-toggle="buttons">
-        <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
-        <label class="btn btn-primary categeories">
-          <input type="checkbox" 
-                 id="<%= category.name %>" 
-                 name="recipe_categories[<%= category.id %>][category_id]"
-                 value="<%= category.id %>"><%= category.name %>
-        </label>
-        <% })%>
+<div class="row">
+  <div class="col-md-8">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" name="title" id="title">
+            </div>
       </div>
-    </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" id="recipe-form-button" class="btn btn-default">Add Recipe</button> 
-    </div>
+      <div class="form-group">
+        <label for="blog_url" class="col-sm-2 control-label">Blog Url</label>         <div class="col-sm-10">
+              <input class="form-control" type="text" name="blog_url" id="blog_url">
+            </div>
+      </div>  
+
+      <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" name="description" id="description">
+            </div>
+      </div>
+
+      <div class="form-group">
+        <label for="total_time" class="col-sm-2 control-label">Total Time</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="number" name="total_time" id="total_time">
+            </div>
+      </div>
+
+      <div class="form-group">
+        <label for="photo" class="col-sm-2 control-label">Photo</label>
+        <div class="col-sm-10">
+          <input type="file" id="photo">
+        </div>
+      </div>
+
+        <label class="col-sm-2 control-label">Categories</label>
+        <div class="form-group col-sm-offset-2 col-sm-5">
+          <div class="btn-group" data-toggle="buttons">
+            <% FoodgawkerApp.Data.categories.forEach(function(category) { %>
+            <label class="btn btn-primary categeories">
+              <input type="checkbox" 
+                     id="<%= category.name %>" 
+                     name="recipe_categories[<%= category.id %>][category_id]"
+                     value="<%= category.id %>"><%= category.name %>
+            </label>
+            <% })%>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" id="recipe-form-button" class="btn btn-default">Add Recipe</button> 
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+  
+  <div class="col-sm-4">
+    <div id="noImg"><center><h4 id="uploadText">Photo Preview</h4></div>
+    <img class="detail small shadow" id="preview">
+  </div>
+</div>
