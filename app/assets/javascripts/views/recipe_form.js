@@ -66,9 +66,7 @@ this.$("#blog_url").val("http://minimalistbaker.com/vegan-cinnamon-roll-pancakes
       FoodgawkerApp.flash(["Recipe added!"], "success")
     };
     
-   console.log(this.model.get('sample'))
     this.model.set(attrs);
-   console.log(this.model.get('sample'))
     this.model.set("favorites", new FoodgawkerApp.Collections.Favorites())
     
     if(this.model.isNew()){

@@ -57,6 +57,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   },
   
   index: function () {
+    FoodgawkerApp.Data.recipes.sort();
     var view = new FoodgawkerApp.Views.RecipesIndex({ 
       collection: FoodgawkerApp.Data.recipes 
     });
