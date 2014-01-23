@@ -11,18 +11,32 @@ FoodgawkerApp.Views.Results = Backbone.View.extend({
   render: function () {
     var resultsView = this;
     var content = this.template({ recipes: this.collection });
-    
     this.$el.html(content);
+    
+    var recipeCounter = 0;
+    var rowId = 2;
     this.collection.each(function (recipe) {
       var miniDetailView = new FoodgawkerApp.Views.MiniRecipeDetail({ 
-        model: recipe 
+        model: recipe
       });
       
+      if(recipeCounter % 3 === 0) {
+        if(recipeCounter > rowId) {
+          rowId += 3;
+        }
+        resultsView.appendRow(rowId)        
+      }
       resultsView.childViews.push(miniDetailView);
-      resultsView.$el.append(miniDetailView.render().$el);
+      resultsView.$("#" + rowId).append(miniDetailView.render().$el);
+      recipeCounter++;
     })
     // this.listenForScroll();
     return this;
+  },
+  
+  appendRow: function (id) {
+    var newRow = $("<div class='row index' id='" + id + "'>")
+    this.$el.append(newRow)
   },
   
   // listenForScroll: function () {

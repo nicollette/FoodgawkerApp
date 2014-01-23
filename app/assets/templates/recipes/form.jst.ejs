@@ -1,6 +1,11 @@
 <div class="row">
+  <button id="fill-form" class="btn btn-default">Fill In Sample Info</button>
+</div>
+
+<div class="row">
   <div class="col-md-8 submit-form">
     <form class="form-horizontal" role="form">
+      
       <div class="form-group">
         <label for="photo"
                class="col-sm-2 control-label form-label">Photo</label>
@@ -34,8 +39,6 @@
               <textarea class="form-control"
                        name="description" id="description" 
                        class="input-box-form"></textarea>
-              <!-- <input class="form-control" 
-                     type="text" name="description" id="description"> -->
             </div>
       </div>
 
@@ -67,7 +70,7 @@
                      id="<%= category.name %>" 
                      name="recipe_categories[<%= category.id %>][category_id]"
                      value="<%= category.id %>" 
-                     class="input-box-form"><%= category.name %>
+                     class="input-box-form" "checked"><%= category.name %>
             </label>
             <% })%>
           </div>

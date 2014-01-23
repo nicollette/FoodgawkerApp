@@ -6,6 +6,11 @@ class Api::RecipesController < ApplicationController
   end
   
   def create
+    if params[:sample]
+      f = File.open(Rails.public_path + '/my_sample_image.jpg')
+      params[:recipe][:photo] = f
+    end
+    
     params[:recipe][:user_id] = current_user.id
     params[:recipe][:title] = params[:recipe][:title].downcase
     @recipe = Recipe.new(params[:recipe])
@@ -16,6 +21,8 @@ class Api::RecipesController < ApplicationController
       flash.now[:errors] = @recipe.errors.full_messages
       render :show
     end
+    
+    f.close if f
   end
   
   def show

@@ -75,14 +75,21 @@ div.detail-body {
   padding:10px;
 }
 div.detail-modal {
-  height: 700px;
+  height: 550px;
+  width: 700px;
 } 
 
-img.large{
-  width: 375px;
-  height: 375px;
+img.modal-img {
+  width: 350px;
+  height: 350px;
 }
- 
+
+
+
+img.large {
+  width: 550px;
+  height: 550px;
+}
  
 .nav, .navbar-fixed-top, .navbar-nav {
    background-color: #7be0a5;
