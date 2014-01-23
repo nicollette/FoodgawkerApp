@@ -9,8 +9,15 @@ FoodgawkerApp::Application.routes.draw do
                       :defaults => {:format => "json"}
     resources :share, :only => [:index]
     resources :top_recipes, :only => [:index]
-    resources :recipes, :only => [:index, :create, :show], 
-                        :defaults => {:format => "json"}
+    resources :recipes, 
+              :only => [:index, :create, :show], 
+              :defaults => {:format => "json"} do
+      member do
+        get :prev_recipe
+        get :next_recipe
+      end
+        
+    end
     resources :favorite, :only => [:create, :destroy],
                          :defaults => {:format => "json"}
     resources :favorite_recipes, :only => [:index], 
@@ -20,4 +27,3 @@ FoodgawkerApp::Application.routes.draw do
 end
 
 
-## GENERATE CONTROLLER TO SEND THE EMAIL

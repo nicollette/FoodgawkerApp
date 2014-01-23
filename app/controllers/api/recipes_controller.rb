@@ -23,11 +23,13 @@ class Api::RecipesController < ApplicationController
     render :show
   end
   
-  def prevRecipe
-    
+  def prev_recipe
+    @recipe = Recipe.find(params[:id]).previous
+    render :show
   end
   
-  def nextRecipe
-    
+  def next_recipe
+    @recipe = Recipe.find(params[:id]).next
+    render :show
   end
 end

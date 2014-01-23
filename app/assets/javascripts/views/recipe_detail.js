@@ -4,7 +4,8 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   events: {
     "click button#favorite": "favorite",
     "click button#unfavorite": "unfavorite",
-    "click button#prev-btn": "previousRecipe"
+    "click button#prev-btn": "previousRecipe",
+    "click button#next-btn": "nextRecipe"
   },
   
   initialize: function () {
@@ -12,9 +13,23 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
   },
   
   previousRecipe: function () {
-    var currIdx = _.indexOf(FoodgawkerApp.Data.recipes.pluck("id"), this.model.id)
-    var prevRecipeId = FoodgawkerApp.Data.recipes[currIdx - 1].id
-    Backbone.history.navigate("recpies/"+ this.model.id - 1, { trigger: true })
+    $.ajax({
+      type: 'GET',
+      url: '/api/recipes/' + this.model.id + "/prev_recipe",
+      success: function (response) {
+         Backbone.history.navigate("recipes/"+ response.id, { trigger: true })
+      }
+    })
+  },
+  
+  nextRecipe: function () {
+    $.ajax({
+      type: 'GET',
+      url: '/api/recipes/' + this.model.id + "/next_recipe",
+      success: function (response) {
+         Backbone.history.navigate("recipes/"+ response.id, { trigger: true })
+      }
+    })
   },
   
   render: function () {
@@ -25,10 +40,6 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
-  },
- 
-  renderSideBar: function () {
-    
   },
   
   getCategories: function (recipe) {

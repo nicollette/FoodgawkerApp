@@ -15,7 +15,22 @@ class Recipe < ActiveRecord::Base
       large: '475X475#'
   }
   
-   
+  def previous
+    if self.id == 1 
+      Recipe.last
+    else
+      Recipe.where("id < ?", self.id).order("id DESC").limit(1).first
+    end
+  end
+
+  def next
+    if self.id == Recipe.last.id
+      Recipe.first
+    else
+      Recipe.where("id > ?", self.id).limit(1).first
+    end
+  end
+  
   def self.time_ordered
     order('id DESC')
   end
