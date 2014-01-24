@@ -14,7 +14,7 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
   
   signUp: function (event) {
     event.preventDefault();
-    
+    var signUpView = this;
     var user = this.model
     var attrs = $("#sign-up-form").serializeJSON();
     
@@ -29,6 +29,10 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
           ["Welcome " + response.attributes["username"] + "!"], 
           "success"
         );
+        signUpView.$("input#username").val("")
+        signUpView.$("input#password").val("")
+        signUpView.$("input#email").val("")
+        
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);

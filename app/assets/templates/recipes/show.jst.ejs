@@ -15,13 +15,6 @@
     <p class="detail-text"><b>Ingredients: </b><%= recipe.get("ingredients") %></p>
     <p class="detail-text"><%= recipe.get("description") %></p>
     <p class="detail-text"><b><a href="<%= recipe.get("blog_url")%>">Full recipe</a></b></p>
-    
-    <!-- <% if (recipe.get("favorites").length < 1 ) { %>
-      <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
-    <% } else { %>
-      <button id="unfavorite" data-recipe-id="<%= recipe.id %>">Unfavorite</button> 
-    <% } %>
-     -->
       
       <% var favorites = recipe.get("favorites") %>
       <% var currUser = FoodgawkerApp.Data.currentUser %>

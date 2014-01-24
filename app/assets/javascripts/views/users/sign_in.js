@@ -14,6 +14,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   
   signIn: function (event) {
     event.preventDefault();
+    var signInView = this;
     this.model = new FoodgawkerApp.Models.Session();
     var session = this.model
 
@@ -28,7 +29,8 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
           ["Welcome " + response.attributes["username"] + "!"], 
           "success"
         )
-        
+        signInView.$("input#username").val("")
+        signInView.$("input#password").val("")
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);
