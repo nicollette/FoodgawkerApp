@@ -2,7 +2,8 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
   template: JST["users/new"],
   
   events: {
-    "click button": "signUp"
+    "click button#sign-up-button": "signUp",
+    'keypress input#password': 'submitForm'
   },
   
   render: function () {
@@ -10,6 +11,15 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
     this.$el.html(content);
     
     return this;
+  },
+  
+  submitForm: function (event) {
+    if (event.keyCode != 13) { 
+      return; 
+    }
+    else {
+      $('button#sign-up-button').click();
+    }
   },
   
   signUp: function (event) {

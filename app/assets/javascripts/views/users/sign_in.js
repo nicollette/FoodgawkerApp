@@ -14,11 +14,12 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   },
   
   submitForm: function (event) {
-    if (event.keyCode != 13) { return; }
+    if (event.keyCode != 13) { 
+      return; 
+    }
     else {
       $('button#sign-in-button').click();
     }
-    
   },
   
   signIn: function (event) {
