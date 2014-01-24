@@ -2,7 +2,8 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   template: JST["session/new"],
   
   events: {
-    "click button#sign-in-button": "signIn"
+    "click button#sign-in-button": "signIn", 
+    'keypress input#password': 'submitForm'
   },
   
   render: function () {
@@ -10,6 +11,13 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
     this.$el.html(content);
     
     return this;
+  },
+  
+  submitForm: function (event) {
+    if (event.keyCode != 13) { return; }
+    else {
+      this.signIn(event);
+    }
   },
   
   signIn: function (event) {
@@ -23,6 +31,8 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
 
     this.model.save({}, {
       success: function (response) {
+        $("#signInModal").hide()
+        
         FoodgawkerApp.Data.session = session;
         delete response.attributes["user"];
         FoodgawkerApp.flash(
