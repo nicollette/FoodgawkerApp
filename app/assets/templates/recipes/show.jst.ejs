@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-md-8">
-    <center><h1><%= recipe.get("title").toUpperCase()%></h1></center>
+    <h1 id="show-title"><%= recipe.get("title").toUpperCase()%></h1>
     <div id="arrows">
       <button id="prev-btn" class="arrow-btn signout"><span class="glyphicon glyphicon-chevron-left"></span></button>
     </div>
@@ -24,10 +24,11 @@
       <% } else { %>
         <button class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart-empty"></span></button>
       <% } %>
+      <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button><h6 id="email-tooltip">Email this recipe to yourself!</h6><h6 id="email-text">Recipe was sent to your email!</h6>
     <% } else { %>
-      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-heart-empty"></span></button> 
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-heart-empty"></span></button>
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal" data-recipe-id="<%= recipe.id %>" id="signedout-share"><span class="glyphicon glyphicon-send"></span></button><h6 id="email-tooltip">Email this recipe to yourself!</h6>
     <% }%>
-    <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
   </div>
 
   <div id="side-bar" class="col-md-4">

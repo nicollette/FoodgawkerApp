@@ -45,11 +45,14 @@
    width: 500px;
    height: 500px;
  }
- 
+ #show-title {
+   padding-left: 30px;
+ }
  div#arrows {
    height: 30px;
    width: 30px;
    display: inline-block;
+   padding-left: 4px;
  }
  
  button.arrow-btn {

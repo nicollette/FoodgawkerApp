@@ -6,17 +6,29 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
     "click button#unfavorite": "unfavorite",
     "click button#prev-btn": "previousRecipe",
     "click button#next-btn": "nextRecipe",
-    "click button#share": "emailRecipe"
+    "click button#share": "emailRecipe",
+    "mouseenter button#share": "emailTooltip",
+    "mouseenter button#signedout-share": "emailTooltip",
+    
+  },
+  
+  emailTooltip: function (event) {
+    var view = this;
+    this.$("#email-tooltip").show();
+    $(event.currentTarget).mouseleave(function () {
+      view.$("#email-tooltip").hide();
+    })
   },
   
   initialize: function () {
     this.listenTo(this.model, "all", this.render);
     this.listenTo(this.model.get("favorites"), "all", this.render);
+    this.listenTo(FoodgawkerApp.Data.currentUser, "all", this.render);
   },
   
   emailRecipe: function (event) {
     var recipeId = $(event.target).attr("data-recipe-id");
-    
+    var view = this;
     $.ajax({
       type: 'GET',
       url: '/api/share',
@@ -24,7 +36,8 @@ FoodgawkerApp.Views.RecipeDetail = Backbone.View.extend({
         url: this.model.get("blog_url")
       },
       success: function (response) {
-        FoodgawkerApp.flash(["Recipe sent via snail mail!"], "info");
+        view.$("#email-tooltip").hide();
+        view.$("#email-text").css("display", "inline-block").fadeOut(2000);
       }
     })
   },
