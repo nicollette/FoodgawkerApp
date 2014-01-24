@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
       login!
       render :user
     else
-      render :json => { :errors => @user.errors.full_messages }
+      # render :json => { :errors => @user.errors.full_messages }
+      render :json => :user
     end
   end
   
