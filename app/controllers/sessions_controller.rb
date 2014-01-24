@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
       login!
       render :user
     else
-      flash.now[:errors] = ["invalid credentials"]
-      render :new
+      render :json => @user.errors
     end
   end
   

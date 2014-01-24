@@ -16,8 +16,9 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
   submitForm: function (event) {
     if (event.keyCode != 13) { return; }
     else {
-      this.signIn(event);
+      $('button#sign-in-button').click();
     }
+    
   },
   
   signIn: function (event) {
@@ -30,9 +31,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
     this.model.set(attrs);
 
     this.model.save({}, {
-      success: function (response) {
-        $("#signInModal").hide()
-        
+      success: function (response) {        
         FoodgawkerApp.Data.session = session;
         delete response.attributes["user"];
         FoodgawkerApp.flash(
@@ -44,7 +43,10 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);
-
+      },
+      
+      error: function (model, xhr, options) {
+        debugger;
       }
     });
     
