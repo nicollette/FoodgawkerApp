@@ -47,7 +47,7 @@ FoodgawkerApp.Views.MostFaved = Backbone.View.extend({
 
   nextPage: function () {
     var indexView = this;
-    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50){
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 400){
       console.log("scrolled to bottom!");
       if (indexView.collection.page_number < indexView.collection.total_pages) {
         indexView.collection.fetch({
