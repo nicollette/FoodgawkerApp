@@ -27,6 +27,16 @@
    color: black;
  }
  
+ p.detail-desc {
+   height: 95px;
+   font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 18px;
+   
+ }
+ 
+ div.row.index, .mini-container{
+   height: 450px;
+ }
  /******************************/
  
  
@@ -343,16 +353,9 @@ button.close {
   box-shadow:         3px 3px 5px 0px #ccc;
 }
  
- div.row.index, .mini-container{
-   height: 450px;
- }
+
  
- p.detail-desc {
-   height: 80px;
-   font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 16px;
-   
- }
+
  
  
  a {
