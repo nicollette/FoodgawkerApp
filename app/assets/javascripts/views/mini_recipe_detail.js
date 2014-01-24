@@ -4,11 +4,12 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, "all", this.render);
     this.listenTo(this.model.get("favorites"), "all", this.render);
-    // $('button#share').tooltip({
-    //   placement: "right",
-    //   title: "Email Recipe",
-    //   trigger: "hover"
-    // })
+    
+    $('#tooltip').tooltip({
+      placement: "right",
+      title: "Email Recipe",
+      trigger: "hover"
+    })
   },
 
   events: {
@@ -16,7 +17,17 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     "click button#unfavorite": "unfavorite",
     "click div.hover-header": "toggleModal", 
     "mouseenter img.detail": "showTitle", 
+    "mouseenter button#share": "emailTooltip",
+    "mouseenter button#signedout-share": "emailTooltip",
     "click button#share": "emailRecipe"
+  },
+  
+  emailTooltip: function (event) {
+    var view = this;
+    this.$("#email-tooltip").show();
+    $(event.currentTarget).mouseleave(function () {
+      view.$("#email-tooltip").hide();
+    })
   },
   
   render: function () {
@@ -35,6 +46,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
         url: this.model.get("blog_url")
       },
       success: function (response) {
+        view.$("#email-tooltip").hide();
         view.$("#email-text").css("display", "inline-block").fadeOut(2000);
       }
     })

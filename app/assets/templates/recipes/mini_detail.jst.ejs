@@ -6,22 +6,20 @@
   
   <br><br>
   <p class="detail-desc"><%= recipe.get("description")%> <a href="#recipes/<%= recipe.id %>">More Info</a></p>
+    <% var favorites = recipe.get("favorites") %>
+    <% var currUser = FoodgawkerApp.Data.currentUser %>
   
-  <% var favorites = recipe.get("favorites") %>
-  <% var currUser = FoodgawkerApp.Data.currentUser %>
-  
-  <% if(currUser.id) { %>
-    <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
-       <button class="btn btn-primary btn-sm" id="unfavorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart"></span></button> 
+    <% if(currUser.id) { %>
+      <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
+         <button class="btn btn-primary btn-sm" id="unfavorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart"></span></button> 
+      <% } else { %>
+        <button class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart-empty"></span></button>
+      <% } %>
+        <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button><h6 id="email-tooltip">Email this recipe to yourself!</h6><h6 id="email-text">Recipe was sent to your email!</h6>
     <% } else { %>
-      <button class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart-empty"></span></button>
-    <% } %>
-      <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button><h6 id="email-text">Recipe was sent to your email!</h6>
-  <% } else { %>
-    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-heart-empty"></span></button>
-    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-send"></span></button>
-  <% }%>
-
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-heart-empty"></span></button>
+      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal" data-recipe-id="<%= recipe.id %>" id="signedout-share"><span class="glyphicon glyphicon-send"></span></button><h6 id="email-tooltip">Email this recipe to yourself!</h6>
+    <% }%>
 </div>
 
 <div class="modal fade" id="recipeModal<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -58,8 +56,8 @@
               <% } else { %>
                 <button type="button" class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal"><span class="glyphicon glyphicon-heart-empty"></span></button>
               <% } %>
+              <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
             <% } %>
-            <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
         </div>
         </div>
           <!-- <div class="modal-footer">
