@@ -13,6 +13,28 @@
  */
  @import "bootstrap";
  
+ /****** Recipe Show **********/
+ img.large {
+   width: 500px;
+   height: 500px;
+ }
+ 
+ div#arrows {
+   height: 30px;
+   width: 30px;
+   display: inline-block;
+ }
+ 
+ button.arrow-btn {
+   height: 23px;
+   width: 23px;
+ }
+ 
+ .detail-text {
+   font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 16px; 
+ }
+ /******************************/
 /***** Sign in/ Sign Up Forms ******/
  label.modal-form-label {
     font-size: 18px;
@@ -258,15 +280,7 @@ button.close {
 }
 
 
-/************/
-
-img.large {
-  width: 550px;
-  height: 550px;
-}
- 
-
-  
+/************/  
 .col-xs-1 {
   margin: 0;
   width: 25px;

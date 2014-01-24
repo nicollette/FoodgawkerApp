@@ -72,8 +72,6 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    font-awesome-sass (4.0.2)
-      sass-rails (>= 3.1.1)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
     hike (1.2.3)
@@ -170,7 +168,6 @@ DEPENDENCIES
   delayed_job_active_record
   ejs
   figaro
-  font-awesome-sass
   friendly_id
   jbuilder
   jquery-rails

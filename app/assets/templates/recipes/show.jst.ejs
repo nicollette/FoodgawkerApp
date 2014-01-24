@@ -1,18 +1,19 @@
 <div class="row">
-  <!-- <div class="col-xs-1">
-    <button id="prev-btn" class="arrow-btn"><</button>
-  </div> -->
+
   <div class="col-md-8">
-    <h1><%= recipe.get("title") %></h1>
-    <button id="prev-btn" class="arrow-btn"><</button>
-    <img class="large shadow" src="<%= recipe.get('large_photo_url')%>">
-    <button id="next-btn" class="arrow-btn">></button>
+    <center><h1><%= recipe.get("title").toUpperCase()%></h1></center>
+    <div id="arrows">
+      <button id="prev-btn" class="arrow-btn signout"><span class="glyphicon glyphicon-chevron-left"></span></button>
+    </div>
+    <img class="large shadow img-rounded" src="<%= recipe.get('large_photo_url')%>">
+    <div id="arrows">
+      <button id="next-btn" class="arrow-btn signout"><span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
     <br>
     <br>
-    <p>Description: <%= recipe.get("description") %></p>
-    <p>Total Time: <%= recipe.get("total_time") %> minutes</p>
-    <p><a href="<%= recipe.get("blog_url")%>">source</a></p>
-    <p>Added by: <%= recipe.get("username") %></p>
+    <p class="detail-text">Description: <%= recipe.get("description") %></p>
+    <p class="detail-text">Total Time: <%= recipe.get("total_time") %> minutes</p>
+    <p class="detail-text"><a href="<%= recipe.get("blog_url")%>">source</a></p>
 
     <% if (recipe.get("favorites").length < 1 ) { %>
       <button id="favorite" data-recipe-id="<%= recipe.id %>">Favorite</button>
@@ -23,13 +24,11 @@
     <h5>Categories</h5>
     <ul>
     <% recipe.get("categories").forEach(function(category) { %>
-      <li><%= category.name %></li>
+      <li class="detail-text"><%= category.name %></li>
     <% }) %>
     </ul>
   </div>
-  <!-- <div class="col-xs-1">
-    <button id="prev-btn" class="arrow-btn">></button>
-  </div> -->
+
   <div id="side-bar" class="col-md-4">
     <center><h3>peep these tasty recipes</h3></center>
     <div class="row" id="row1">
