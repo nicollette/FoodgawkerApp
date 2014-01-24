@@ -1,15 +1,11 @@
 class SessionsController < ApplicationController
-  # def new
-  #   render :new
-  # end
-  
   def create
     @user = User.find_by_credentials(params[:user])
     if @user
       login!
       render :user
     else
-      render :json => @user.errors
+      render :json => { :errors => @user.errors.full_messages }
     end
   end
   

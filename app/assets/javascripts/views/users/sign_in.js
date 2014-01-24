@@ -44,11 +44,12 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);
-      },
-      
-      error: function (model, xhr, options) {
-        debugger;
       }
+      // 
+      // error: function (model, xhr, options) {
+      //   // var errors = $.parseJSON(xhr.responseText).errors
+      //   debugger;
+      // }
     });
     
   }
