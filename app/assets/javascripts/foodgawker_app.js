@@ -6,14 +6,13 @@ window.FoodgawkerApp = {
   Data: {},
   initialize: function() {
     FoodgawkerApp.Data.categories =      
-      JSON.parse($("#bootstrapped-categories").html());
-    // Do i not need to JSON.parse the bootstrapped data?
-    // I get an error on load
+    JSON.parse($("#bootstrapped-categories").html());
+    
     var currUser = JSON.parse($("#bootstrapped-current-user").html().trim());
     FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User();
+    
     var navView = new FoodgawkerApp.Views.NavBar();
     $("#nav-section").html(navView.render().$el);
-    
     if(typeof currUser === "object") {
       FoodgawkerApp.Data.currentUser.set(currUser);
       FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ id: 1 });
@@ -23,9 +22,6 @@ window.FoodgawkerApp = {
         "success"
       )
     }
-    
-    
-    
     this.addSignInModal();
     this.addSignUpModal();
     

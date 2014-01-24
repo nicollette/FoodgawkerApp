@@ -43,11 +43,13 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
   },
   
   showSearchForm: function (event) {
-    $("#search-form").slideDown('500').css('display', 'block');
-    
-    $("#search-view").mouseleave(function () {
-      $("#search-form").slideUp('500');
-    })
+    _.debounce(function () {
+      $("#search-form").slideDown('500').css('display', 'block');
+
+      $("#search-view").mouseleave(function () {
+        $("#search-form").slideUp('500');
+      })
+    }, 100)()
   },
   
   render: function () {
