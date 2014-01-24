@@ -16,11 +16,13 @@
  /***** Mini recipe detail *****/
  #email-text {
    display: none;
- }
- h6.email-sent {
-   display:inline-block;
+   padding: 5px;
+   font: 13px;
+   color: black;
  }
  /******************************/
+ 
+ 
  /****** Recipe Show **********/
  img.large {
    width: 500px;
