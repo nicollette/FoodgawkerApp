@@ -69,18 +69,19 @@ h4#uploadText {
 /* Detail Modal */
 div.detail-header {
   padding:7px;
+  border-bottom:0;
 }
 h4.modal-title {
   font-size: 25px;
   font-weight: bold;
+  color: lightgray;
 }
 div.detail-body {
   padding:10px;
 }
 div.detail-modal {
-  height: 550px;
+  height: 470px;
   width: 700px;
-  mar
 } 
 
 img.modal-img {
@@ -90,14 +91,22 @@ img.modal-img {
 
 h5.modal-text {
   font-size: 19px;
+  color: lightgray;
 }
 
- .modal-content {
-   background-color: #E7E6E6;
-   opacity: 0.9;
- }
+/************/
 
+/**** GENERAL MODAL STYLE ****/
+.modal-content {
+ # background-color: #E7E6E6;
+ background-color: #363636;
+ opacity: 0.9;
+}
+button.close {
+  color: #7be0a5;
+}
 
+/************/
 
 img.large {
   width: 550px;
