@@ -79,10 +79,13 @@ input.signin-input {
 
  }
  
- h6.navbar-brand {
-   font-size: 15px;
+ p.navbar-tag {
+   font-size: 14px;
    display: block;
-   padding-left: 0px;
+   padding-left: 27px;
+   padding-top:0px;
+   margin: 0;
+   
  }
  li.nav-btn {
    position:aboslute;
@@ -91,14 +94,16 @@ input.signin-input {
  
  
  .navbar-brand {
-   font-size: 25px;
-   font-weight: 650;
+   font-size: 29px;
+   font-weight: 550 !important;
    padding-right:0px;
    display: block;
+   padding-bottom: 4px;
+   color: black;
  }
  
  #app-nav {
-   font-size: 17px;
+   font-size: 19px;
  }
  
  .nav, .navbar-fixed-top, .navbar-nav {
@@ -106,6 +111,7 @@ input.signin-input {
     opacity:0.9;
     padding-bottom: 0;
     margin-bottom:0;
+    padding-top: 3px;
   }
 
 .signup {
