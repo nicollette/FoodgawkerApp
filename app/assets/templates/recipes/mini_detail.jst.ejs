@@ -47,6 +47,10 @@
             <h5 class="modal-text"><%= recipe.get("description")%></h5>
             <br>
           </div>
+          <div id="share-tooltips">
+            <p id="email-tooltip-modal">Email this recipe to yourself!</p>
+            <p id="email-text-modal">Recipe was sent to your email!</p>
+          </div>
           <div id="modal-btns">
             <% var favorites = recipe.get("favorites") %>
             <% var currUser = FoodgawkerApp.Data.currentUser %>
@@ -56,7 +60,7 @@
               <% } else { %>
                 <button type="button" class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal"><span class="glyphicon glyphicon-heart-empty"></span></button>
               <% } %>
-              <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
+              <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share-modal"><span class="glyphicon glyphicon-send"></span></button>
             <% } %>
         </div>
         </div>

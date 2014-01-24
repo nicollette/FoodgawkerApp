@@ -19,7 +19,9 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     "mouseenter img.detail": "showTitle", 
     "mouseenter button#share": "emailTooltip",
     "mouseenter button#signedout-share": "emailTooltip",
-    "click button#share": "emailRecipe"
+    "mouseenter button#share-modal": "emailTooltipModal",
+    "click button#share": "emailRecipe",
+    "click button#share-modal": "emailRecipeModal"
   },
   
   emailTooltip: function (event) {
@@ -30,10 +32,34 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
     })
   },
   
+  emailTooltipModal: function (event) {
+    var view = this;
+    this.$("#email-tooltip-modal").show();
+    $(event.currentTarget).mouseleave(function () {
+      view.$("#email-tooltip-modal").hide();
+    })
+  },
+  
   render: function () {
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
     return this;
+  },
+  
+  emailRecipeModal: function (event) {
+    var recipeId = $(event.target).attr("data-recipe-id");
+    var view = this;
+    $.ajax({
+      type: 'GET',
+      url: '/api/share',
+      data: {
+        url: this.model.get("blog_url")
+      },
+      success: function (response) {
+        view.$("#email-tooltip-modal").hide();
+        view.$("#email-text-modal").show().fadeOut(2000);
+      }
+    })
   },
   
   emailRecipe: function (event) {
