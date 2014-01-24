@@ -27,7 +27,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   
   emailRecipe: function (event) {
     var recipeId = $(event.target).attr("data-recipe-id");
-    
+    var view = this;
     $.ajax({
       type: 'GET',
       url: '/api/share',
@@ -35,7 +35,8 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
         url: this.model.get("blog_url")
       },
       success: function (response) {
-        FoodgawkerApp.flash(["Recipe sent via snail mail!"], "info");
+        view.$("#email-text").show().fadeOut(4000);
+        // FoodgawkerApp.flash(["Recipe sent via snail mail!"], "info");
       }
     })
   },

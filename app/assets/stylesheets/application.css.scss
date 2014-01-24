@@ -13,6 +13,14 @@
  */
  @import "bootstrap";
  
+ /***** Mini recipe detail *****/
+ #email-text {
+   display: none;
+ }
+ h6.email-sent {
+   display:inline-block;
+ }
+ /******************************/
  /****** Recipe Show **********/
  img.large {
    width: 500px;
@@ -70,6 +78,12 @@ input.signin-input {
    padding: 2px;
 
  }
+ 
+ h6.navbar-brand {
+   font-size: 15px;
+   display: block;
+   padding-left: 0px;
+ }
  li.nav-btn {
    position:aboslute;
    right: 30px;
@@ -79,6 +93,8 @@ input.signin-input {
  .navbar-brand {
    font-size: 25px;
    font-weight: 650;
+   padding-right:0px;
+   display: block;
  }
  
  #app-nav {

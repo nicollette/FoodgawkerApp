@@ -14,7 +14,7 @@
     <p class="detail-text"><b>Total Time:</b> <%= recipe.get("total_time") %> minutes</p>
     <p class="detail-text"><b>Ingredients: </b><%= recipe.get("ingredients") %></p>
     <p class="detail-text"><%= recipe.get("description") %></p>
-    <p class="detail-text"><b><a href="<%= recipe.get("blog_url")%>">Full recipe</a></b></p>
+    <p class="detail-text"><b><a target="_blank" href="<%= recipe.get("blog_url")%>">Full recipe</a></b></p>
       
       <% var favorites = recipe.get("favorites") %>
       <% var currUser = FoodgawkerApp.Data.currentUser %>
