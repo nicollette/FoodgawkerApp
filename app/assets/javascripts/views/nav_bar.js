@@ -19,7 +19,7 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
     var session = this.model
     var attrs = { 
       user: {
-        username: "guest",
+        username: "hungryhippo",
         password: "password"
       }
     }
