@@ -1,4 +1,4 @@
-<div class="col-sm-4" data-recipe-id="<%= recipe.id %>">
+<div class="col-sm-4 mini-container" data-recipe-id="<%= recipe.id %>">
   <img id="overlay-img<%= recipe.id %>" data-recipe-id="<%= recipe.id %>" class="img-circle small overlay">
     <div class="hover-header" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><center><h4 class="hover-header-text" data-recipe-id="<%= recipe.id %>" id="header<%= recipe.id %>"><%= recipe.get("title").toUpperCase() %></h4></center></div>
    
@@ -12,14 +12,14 @@
   
   <% if(currUser.id) { %>
     <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
-       <button class="btn btn-primary btn-sm" id="unfavorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart-empty"></span></button> 
+       <button class="btn btn-primary btn-sm" id="unfavorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart"></span></button> 
     <% } else { %>
-      <button class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart"></span></button>
+      <button class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>"><span class="glyphicon glyphicon-heart-empty"></span></button>
     <% } %>
   <% } else { %>
     <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-heart-empty"></span></button> 
   <% }%>
-  <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
+  <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share" data-toggle="tooltip" data-original-title="Tooltip on right" title=""><span class="glyphicon glyphicon-send"></span></button>
 
 </div>
 
@@ -48,17 +48,18 @@
             <h5 class="modal-text"><%= recipe.get("description")%></h5>
             <br>
           </div>
-
-          <% var favorites = recipe.get("favorites") %>
-          <% var currUser = FoodgawkerApp.Data.currentUser %>
-          <% if(currUser.id) { %>
-            <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
-               <button type="button" id="unfavorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal">Unfavorite</button> 
-            <% } else { %>
-              <button type="button" id="favorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal">Favorite</button>
+          <div id="modal-btns">
+            <% var favorites = recipe.get("favorites") %>
+            <% var currUser = FoodgawkerApp.Data.currentUser %>
+            <% if(currUser.id) { %>
+              <% if(favorites && favorites.findWhere({ user_id: currUser.id })) { %>
+                 <button type="button" class="btn btn-primary btn-sm" id="unfavorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal"><span class="glyphicon glyphicon-heart"></span></button> 
+              <% } else { %>
+                <button type="button" class="btn btn-primary btn-sm" id="favorite" data-recipe-id="<%= recipe.id %>" data-dismiss="modal"><span class="glyphicon glyphicon-heart-empty"></span></button>
+              <% } %>
             <% } %>
-          <% } %>
-          
+            <button class="btn btn-primary btn-sm" data-recipe-id="<%= recipe.id %>" id="share"><span class="glyphicon glyphicon-send"></span></button>
+        </div>
         </div>
           <!-- <div class="modal-footer">
           </div> -->

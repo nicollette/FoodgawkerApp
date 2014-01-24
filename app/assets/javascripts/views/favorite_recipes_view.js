@@ -11,10 +11,14 @@ FoodgawkerApp.Views.FavoriteRecipesView = Backbone.View.extend({
     var favoritesView = this;
     var content = this.template({ recipes: this.collection });
     this.$el.html(content);
+    
+    var recipeCounter = 0;
+    var rowId = 2;
     this.collection.each(function (recipe) {
       var miniDetailView = new FoodgawkerApp.Views.MiniRecipeDetail({ 
         model: recipe 
       });
+      
       favoritesView.childViews.push(miniDetailView);
       favoritesView.$el.append(miniDetailView.render().$el);
     })
@@ -22,6 +26,7 @@ FoodgawkerApp.Views.FavoriteRecipesView = Backbone.View.extend({
     return this;
   },
   
+
   removeAll: function () {
     this.childViews.forEach(function(childView) {
       childView.remove();

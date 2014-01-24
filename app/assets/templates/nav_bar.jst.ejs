@@ -8,17 +8,17 @@
       <li><a href="#">All Recipes</a></li>
       <li><a href="#top">Most Faved</a></li>
       <li id="search-nav"><a>Search</a></li>
-      
-      <% if(FoodgawkerApp.Data.currentUser.id === undefined) { %>
-        <li><button class="nav-bar-btn btn btn-primary btn-sm" data-toggle="modal" data-target="#signUpModal">Sign Up</button><li>
-        <li><button class="nav-bar-btn btn btn-primary btn-sm" data-toggle="modal" data-target="#signInModal">Sign In</button><li>
-        <li><button class="nav-bar-btn btn btn-primary btn-sm" id="guest-btn">Guest Log In</button><li>
-      <% } else { %>
-        <li><a href="#recipes/new">Submit Recipe</a></li>
-        <li><a href="#favorites">Favorite Recipes</a></li>
-        <li><button type="submit" class="nav-bar-btn" id="sign-out-btn">Sign Out</button></li>
-      <% } %>
+        <% if(FoodgawkerApp.Data.currentUser.id === undefined) { %>
+          <li><button class="btn btn-info btn-default nav-bar-btn signup" data-toggle="modal" data-target="#signUpModal">Sign Up</button><li>
+          <li><button class="btn btn-info btn-default nav-bar-btn signin" data-toggle="modal" data-target="#signInModal">Sign In</button><li>
+          <li><button class="btn btn-info btn-default nav-bar-btn" id="guest-btn">Guest Log In</button><li>
+        <% } else { %>
+          <li><a href="#recipes/new">Submit Recipe</a></li>
+          <li><a href="#favorites">Favorite Recipes</a></li>
+          <li><button type="submit" class="btn btn-info btn-default nav-bar-btn signout" id="sign-out-btn">Sign Out</button></li>
+        <% } %>
     </ul>
+    
   </div>
 
   <div id="search-view">

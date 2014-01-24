@@ -13,6 +13,137 @@
  */
  @import "bootstrap";
  
+/***** Sign in/ Sign Up Forms ******/
+ label.modal-form-label {
+    font-size: 18px;
+    font-family: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100px;
+    color: lightgray;
+  }
+  
+input.signin-input {
+  width: 340px;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.signin-modal {
+  width: 400px;
+}
+
+#sign-in-button, #sign-up-button {
+  font-size: 20px;
+  font-weight: 1000px;;
+}
+/************/
+  
+/***** Nav Bar ******/
+ .nav-bar-btn {
+   margin-top: 5px;
+   margin-right: 15px;
+   font-size: 17px;
+   height: 30px;
+   padding: 2px;
+
+ }
+ li.nav-btn {
+   position:aboslute;
+   right: 30px;
+ }
+ 
+ 
+ .navbar-brand {
+   font-size: 25px;
+   font-weight: 650;
+ }
+ 
+ #app-nav {
+   font-size: 17px;
+ }
+ 
+ .nav, .navbar-fixed-top, .navbar-nav {
+    background-color: #7be0a5;
+    opacity:0.9;
+    padding-bottom: 0;
+    margin-bottom:0;
+  }
+
+.signup {
+  background: #b8b8b8;
+  background-image: -webkit-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -moz-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -ms-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -o-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: linear-gradient(to bottom, #b8b8b8, #8a8a8a);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #d9230f;
+  border: solid #7a7a7a 1px;
+}
+
+.signup:hover {
+  background: #cf0808;
+  background-image: -webkit-linear-gradient(top, #cf0808, #d40023);
+  background-image: -moz-linear-gradient(top, #cf0808, #d40023);
+  background-image: -ms-linear-gradient(top, #cf0808, #d40023);
+  background-image: -o-linear-gradient(top, #cf0808, #d40023);
+  background-image: linear-gradient(to bottom, #cf0808, #d40023);
+  text-decoration: none;
+  border:0;
+}
+
+.signin {
+  background: #b8b8b8;
+  background-image: -webkit-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -moz-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -ms-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: -o-linear-gradient(top, #b8b8b8, #8a8a8a);
+  background-image: linear-gradient(to bottom, #b8b8b8, #8a8a8a);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #fafafa;
+  border: solid #7a7a7a 1px;
+}
+
+.signin:hover {
+  background: #cf0808;
+  background-image: -webkit-linear-gradient(top, #cf0808, #d40023);
+  background-image: -moz-linear-gradient(top, #cf0808, #d40023);
+  background-image: -ms-linear-gradient(top, #cf0808, #d40023);
+  background-image: -o-linear-gradient(top, #cf0808, #d40023);
+  background-image: linear-gradient(to bottom, #cf0808, #d40023);
+  text-decoration: none;
+  border:0;
+}
+.signout {
+  background: #ff5757;
+  background-image: -webkit-linear-gradient(top, #ff5757, #f71818);
+  background-image: -moz-linear-gradient(top, #ff5757, #f71818);
+  background-image: -ms-linear-gradient(top, #ff5757, #f71818);
+  background-image: -o-linear-gradient(top, #ff5757, #f71818);
+  background-image: linear-gradient(to bottom, #ff5757, #f71818);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #fafafa;
+  border: solid #ff2929 1px;
+}
+
+.signout:hover {
+  background: #cf0808;
+  background-image: -webkit-linear-gradient(top, #cf0808, #d40023);
+  background-image: -moz-linear-gradient(top, #cf0808, #d40023);
+  background-image: -ms-linear-gradient(top, #cf0808, #d40023);
+  background-image: -o-linear-gradient(top, #cf0808, #d40023);
+  background-image: linear-gradient(to bottom, #cf0808, #d40023);
+  text-decoration: none;
+  border:0;
+}
+ /************/
  
  /* Submit Recipe Form */
 label.form-label {
@@ -94,11 +225,16 @@ h5.modal-text {
   color: lightgray;
 }
 
+div#modal-btns {
+  position: absolute;
+  bottom:35px;
+  right:40px;
+}
+
 /************/
 
 /**** GENERAL MODAL STYLE ****/
 .modal-content {
- # background-color: #E7E6E6;
  background-color: #363636;
  opacity: 0.9;
 }
@@ -120,6 +256,8 @@ button.close {
 .glyphicon.glyphicon-send {
   color: gray;
 }
+
+
 /************/
 
 img.large {
@@ -127,12 +265,7 @@ img.large {
   height: 550px;
 }
  
-.nav, .navbar-fixed-top, .navbar-nav {
-   background-color: #7be0a5;
-   opacity:0.9;
-   padding-bottom: 0;
-   margin-bottom:0;
- }
+
   
 .col-xs-1 {
   margin: 0;
@@ -147,7 +280,7 @@ img.large {
   box-shadow:         3px 3px 5px 0px #ccc;
 }
  
- div.row.index{
+ div.row.index, .mini-container{
    height: 450px;
  }
  
@@ -191,6 +324,7 @@ img.large {
  
  body {
    padding-top: 70px;
+   padding-bottom: 50px;
  }
  
  img.small{
@@ -218,19 +352,7 @@ img.large {
    padding: 10px;
  }
  
- .nav-bar-btn {
-   margin-top: 8px;
-   margin-right: 15px;
- }
- 
- .navbar-brand {
-   font-size: 25px;
-   font-weight: 650;
- }
- 
- #app-nav {
-   font-size: 17px;
- }
+
  
  .btn-primary {
    background-color: hsl(145, 62%, 68%) !important;

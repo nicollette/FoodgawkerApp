@@ -4,6 +4,11 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, "all", this.render);
     this.listenTo(this.model.get("favorites"), "all", this.render);
+    // $('button#share').tooltip({
+    //   placement: "right",
+    //   title: "Email Recipe",
+    //   trigger: "hover"
+    // })
   },
 
   events: {
@@ -30,7 +35,7 @@ FoodgawkerApp.Views.MiniRecipeDetail = Backbone.View.extend({
         url: this.model.get("blog_url")
       },
       success: function (response) {
-        FoodgawkerApp.flash(["Snail mail sent!"], "info");
+        FoodgawkerApp.flash(["Recipe sent via snail mail!"], "info");
       }
     })
   },
