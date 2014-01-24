@@ -74,6 +74,7 @@ FoodgawkerApp.Views.NavBar = Backbone.View.extend({
           ["Goodbye " + FoodgawkerApp.Data.currentUser.get("username") + "!"], 
           "info"
         )
+        Backbone.history.navigate("", { trigger: true });
       }
     })
   }
