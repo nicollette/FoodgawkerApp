@@ -44,7 +44,7 @@ gem 'kaminari'
 gem "letter_opener", :group => :development
 
 gem 'delayed_job_active_record'
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 # gem 'jquery-fileupload-rails', '0.3.0'
 
 # Use unicorn as the app server
