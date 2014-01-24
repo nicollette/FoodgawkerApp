@@ -37,6 +37,32 @@
  div.row.index, .mini-container{
    height: 450px;
  }
+ 
+ 
+ .hover-header {
+   font-weight: bold;
+   height: 275px;
+   width: 275px;
+   cursor: pointer;
+   display: none;
+   position: absolute;
+   left: 14px;
+   top: 0;
+   z-index: 1px;
+ }
+
+
+.hover-header-text {
+  font-size:19px;
+  word-wrap: break-word;
+  color: white;
+  position: absolute;
+  left: 11%;
+  top: 40%;
+  width: 225px;
+  z-index: 1px;
+  letter-spacing:1px;
+} 
  /******************************/
  
  
@@ -365,30 +391,7 @@ button.close {
    cursor: pointer;
  }
   
- 
- .hover-header {
-   font-weight: bold;
-   height: 275px;
-   width: 275px;
-   cursor: pointer;
-   display: none;
-   position: absolute;
-   left: 14px;
-   top: 0;
-   z-index: 1px;
- }
 
-
-.hover-header-text {
-  word-wrap: break-word;
-  color: white;
-  position: absolute;
-  left: 11%;
-  top: 41%;
-  width: 225px;
-  z-index: 1px;
-  letter-spacing:1px;
-} 
 
  
  body {
