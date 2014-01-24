@@ -11,6 +11,9 @@ window.FoodgawkerApp = {
     // I get an error on load
     var currUser = JSON.parse($("#bootstrapped-current-user").html().trim());
     FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User();
+    var navView = new FoodgawkerApp.Views.NavBar();
+    $("#nav-section").html(navView.render().$el);
+    
     if(typeof currUser === "object") {
       FoodgawkerApp.Data.currentUser.set(currUser);
       FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session({ id: 1 });
@@ -21,8 +24,7 @@ window.FoodgawkerApp = {
       )
     }
     
-    var navView = new FoodgawkerApp.Views.NavBar();
-    $("#nav-section").html(navView.render().$el);
+    
     
     this.addSignInModal();
     this.addSignUpModal();
