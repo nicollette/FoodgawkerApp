@@ -93,44 +93,4 @@ class Recipe < ActiveRecord::Base
       WHERE 
         #{where_clause}"
   end
-  
-
- #  def self.filter_by_categories(categories)
- #    categories = [2, 3]
- #    join_statement = categories.map do |category|
- #      "SELECT
- #          recipe_categories.recipe_id
- #        FROM
- #          recipe_categories
- #        WHERE
- #          recipe_categories.category_id = ?"
- #    end.join("\nINTERSECT\n")
- #    
- #    query = <<-SQL
- #      SELECT
- #        recipes.*
- #      FROM 
- #        recipes
- #      JOIN
- #        (#{join_statement}) AS rc
- #      ON
- #        recipes.id = rc.recipe_id
- #    SQL
- #    sql_params = [query].concat(categories)
- #    
- #    sql_results = Recipe.find_by_sql(sql_params)   
- #  end
- #  
- #  def self.filter_by_keywords(keywords)
- #    keywords = ["cookie", "banana"]
- #    where_clause = keywords.map do |keyword|
- #      "title like ?"
- #    end.join(" AND ")
- #    
- #    parsed_keywords = keywords.map do |keyword|
- #      "%#{keyword}%"
- #    end
- #    
- #    results = Recipe.where(where_clause, *parsed_keywords)
- #  end
 end
