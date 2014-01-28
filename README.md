@@ -1,4 +1,4 @@
-Veggawker
+[Veggawker](http://veggawker.com)
 =========
 
 Veggawker is a user-submitted vegan recipe website. Any blogger can submit a recipe which links to their blog with the full recipe. Recipes can be searched by keyword and category. Veggawker's minimal layout makes it easy to find intriguing recipes.
