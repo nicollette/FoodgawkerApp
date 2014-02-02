@@ -44,6 +44,19 @@ gem 'kaminari'
 gem "letter_opener", :group => :development
 
 gem 'delayed_job_active_record'
+
+gem 'capybara'
+gem 'selenium-webdriver'
+gem 'launchy'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'guard-rspec'
+end
+
 # gem 'font-awesome-sass'
 # gem 'jquery-fileupload-rails', '0.3.0'
 
