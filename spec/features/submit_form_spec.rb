@@ -1,17 +1,16 @@
 require 'spec_helper'
 
-Capybara.default_wait_time = 60
-
 describe 'submitting a new recipe', :type => :feature, :js => true do
   before :each do
-    visit('/')
-    click_button("Guest Log In")
+
   end
   
   it "submits form successfully" do
+    visit('/')
+    click_button("Guest Log In")
+    sleep(30)
     
-    
-    click_link("Submit Recipe")
+    click_link("#submit-recipe")
     fill_in('title', :with => "best cookies everrrr")
     fill_in('blog_url', :with => "www.fakinit.com")
     click_button("Add Recipe")

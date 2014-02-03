@@ -10,7 +10,7 @@
       <li id="search-nav"><a>Search</a></li>
         <% if(FoodgawkerApp.Data.currentUser.id === undefined) { %>
           <li><a data-toggle="modal" data-target="#signUpModal">Sign Up</a><li>
-          <li><a data-toggle="modal" data-target="#signInModal">Sign In</a><li>
+          <li id="sign-in-li"><a data-toggle="modal" data-target="#signInModal" id="sign-in">Sign In</a><li>
           <li><button class="btn btn-info btn-default nav-bar-btn" id="guest-btn">Guest Log In</button><li>
         <% } else { %>
           <li><a href="#recipes/new" id="submit-recipe">Submit Recipe</a></li>
