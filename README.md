@@ -26,3 +26,5 @@ Highlights
 
 *   Nested submit recipe form creates Recipe and Category models in a single transaction
     * [https://github.com/nicollette/FoodgawkerApp/blob/master/app/assets/templates/recipes/form.jst.ejs] (https://github.com/nicollette/FoodgawkerApp/blob/master/app/assets/templates/recipes/form.jst.ejs)
+    
+*   Used Kamanari gem for infinite scroll
