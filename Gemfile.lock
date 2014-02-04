@@ -67,6 +67,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    database_cleaner (0.7.0)
     delayed_job (4.0.0)
       activesupport (>= 3.0, < 4.1)
     delayed_job_active_record (4.0.0)
@@ -81,6 +82,13 @@ GEM
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     ffi (1.9.3)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -229,8 +237,11 @@ DEPENDENCIES
   bcrypt-ruby
   capybara
   coffee-rails (~> 3.2.1)
+  database_cleaner
   delayed_job_active_record
   ejs
+  factory_girl_rails
+  faker
   figaro
   friendly_id
   guard-rspec

@@ -16,89 +16,90 @@ ActiveRecord::Base.transaction do
   c19 = Category.create(:name => "Soups")
   
   
-  # 
-  # u1 = User.create(:username => "nico", :email => "nico@gmail.com", :password => "password")
-  # u2 = User.create(:username => "guest1", :email => "guest1@gmail.com", :password => "password")
-  # u3 = User.create(:username => "guest2", :email => "guest2@gmail.com", :password => "password")
-  #   
-  # f1 = File.open(Rails.root.join('photos/carrot_cake.jpg').to_s)
-  # r1 = Recipe.create(title: "joyous carrot cake", blog_url: "http://www.wholeheartedeats.com/2014/01/one-year-some-cake.html", description: "Carrot Cake healthy enough to eat for Breakfast {Gluten Free, Oil/ Refined Sugar Free}", ingredients: "carrot, sugar, apple sauce, vanilla, oats, baking soda, baking powder, cinnamon, sea salt, nutmeg, clove, pineapple, raisins, walnuts", total_time: 80, user_id: 1, photo: f1)
-  # f1.close
-  # RecipeCategory.create(recipe_id: r1.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r1.id, category_id: c8.id)
-  # 
-  # f2 = File.open(Rails.root.join('photos/hemp_balls.jpg').to_s)
-  # r2 = Recipe.create(title: "pecan-hemp balls", blog_url: "http://cravinggreens.blogspot.ca/2014/01/pecan-hemp-balls.html", description: "Treat yourself to these quick and healthy pecan-hemp balls (no-bake). A delicious boost of healthy fats and dietary fiber.", ingredients: "pecans, wheat germ, flaxseeds, hemp seeds, cinnamon, nutmeg, salt, apple butter, flaxseed oil", total_time: 20, user_id: 1, photo: f2)
-  # f2.close
-  # RecipeCategory.create(recipe_id: r2.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r2.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r2.id, category_id: c18.id)
-  # 
-  # f3 = File.open(Rails.root.join('photos/m_a_risotto.jpg').to_s)
-  # r3 = Recipe.create(title: "mushroom asparagus risotto", blog_url: "http://www.munatycooking.com/2013/12/mushroom-asparagus-risotto-lunchbox-review.html", description: "Creamy and low in calorie risotto.", ingredients: "asparagus, white mushroom, Arborio rice, onion, water, olive oil, salt, black pepper", total_time: 35, user_id: 1, photo: f3)
-  # f3.close
-  # RecipeCategory.create(recipe_id: r3.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r3.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r3.id, category_id: c14.id)
-  # 
+  
+  u1 = User.create(:username => "nico", :email => "nico@gmail.com", :password => "password")
+  u2 = User.create(:username => "guest1", :email => "guest1@gmail.com", :password => "password")
+  u3 = User.create(:username => "guest2", :email => "guest2@gmail.com", :password => "password")
+  u4 = User.create(:username => "hungryhippo", :email => "sohungry@noms.com", :password => "password")
+    
+  f1 = File.open(Rails.root.join('photos/carrot_cake.jpg').to_s)
+  r1 = Recipe.create(title: "joyous carrot cake", blog_url: "http://www.wholeheartedeats.com/2014/01/one-year-some-cake.html", description: "Carrot Cake healthy enough to eat for Breakfast {Gluten Free, Oil/ Refined Sugar Free}", ingredients: "carrot, sugar, apple sauce, vanilla, oats, baking soda, baking powder, cinnamon, sea salt, nutmeg, clove, pineapple, raisins, walnuts", total_time: 80, user_id: 1, photo: f1)
+  f1.close
+  RecipeCategory.create(recipe_id: r1.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r1.id, category_id: c8.id)
+  
+  f2 = File.open(Rails.root.join('photos/hemp_balls.jpg').to_s)
+  r2 = Recipe.create(title: "pecan-hemp balls", blog_url: "http://cravinggreens.blogspot.ca/2014/01/pecan-hemp-balls.html", description: "Treat yourself to these quick and healthy pecan-hemp balls (no-bake). A delicious boost of healthy fats and dietary fiber.", ingredients: "pecans, wheat germ, flaxseeds, hemp seeds, cinnamon, nutmeg, salt, apple butter, flaxseed oil", total_time: 20, user_id: 1, photo: f2)
+  f2.close
+  RecipeCategory.create(recipe_id: r2.id, category_id: c1.id)
+  RecipeCategory.create(recipe_id: r2.id, category_id: c5.id)
+  RecipeCategory.create(recipe_id: r2.id, category_id: c18.id)
+  
+  f3 = File.open(Rails.root.join('photos/m_a_risotto.jpg').to_s)
+  r3 = Recipe.create(title: "mushroom asparagus risotto", blog_url: "http://www.munatycooking.com/2013/12/mushroom-asparagus-risotto-lunchbox-review.html", description: "Creamy and low in calorie risotto.", ingredients: "asparagus, white mushroom, Arborio rice, onion, water, olive oil, salt, black pepper", total_time: 35, user_id: 1, photo: f3)
+  f3.close
+  RecipeCategory.create(recipe_id: r3.id, category_id: c6.id)
+  RecipeCategory.create(recipe_id: r3.id, category_id: c10.id)
+  RecipeCategory.create(recipe_id: r3.id, category_id: c14.id)
+  
   # f4 = File.open(Rails.root.join('photos/r4.jpg').to_s)   
-  # r4 = Recipe.create(title: "spicy butternut squash with quinoa", blog_url: "http://thehonoursystem.com/2014/01/20/spicy-roasted-butternut-squash-with-quinoa-dried-cranberries/", description: "Spicy Roasted Butternut Squash with Quinoa & Dried Cranberries. Gluten Free! Tastes even better for lunch the next day!", ingredients: "butternut squash, shallots, garlic cloves, olive oil, chili flakes, sea salt, pepper, dried cranberries", total_time: 45, user_id: 1, photo: f4)
-  # f4.close
-  # RecipeCategory.create(recipe_id: r4.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r4.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r4.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r4.id, category_id: c14.id)
-  # 
-  # f5 = File.open(Rails.root.join('photos/tofu_citrus.jpg').to_s)
-  # r5 = Recipe.create(title: "grilled tofu with citrus salsa", blog_url: "http://golubkakitchen.com/2014/01/ginger-marinated-tofu-with-citrus-salsa.html", description: "Ginger marinated tofu with citrus salsa.", ingredients: "grapefruit, orange, avocado, red onion, jalapeno chile, cilantro, sea salt, black pepper, lime, extra-firm tofu, tamari, mirin wine, honey, ginger", total_time: 60, user_id: 1, photo: f5)
-  # f5.close
-  # RecipeCategory.create(recipe_id: r5.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r5.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r5.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r5.id, category_id: c14.id)
-  # 
-  # f6 = File.open(Rails.root.join('photos/pistachio_ic.jpg').to_s)
-  # r6 = Recipe.create(title: "pistachio ice cream", blog_url: "http://nutritionstripped.com/pistachio-ice-cream/#.Ut4RKmTTky5", description: "A delicious, thick, and creamy non-dairy ice cream with pistachios!", ingredients: "bananas, almond milk, pistachio, vanilla, spirulina, cinnamon", total_time: 15, user_id: 1, photo: f6)
-  # f6.close
-  # RecipeCategory.create(recipe_id: r6.id, category_id: c5.id)
-  # 
-  # f7 = File.open(Rails.root.join('photos/pump_coco_soup.jpg').to_s)
-  # r7 = Recipe.create(title: "thai pumpkin and coconut soup", blog_url: "http://circusgardener.com/2013/11/03/thai-pumpkin-and-coconut-soup/", description: "Thai pumpkin and coconut soup - a stunningly good soup, perfect for a cold winter's day.", ingredients: "pumpkin, onion, coconut milk, vegetable stock, extra virgin olive oil, sea salt, red chillies, coriander, cumin, lemongrass stalks, ginger, garlic, red onion, lime", total_time: 50, user_id: 1, photo: f7)
-  # f7.close
-  # RecipeCategory.create(recipe_id: r7.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r7.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r7.id, category_id: c19.id)
-  # 
-  # f8 = File.open(Rails.root.join('photos/wasabi_hum.jpg').to_s)
-  # r8 = Recipe.create(title: "spicy wasabi hummus", blog_url: "http://forealslife.com/blog/spicy-wasabi-hummus-oil-and-tahini-free", description: "Spicy Wasabi Hummus with toasted sesame seeds. Perfect for spicy food lovers! (Hint - it's really good on a baked potato!)", ingredients: "chickpeas, rice vinegar, wasabi, soy sauce, water, seasame seeds, garlic", total_time: 10, user_id: 1, photo: f8)
-  # f8.close
-  # RecipeCategory.create(recipe_id: r8.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r8.id, category_id: c18.id)
-  # 
-  # f9 = File.open(Rails.root.join('photos/mq_soup.jpg').to_s)
-  # r9 = Recipe.create(title: "creamy mushroom & quinoa soup", blog_url: "http://www.queenofquinoa.me/2014/01/mushroom-quinoa-soup/", description: "This soup is made creamy and rich with coconut milk, then filled with meaty mushrooms & protein-rich quinoa.", ingredients: "olive oil, mushrooms, shallots, garlic, quinoa flour, coconut milk, vegetable broth, lemon, salt, pepper, sriracha, chives", total_time: 45, user_id: 1, photo: f9)
-  # f9.close
-  # RecipeCategory.create(recipe_id: r9.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r9.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r9.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r9.id, category_id: c19.id)
-  # 
-  # f10 = File.open(Rails.root.join('photos/r10.jpg').to_s)
-  # r10 = Recipe.create(title: "easy lemon herb spaghetti", blog_url: "http://www.sugardishme.com/2014/01/17/easy-lemon-herb-spaghetti/", description: "Dinner on the table in 20 minutes or less with this simple pasta dish that's loaded with flavor.", ingredients: "whole wheat spaghetti, olive oil, garlic, lemon, panko bread crumbs, basil, oregano, salt, black pepper, red pepper flakes", total_time: 20, user_id: 1, photo: f10)
-  # f10.close
-  # RecipeCategory.create(recipe_id: r10.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r10.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r10.id, category_id: c12.id)
-  # 
-  # f11 = File.open(Rails.root.join('photos/donuts.jpg').to_s)
-  # r11 = Recipe.create(title: "baked donuts", blog_url: "http://www.myitaliansmorgasbord.com/2014/01/19/egg-and-dairy-free-baked-yeasted-doughnuts-with-strawberry-icing/", description: "Egg and Dairy-Free Baked Yeasted Doughnuts with Strawberry Icing", ingredients: "bread flour, water, soy flour, sea salt, sugar, yeast, strawberries", total_time: 60, user_id: 1, photo: f11)
-  # f11.close
-  # RecipeCategory.create(recipe_id: r11.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r11.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r11.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r11.id, category_id: c18.id)
-  # 
-  # f12 = File.open(Rails.root.join('photos/bo_muffins.jpg').to_s)
+#   r4 = Recipe.create(title: "spicy butternut squash with quinoa", blog_url: "http://thehonoursystem.com/2014/01/20/spicy-roasted-butternut-squash-with-quinoa-dried-cranberries/", description: "Spicy Roasted Butternut Squash with Quinoa & Dried Cranberries. Gluten Free! Tastes even better for lunch the next day!", ingredients: "butternut squash, shallots, garlic cloves, olive oil, chili flakes, sea salt, pepper, dried cranberries", total_time: 45, user_id: 1, photo: f4)
+#   f4.close
+#   RecipeCategory.create(recipe_id: r4.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r4.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r4.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r4.id, category_id: c14.id)
+#   
+#   f5 = File.open(Rails.root.join('photos/tofu_citrus.jpg').to_s)
+#   r5 = Recipe.create(title: "grilled tofu with citrus salsa", blog_url: "http://golubkakitchen.com/2014/01/ginger-marinated-tofu-with-citrus-salsa.html", description: "Ginger marinated tofu with citrus salsa.", ingredients: "grapefruit, orange, avocado, red onion, jalapeno chile, cilantro, sea salt, black pepper, lime, extra-firm tofu, tamari, mirin wine, honey, ginger", total_time: 60, user_id: 1, photo: f5)
+#   f5.close
+#   RecipeCategory.create(recipe_id: r5.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r5.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r5.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r5.id, category_id: c14.id)
+#   
+#   f6 = File.open(Rails.root.join('photos/pistachio_ic.jpg').to_s)
+#   r6 = Recipe.create(title: "pistachio ice cream", blog_url: "http://nutritionstripped.com/pistachio-ice-cream/#.Ut4RKmTTky5", description: "A delicious, thick, and creamy non-dairy ice cream with pistachios!", ingredients: "bananas, almond milk, pistachio, vanilla, spirulina, cinnamon", total_time: 15, user_id: 1, photo: f6)
+#   f6.close
+#   RecipeCategory.create(recipe_id: r6.id, category_id: c5.id)
+#   
+#   f7 = File.open(Rails.root.join('photos/pump_coco_soup.jpg').to_s)
+#   r7 = Recipe.create(title: "thai pumpkin and coconut soup", blog_url: "http://circusgardener.com/2013/11/03/thai-pumpkin-and-coconut-soup/", description: "Thai pumpkin and coconut soup - a stunningly good soup, perfect for a cold winter's day.", ingredients: "pumpkin, onion, coconut milk, vegetable stock, extra virgin olive oil, sea salt, red chillies, coriander, cumin, lemongrass stalks, ginger, garlic, red onion, lime", total_time: 50, user_id: 1, photo: f7)
+#   f7.close
+#   RecipeCategory.create(recipe_id: r7.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r7.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r7.id, category_id: c19.id)
+#   
+#   f8 = File.open(Rails.root.join('photos/wasabi_hum.jpg').to_s)
+#   r8 = Recipe.create(title: "spicy wasabi hummus", blog_url: "http://forealslife.com/blog/spicy-wasabi-hummus-oil-and-tahini-free", description: "Spicy Wasabi Hummus with toasted sesame seeds. Perfect for spicy food lovers! (Hint - it's really good on a baked potato!)", ingredients: "chickpeas, rice vinegar, wasabi, soy sauce, water, seasame seeds, garlic", total_time: 10, user_id: 1, photo: f8)
+#   f8.close
+#   RecipeCategory.create(recipe_id: r8.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r8.id, category_id: c18.id)
+#   
+#   f9 = File.open(Rails.root.join('photos/mq_soup.jpg').to_s)
+#   r9 = Recipe.create(title: "creamy mushroom & quinoa soup", blog_url: "http://www.queenofquinoa.me/2014/01/mushroom-quinoa-soup/", description: "This soup is made creamy and rich with coconut milk, then filled with meaty mushrooms & protein-rich quinoa.", ingredients: "olive oil, mushrooms, shallots, garlic, quinoa flour, coconut milk, vegetable broth, lemon, salt, pepper, sriracha, chives", total_time: 45, user_id: 1, photo: f9)
+#   f9.close
+#   RecipeCategory.create(recipe_id: r9.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r9.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r9.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r9.id, category_id: c19.id)
+#   
+#   f10 = File.open(Rails.root.join('photos/r10.jpg').to_s)
+#   r10 = Recipe.create(title: "easy lemon herb spaghetti", blog_url: "http://www.sugardishme.com/2014/01/17/easy-lemon-herb-spaghetti/", description: "Dinner on the table in 20 minutes or less with this simple pasta dish that's loaded with flavor.", ingredients: "whole wheat spaghetti, olive oil, garlic, lemon, panko bread crumbs, basil, oregano, salt, black pepper, red pepper flakes", total_time: 20, user_id: 1, photo: f10)
+#   f10.close
+#   RecipeCategory.create(recipe_id: r10.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r10.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r10.id, category_id: c12.id)
+#   
+#   f11 = File.open(Rails.root.join('photos/donuts.jpg').to_s)
+#   r11 = Recipe.create(title: "baked donuts", blog_url: "http://www.myitaliansmorgasbord.com/2014/01/19/egg-and-dairy-free-baked-yeasted-doughnuts-with-strawberry-icing/", description: "Egg and Dairy-Free Baked Yeasted Doughnuts with Strawberry Icing", ingredients: "bread flour, water, soy flour, sea salt, sugar, yeast, strawberries", total_time: 60, user_id: 1, photo: f11)
+#   f11.close
+#   RecipeCategory.create(recipe_id: r11.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r11.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r11.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r11.id, category_id: c18.id)
+#   
+#   f12 = File.open(Rails.root.join('photos/bo_muffins.jpg').to_s)
 #   r12 = Recipe.create(title: "blueberry oat muffins", blog_url: "http://www.oatmealwithafork.com/2014/01/17/sugar-free-guilt-free-blueberry-oat-muffins-gf-vegan/", description: "Sugar-Free, Guilt-Free Blueberry Oat Muffins...made from whole food ingredients like oats and dates, and only 106 calories each!", ingredients: "dates, applesauce, oil, dairy-free milk, lemon juice, oats, brown rice flour, baking powder, baking soda, sea salt, cinnamon, stevia, blueberries", total_time: 35, user_id: 1, photo: f12)
 #   f12.close
 #   RecipeCategory.create(recipe_id: r12.id, category_id: c1.id)
@@ -115,89 +116,89 @@ ActiveRecord::Base.transaction do
 #   RecipeCategory.create(recipe_id: r13.id, category_id: c8.id)
 #   RecipeCategory.create(recipe_id: r13.id, category_id: c14.id)
 #   RecipeCategory.create(recipe_id: r13.id, category_id: c18.id)
-  # 
-  # f14 = File.open(Rails.root.join('photos/crbuns.jpg').to_s)
-  # r14 = Recipe.create(title: "cinnamon raison buns", blog_url: "http://swissmissinthekitchen.blogspot.ch/2014/01/vegan-cinnamon-raisin-buns.html", description: "Vegan cinnamon raisin buns made with coconut oil and spelt flour!", ingredients: "spelt flour, salt, maple syrup, stevia, vanilla, yeast, almond milk, coconut oil, raisins, cinnamon", total_time: 60, user_id: 1, photo: f14)
-  # f14.close
-  # RecipeCategory.create(recipe_id: r14.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r14.id, category_id: c5.id)
-  # RecipeCategory.create(recipe_id: r14.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r14.id, category_id: c18.id)
-  # 
-  # f15 = File.open(Rails.root.join('photos/r15.jpg').to_s)
-  # r15 = Recipe.create(title: "banana pecan pancakes", blog_url: "http://thefitchen.com/2013/12/19/banana-pecan-pancakes/", description: "Healthy, easy pancakes – done in under 30 minutes! Hearty, fluffy, nutty, and caramel-y. Plus, they’re vegan and gluten-free!", ingredients: "oat flour, pecans, coconut milk, baking powder, vanilla, ground flax, sea salt, maple syrup, coconut oil", total_time: 30, user_id: 1, photo: f15)
-  # f15.close
-  # RecipeCategory.create(recipe_id: r15.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r15.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r15.id, category_id: c8.id)
-  
-  # f16 = File.open(Rails.root.join('photos/r16.jpg').to_s)
-  # r16 = Recipe.create(title: "soyrizo kelp noodle casserole", blog_url: "http://www.fellowshipofthevegetable.com/soyrizo-kelp-noodle-casserole/", description: "Kelp noodles baked with spicy soyrizo, sautéed veggies and tomato sauce.", ingredients: "kelp noodles, olive oil, onion, celery, soyrizo, tomato sauce, daiya cheese, parsley", total_time: 55, user_id: 2, photo: f16)
-  # f16.close
-  # RecipeCategory.create(recipe_id: r16.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r16.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r16.id, category_id: c12.id)
-  # 
-  # f17 = File.open(Rails.root.join('photos/r17.jpg').to_s)
-  # r17 = Recipe.create(title: "easy white bean and tomato soup", blog_url: "http://makingthymeforhealth.com/2013/12/10/easy-white-bean-tomato-soup-vegan/", description: "Easy White Bean & Tomato Soup- a vegan soup that's ready in thirty minutes.", ingredients: "white beans, marinara sauce, vegetable broth, olive oil, swiss chard, onion, carrots, garlic, oregano, salt, pepper, whole wheat elbows", total_time: 45, user_id: 2, photo: f17)
-  # f17.close
-  # RecipeCategory.create(recipe_id: r17.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r17.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r17.id, category_id: c12.id)
-  # RecipeCategory.create(recipe_id: r17.id, category_id: c19.id)
-  # 
-  # f18 = File.open(Rails.root.join('photos/r18.jpeg').to_s)
-  # r18 = Recipe.create(title: "raw thai noodle salad", blog_url: "http://www.floridacoastalcooking.com/2013/12/raw-thai-noodle-salad.html", description: "Raw Thai Noodle Salad ~ Easy, Gluten Free and Vegan", ingredients: "kelp noodles, broccoli, green onion, red cabbage, carrots, seasame seeds, cilantro, nut butter, ume plum vinegar, agave, chili sauce", total_time: 15, user_id: 2, photo: f18)
-  # f18.close
-  # RecipeCategory.create(recipe_id: r18.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r18.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r18.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r18.id, category_id: c12.id)
-  # RecipeCategory.create(recipe_id: r18.id, category_id: c15.id)
-  # 
-  # f19 = File.open(Rails.root.join('photos/r19.jpeg').to_s)
-  # r19 = Recipe.create(title: "vegan cheesy baked pesto mac", blog_url: "http://boldvegan.com/cheesy-baked-pesto-mac-with-walnut-parm-gluten-free-soy-free/", description: "Vegan Cheesy Baked Pesto Mac with Walnut Parmesan (Gluten Free and Soy Free).", ingredients: "potato, carrot, onion, water, walnuts, nutritional yeast, basil, garlic, olive oil, turmeric powder, sea salt, pepper, quinoa pasta, walnuts", total_time: 50, user_id: 2, photo: f19)
-  # f19.close
-  # RecipeCategory.create(recipe_id: r19.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r19.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r19.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r19.id, category_id: c12.id)
-  # 
-  # f20 = File.open(Rails.root.join('photos/r20.jpeg').to_s)
-  # r20 = Recipe.create(title: "spicy miso udon noodle soup", blog_url: "http://blog.seasonwithspice.com/2013/10/miso-udon-noodle-soup-recipe.html", description: "Miso Udon Noodle Soup with Spicy Korean Chili Dressing", ingredients: "udon noodles, water, shiitake mushrooms, silken tofu, miso paste, spinach, nori, scallions", total_time: 20, user_id: 2, photo: f20)
-  # f20.close
-  # RecipeCategory.create(recipe_id: r20.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r20.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r20.id, category_id: c12.id)
-  # RecipeCategory.create(recipe_id: r20.id, category_id: c19.id)
-  # 
-  # f21 = File.open(Rails.root.join('photos/r21.jpg').to_s)
-  # r21 = Recipe.create(title: "quinoa stuffed avocados", blog_url: "http://theleancleaneatingmachine.com/2014/01/17/quinoa-stuffed-avocados/", description: "Healthy and refreshing quinoa stuffed avocados make a great appetizer or light meal.", ingredients: "quinoa, vegetable broth, avocado, lime, cilantro, sriracha", total_time: 45, user_id: 2, photo: f21)
-  # f21.close
-  # RecipeCategory.create(recipe_id: r21.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r21.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r21.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r21.id, category_id: c15.id)
-  # RecipeCategory.create(recipe_id: r21.id, category_id: c18.id)
-  # 
-  # f22 = File.open(Rails.root.join('photos/r22.jpg').to_s)
-  # r22 = Recipe.create(title: "goji banana mango oats", blog_url: "http://nutritionstripped.com/goji-banana-mango-oats/#.UtftCGRDvHs", description: "A gluten free breakfast porridge with oatmeals, bananas, goji berries, and mango.", ingredients: "gluten-free oats, almond milk, banana, mango, goji berries, cinnamon, vanilla", total_time: 20, user_id: 2, photo: f22)
-  # f22.close
-  # RecipeCategory.create(recipe_id: r22.id, category_id: c1.id)
-  # RecipeCategory.create(recipe_id: r22.id, category_id: c7.id)
-  # RecipeCategory.create(recipe_id: r22.id, category_id: c8.id)
-  # RecipeCategory.create(recipe_id: r22.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r22.id, category_id: c18.id)
-  # 
-  # f23 = File.open(Rails.root.join('photos/r23.jpg').to_s)
-  # r23 = Recipe.create(title: "curried bulgur wheat salad", blog_url: "http://www.greatbritishchefs.com/community/curried-bulgur-wheat-salad-recipe", description: "Curried Bulgur Wheat Salad", ingredients: "bulgur wheat, olive oil, agave nectar, curry powder, salt, black pepper, carrot, green pepper, spring onions, sweetcorn, pine nuts, coriander", total_time: 20, user_id: 2, photo: f23)
-  # f23.close
-  # RecipeCategory.create(recipe_id: r23.id, category_id: c6.id)
-  # RecipeCategory.create(recipe_id: r23.id, category_id: c10.id)
-  # RecipeCategory.create(recipe_id: r23.id, category_id: c14.id)
-  # RecipeCategory.create(recipe_id: r23.id, category_id: c15.id)
-  
-  # f24 = File.open(Rails.root.join('photos/r24.jpg').to_s)
+#   
+#   f14 = File.open(Rails.root.join('photos/crbuns.jpg').to_s)
+#   r14 = Recipe.create(title: "cinnamon raison buns", blog_url: "http://swissmissinthekitchen.blogspot.ch/2014/01/vegan-cinnamon-raisin-buns.html", description: "Vegan cinnamon raisin buns made with coconut oil and spelt flour!", ingredients: "spelt flour, salt, maple syrup, stevia, vanilla, yeast, almond milk, coconut oil, raisins, cinnamon", total_time: 60, user_id: 1, photo: f14)
+#   f14.close
+#   RecipeCategory.create(recipe_id: r14.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r14.id, category_id: c5.id)
+#   RecipeCategory.create(recipe_id: r14.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r14.id, category_id: c18.id)
+#   
+#   f15 = File.open(Rails.root.join('photos/r15.jpg').to_s)
+#   r15 = Recipe.create(title: "banana pecan pancakes", blog_url: "http://thefitchen.com/2013/12/19/banana-pecan-pancakes/", description: "Healthy, easy pancakes – done in under 30 minutes! Hearty, fluffy, nutty, and caramel-y. Plus, they’re vegan and gluten-free!", ingredients: "oat flour, pecans, coconut milk, baking powder, vanilla, ground flax, sea salt, maple syrup, coconut oil", total_time: 30, user_id: 1, photo: f15)
+#   f15.close
+#   RecipeCategory.create(recipe_id: r15.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r15.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r15.id, category_id: c8.id)
+#   
+#   f16 = File.open(Rails.root.join('photos/r16.jpg').to_s)
+#   r16 = Recipe.create(title: "soyrizo kelp noodle casserole", blog_url: "http://www.fellowshipofthevegetable.com/soyrizo-kelp-noodle-casserole/", description: "Kelp noodles baked with spicy soyrizo, sautéed veggies and tomato sauce.", ingredients: "kelp noodles, olive oil, onion, celery, soyrizo, tomato sauce, daiya cheese, parsley", total_time: 55, user_id: 2, photo: f16)
+#   f16.close
+#   RecipeCategory.create(recipe_id: r16.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r16.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r16.id, category_id: c12.id)
+#   
+#   f17 = File.open(Rails.root.join('photos/r17.jpg').to_s)
+#   r17 = Recipe.create(title: "easy white bean and tomato soup", blog_url: "http://makingthymeforhealth.com/2013/12/10/easy-white-bean-tomato-soup-vegan/", description: "Easy White Bean & Tomato Soup- a vegan soup that's ready in thirty minutes.", ingredients: "white beans, marinara sauce, vegetable broth, olive oil, swiss chard, onion, carrots, garlic, oregano, salt, pepper, whole wheat elbows", total_time: 45, user_id: 2, photo: f17)
+#   f17.close
+#   RecipeCategory.create(recipe_id: r17.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r17.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r17.id, category_id: c12.id)
+#   RecipeCategory.create(recipe_id: r17.id, category_id: c19.id)
+#   
+#   f18 = File.open(Rails.root.join('photos/r18.jpeg').to_s)
+#   r18 = Recipe.create(title: "raw thai noodle salad", blog_url: "http://www.floridacoastalcooking.com/2013/12/raw-thai-noodle-salad.html", description: "Raw Thai Noodle Salad ~ Easy, Gluten Free and Vegan", ingredients: "kelp noodles, broccoli, green onion, red cabbage, carrots, seasame seeds, cilantro, nut butter, ume plum vinegar, agave, chili sauce", total_time: 15, user_id: 2, photo: f18)
+#   f18.close
+#   RecipeCategory.create(recipe_id: r18.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r18.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r18.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r18.id, category_id: c12.id)
+#   RecipeCategory.create(recipe_id: r18.id, category_id: c15.id)
+#   
+#   f19 = File.open(Rails.root.join('photos/r19.jpeg').to_s)
+#   r19 = Recipe.create(title: "vegan cheesy baked pesto mac", blog_url: "http://boldvegan.com/cheesy-baked-pesto-mac-with-walnut-parm-gluten-free-soy-free/", description: "Vegan Cheesy Baked Pesto Mac with Walnut Parmesan (Gluten Free and Soy Free).", ingredients: "potato, carrot, onion, water, walnuts, nutritional yeast, basil, garlic, olive oil, turmeric powder, sea salt, pepper, quinoa pasta, walnuts", total_time: 50, user_id: 2, photo: f19)
+#   f19.close
+#   RecipeCategory.create(recipe_id: r19.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r19.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r19.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r19.id, category_id: c12.id)
+#   
+#   f20 = File.open(Rails.root.join('photos/r20.jpeg').to_s)
+#   r20 = Recipe.create(title: "spicy miso udon noodle soup", blog_url: "http://blog.seasonwithspice.com/2013/10/miso-udon-noodle-soup-recipe.html", description: "Miso Udon Noodle Soup with Spicy Korean Chili Dressing", ingredients: "udon noodles, water, shiitake mushrooms, silken tofu, miso paste, spinach, nori, scallions", total_time: 20, user_id: 2, photo: f20)
+#   f20.close
+#   RecipeCategory.create(recipe_id: r20.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r20.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r20.id, category_id: c12.id)
+#   RecipeCategory.create(recipe_id: r20.id, category_id: c19.id)
+#   
+#   f21 = File.open(Rails.root.join('photos/r21.jpg').to_s)
+#   r21 = Recipe.create(title: "quinoa stuffed avocados", blog_url: "http://theleancleaneatingmachine.com/2014/01/17/quinoa-stuffed-avocados/", description: "Healthy and refreshing quinoa stuffed avocados make a great appetizer or light meal.", ingredients: "quinoa, vegetable broth, avocado, lime, cilantro, sriracha", total_time: 45, user_id: 2, photo: f21)
+#   f21.close
+#   RecipeCategory.create(recipe_id: r21.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r21.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r21.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r21.id, category_id: c15.id)
+#   RecipeCategory.create(recipe_id: r21.id, category_id: c18.id)
+#   
+#   f22 = File.open(Rails.root.join('photos/r22.jpg').to_s)
+#   r22 = Recipe.create(title: "goji banana mango oats", blog_url: "http://nutritionstripped.com/goji-banana-mango-oats/#.UtftCGRDvHs", description: "A gluten free breakfast porridge with oatmeals, bananas, goji berries, and mango.", ingredients: "gluten-free oats, almond milk, banana, mango, goji berries, cinnamon, vanilla", total_time: 20, user_id: 2, photo: f22)
+#   f22.close
+#   RecipeCategory.create(recipe_id: r22.id, category_id: c1.id)
+#   RecipeCategory.create(recipe_id: r22.id, category_id: c7.id)
+#   RecipeCategory.create(recipe_id: r22.id, category_id: c8.id)
+#   RecipeCategory.create(recipe_id: r22.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r22.id, category_id: c18.id)
+#   
+#   f23 = File.open(Rails.root.join('photos/r23.jpg').to_s)
+#   r23 = Recipe.create(title: "curried bulgur wheat salad", blog_url: "http://www.greatbritishchefs.com/community/curried-bulgur-wheat-salad-recipe", description: "Curried Bulgur Wheat Salad", ingredients: "bulgur wheat, olive oil, agave nectar, curry powder, salt, black pepper, carrot, green pepper, spring onions, sweetcorn, pine nuts, coriander", total_time: 20, user_id: 2, photo: f23)
+#   f23.close
+#   RecipeCategory.create(recipe_id: r23.id, category_id: c6.id)
+#   RecipeCategory.create(recipe_id: r23.id, category_id: c10.id)
+#   RecipeCategory.create(recipe_id: r23.id, category_id: c14.id)
+#   RecipeCategory.create(recipe_id: r23.id, category_id: c15.id)
+#   
+#   f24 = File.open(Rails.root.join('photos/r24.jpg').to_s)
 #   r24 = Recipe.create(title: "vegan naked burrito", blog_url: "http://vegieproject.com/vegan-naked-burrito/", description: "Vegan naked burrito with brown rice, black beans, pico de gallo salsa, guacamole and charred corn.", ingredients: "brown rice, black beans, onion, garlic, cumin, paprika, corn, olive oil, tomatoes, lime, avocado", total_time: 30, user_id: 2, photo: f24)
 #   f24.close
 #   RecipeCategory.create(recipe_id: r24.id, category_id: c6.id)

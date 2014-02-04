@@ -13,7 +13,8 @@ class Recipe < ActiveRecord::Base
   has_attached_file :photo, :styles => {
       medium: '275x275#',
       large: '550X550#'
-  }
+  }, :default_url => '/pancakes_:style.jpg'
+  
   
   def previous
     if self.id == 1 

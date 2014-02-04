@@ -45,16 +45,19 @@ gem "letter_opener", :group => :development
 
 gem 'delayed_job_active_record'
 
-gem 'capybara'
 gem 'selenium-webdriver'
-gem 'launchy'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'guard-rspec'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # gem 'font-awesome-sass'
