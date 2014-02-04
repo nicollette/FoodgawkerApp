@@ -4,8 +4,8 @@ describe 'logging in', :type => :feature, :js => true do
   before :each do
     FactoryGirl.create(:user)
   end
-
-  it 'logs in successfully' do
+  
+  it 'logs out successfully' do
     visit('/')
 
     find('#sign-in-li').find('#sign-in').click
@@ -14,5 +14,8 @@ describe 'logging in', :type => :feature, :js => true do
     find('#sign-in-footer').find('#sign-in-button').click
     
     expect(page).to have_content('Welcome')
+    
+    find("#sign-out-li").find("#sign-out-btn").click
+    expect(page).to have_content("Sign In")
   end
 end

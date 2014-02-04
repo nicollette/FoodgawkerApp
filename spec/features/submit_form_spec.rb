@@ -12,7 +12,6 @@ describe 'submitting a new recipe', :type => :feature, :js => true do
     find('#sign-in-form').find('#username-input').fill_in('Username', :with => 'guest1')
     find('#sign-in-form').find("#password-input").fill_in('Password', :with => 'password')
     find('#sign-in-footer').find('#sign-in-button').click
-    
     expect(page).to have_content('Welcome')
     
     find("#submit-recipe-li").find("#submit-recipe").click
