@@ -25,7 +25,6 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
         var view = new FoodgawkerApp.Views.MostFaved({
           collection: topRecipes
         });
-    
         router._swapView(view);
       }
     })

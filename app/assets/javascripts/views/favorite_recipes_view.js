@@ -2,7 +2,7 @@ FoodgawkerApp.Views.FavoriteRecipesView = Backbone.View.extend({
   template: JST["recipes/favorite_recipes"],
 
   initialize: function () {
-    this.listenTo(this.collection, "all", this.render)  
+    this.listenTo(this.collection, "all", this.render);  
   },
    
   childViews: [],

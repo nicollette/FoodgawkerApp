@@ -20,6 +20,7 @@
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
+//= require ./views/recipes_base
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
