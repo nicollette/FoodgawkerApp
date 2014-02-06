@@ -6,7 +6,7 @@ FoodgawkerApp.Views.RecipesBase = Backbone.View.extend({
   },
   
   render: function () {
-    var indexView = this;
+    var view = this;
     var content = this.template({ recipes: this.collection });
     this.$el.html(content);
     
@@ -15,8 +15,8 @@ FoodgawkerApp.Views.RecipesBase = Backbone.View.extend({
         model: recipe 
       });
       
-      indexView.childViews.push(miniDetailView);
-      indexView.$el.append(miniDetailView.render().$el);
+      view.childViews.push(miniDetailView);
+      view.$el.append(miniDetailView.render().$el);
     })
     return this;
   },
@@ -28,16 +28,16 @@ FoodgawkerApp.Views.RecipesBase = Backbone.View.extend({
   },
 
   nextPage: function () {
-    var indexView = this;
+    var view = this;
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 400){
       console.log("scrolled to bottom!");
-      if (indexView.collection.page_number < indexView.collection.total_pages) {
-        indexView.collection.fetch({
-          data: { page: indexView.collection.page_number + 1 },
+      if (view.collection.page_number < view.collection.total_pages) {
+        view.collection.fetch({
+          data: { page: view.collection.page_number + 1 },
           remove: false,
           wait: true,
           success: function () {
-            console.log("successfully fetched page " + indexView.collection.page_number);
+            console.log("successfully fetched page " + view.collection.page_number);
           }
         });
       }
