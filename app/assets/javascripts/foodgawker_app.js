@@ -5,8 +5,8 @@ window.FoodgawkerApp = {
   Routers: {},
   Data: {},
   initialize: function() {
-    FoodgawkerApp.Data.categories =      
-    JSON.parse($("#bootstrapped-categories").html());
+    FoodgawkerApp.Data.categories =     
+      JSON.parse($("#bootstrapped-categories").html());
     
     var currUser = JSON.parse($("#bootstrapped-current-user").html().trim());
     FoodgawkerApp.Data.currentUser = new FoodgawkerApp.Models.User();
@@ -58,10 +58,6 @@ window.FoodgawkerApp = {
   },
   
   addSignInModal: function () {
-    // var newSession = new FoodgawkerApp.Models.Session();
-    // var view = new FoodgawkerApp.Views.SignIn({
-    //   model: newSession
-    // });
    FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session();
     var view = new FoodgawkerApp.Views.SignIn({
       model: FoodgawkerApp.Data.session

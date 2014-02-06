@@ -15,6 +15,7 @@ FoodgawkerApp.Views.RecipesIndex = Backbone.View.extend({
     
     var recipeCounter = 0;
     var rowId = 2;
+    // DRY THIS UP, VERY SIMILAR TO FAVORITE RECIPES VIEW
     this.collection.each(function (recipe) {
       var miniDetailView = new FoodgawkerApp.Views.MiniRecipeDetail({ 
         model: recipe 
