@@ -34,7 +34,7 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
     this.model.save({}, {
       success: function (response) {        
         FoodgawkerApp.Data.session = session;
-        delete response.attributes["user"];
+        delete response.  attributes["user"];
         FoodgawkerApp.flash(
           ["Welcome " + response.attributes["username"] + "!"], 
           "success"
@@ -44,12 +44,13 @@ FoodgawkerApp.Views.SignIn = Backbone.View.extend({
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);
+      },
+      
+      error: function (model, xhr, options) {
+        FoodgawkerApp.flash(
+          ["username or password was invalid"], "danger"
+        )
       }
-      // 
-      // error: function (model, xhr, options) {
-      //   // var errors = $.parseJSON(xhr.responseText).errors
-      //   debugger;
-      // }
     });
     
   }

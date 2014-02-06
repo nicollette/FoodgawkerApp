@@ -13,12 +13,12 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   initialize: function (options) {
     this.recipes = options.recipes;
-    this.$rootEl = options.$rootEl
+    this.$rootEl = options.$rootEl;
   },
   
   detail: function (id) {
     var router = this;
-    var recipe = new FoodgawkerApp.Models.Recipe({id: id})
+    var recipe = new FoodgawkerApp.Models.Recipe({id: id});
     recipe.fetch({
       success: function () {
         var view = new FoodgawkerApp.Views.RecipeDetail({
@@ -39,7 +39,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
         var view = new FoodgawkerApp.Views.FavoriteRecipesView({ 
           collection: favRecipes 
         });
-        router._swapView(view)
+        router._swapView(view);
       }
     })
   },
@@ -50,8 +50,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       collection: FoodgawkerApp.Data.recipes 
     });
     
-    this._swapView(view);      
-  
+    this._swapView(view);
   },
   
   mostFaved: function () {
@@ -65,7 +64,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
         });
         router._swapView(view);
       }
-    })
+    });
   },
   
   new: function () {
@@ -78,7 +77,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       this._swapView(view);  
     }
     else {
-      Backbone.history.navigate("session/new", { trigger: true })
+      Backbone.history.navigate("session/new", { trigger: true });
     }
   },
   
@@ -89,7 +88,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   signIn: function () {
     if(this._isSignedIn()) {
-      Backbone.history.navigate("", { trigger: true })
+      Backbone.history.navigate("", { trigger: true });
     } else {
         var newSession = new FoodgawkerApp.Models.Session();
         var view = new FoodgawkerApp.Views.SignIn({
@@ -102,7 +101,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
   
   signUp: function () {
     if(this._isSignedIn()) {
-      Backbone.history.navigate("", { trigger: true })
+      Backbone.history.navigate("", { trigger: true });
     } else {      
         var newUser = new FoodgawkerApp.Models.User();
         var view = new FoodgawkerApp.Views.SignUp({
@@ -127,7 +126,7 @@ FoodgawkerApp.Routers.RecipeRouter = Backbone.Router.extend({
       this.current_view && this.current_view.remove();
     }
     
-    this.current_view = view
+    this.current_view = view;
     this.$rootEl.html(view.render().$el);
   }
 })
