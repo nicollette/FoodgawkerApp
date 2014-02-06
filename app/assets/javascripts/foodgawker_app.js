@@ -38,25 +38,6 @@ window.FoodgawkerApp = {
     })
   },
   
-  flash: function (messages, type) {
-    this.emptyFlash();
-    var alertClasses = "alert alert-" + type;
-    
-    messages.forEach(function (message) {
-      var $newAlert = $("<div>").addClass(alertClasses);
-      $newAlert.text(message);
-      
-      $("#alerts-section").append($newAlert)
-    })
-    
-    $("#alerts-section").fadeOut(5500, this.emptyFlash.bind(this));
-  },
-  
-  emptyFlash: function () {
-    $("#alerts-section").empty();
-    $("#alerts-section").removeAttr("style")
-  },
-  
   addSignInModal: function () {
    FoodgawkerApp.Data.session = new FoodgawkerApp.Models.Session();
     var view = new FoodgawkerApp.Views.SignIn({
@@ -72,7 +53,27 @@ window.FoodgawkerApp = {
       model: newUser
     });
     $("#modal-sign-up-section").html(view.render().$el);
+  },
+  
+  emptyFlash: function () {
+    $("#alerts-section").empty();
+    $("#alerts-section").removeAttr("style")
+  },
+  
+  flash: function (messages, type) {
+    this.emptyFlash();
+    var alertClasses = "alert alert-" + type;
+    
+    messages.forEach(function (message) {
+      var $newAlert = $("<div>").addClass(alertClasses);
+      $newAlert.text(message);
+      
+      $("#alerts-section").append($newAlert)
+    })
+    
+    $("#alerts-section").fadeOut(5500, this.emptyFlash.bind(this));
   }
+
 };
 
 $(document).ready(function(){
