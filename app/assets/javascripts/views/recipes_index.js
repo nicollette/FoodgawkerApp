@@ -5,4 +5,4 @@ FoodgawkerApp.Views.RecipesIndex = FoodgawkerApp.Views.RecipesBase.extend({
     FoodgawkerApp.Views.RecipesBase.prototype.initialize.call(this);
     this.listenForScroll();
   }
-})
+});

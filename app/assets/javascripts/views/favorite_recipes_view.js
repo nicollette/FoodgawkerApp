@@ -1,36 +1,9 @@
-FoodgawkerApp.Views.FavoriteRecipesView = Backbone.View.extend({
+FoodgawkerApp.Views.FavoriteRecipesView =       
+  FoodgawkerApp.Views.RecipesBase.extend({
+  
   template: JST["recipes/favorite_recipes"],
-
+  
   initialize: function () {
-    this.listenTo(this.collection, "all", this.render);  
-  },
-   
-  childViews: [],
-  
-  render: function () {
-    var favoritesView = this;
-    var content = this.template({ recipes: this.collection });
-    this.$el.html(content);
-    
-    var recipeCounter = 0;
-    var rowId = 2;
-    this.collection.each(function (recipe) {
-      var miniDetailView = new FoodgawkerApp.Views.MiniRecipeDetail({ 
-        model: recipe 
-      });
-      
-      favoritesView.childViews.push(miniDetailView);
-      favoritesView.$el.append(miniDetailView.render().$el);
-    })
-    
-    return this;
-  },
-  
-
-  removeAll: function () {
-    this.childViews.forEach(function(childView) {
-      childView.remove();
-    })
-    this.remove();
+    FoodgawkerApp.Views.RecipesBase.prototype.initialize.call(this);
   }
-})
+});
