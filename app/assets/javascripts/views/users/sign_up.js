@@ -46,6 +46,12 @@ FoodgawkerApp.Views.SignUp = Backbone.View.extend({
         setTimeout(function () {
           FoodgawkerApp.Data.currentUser.set(response.attributes)          
         }, 1000);
+      },
+      
+      error: function () {
+        FoodgawkerApp.flash(
+          ["Sorry something went wrong! Please try signing up again."], "warning"
+        );
       }
     });
   }
